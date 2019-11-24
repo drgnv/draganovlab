@@ -1,0 +1,196 @@
+﻿/*Whole document*/
+html, body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+    margin: 10px;
+}
+/*Containers*/
+div.Main
+{
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #CCCCCC;
+    padding: 10px;
+    width: 820px;
+    margin: auto;
+}
+
+div.Main p
+{
+	margin-left: 3pt;
+	margin-right: 3pt;
+}
+
+div.LeftCell 
+{
+    margin-left: 3px;
+	width: 110px; 
+}
+
+div.RightCell 
+{
+    width: 700px; 
+    word-wrap: break-word;
+}
+
+/*ResultHeader styles*/
+div.ResultHeader
+{
+    margin-bottom: 10px;
+}
+div.ResultHeader h1, h2, h3, h4, h5
+{
+    margin: 0px 0px 5px 0px;
+    text-align: right;
+    font-weight: bold;
+}
+div.ResultHeader h1
+{
+    font-size: 1.5em;
+}
+div.ResultHeader h2
+{
+    font-size: 0.9em;
+}
+
+div.ResultHeader table
+{
+    margin: 0px;
+    border-width: 0px;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+div.ResultHeader td, th
+{
+}
+div.ResultHeader th
+{
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 4px 4px 4px 4px;
+}
+div.ResultHeader td
+{
+    padding: 2px 2px 2px 2px;
+}
+div.ResultHeader th.WoB
+{
+    color: #FFFFFF;
+    background-color: #000000;
+    width: 100px;
+}
+div.ResultHeader th.WoG
+{
+    color: #FFFFFF;
+    background-color: #808080;
+}
+
+div.Resultdetails
+{
+    /* width: 770px;*/
+    margin-left: 30px; /* малко вдясно от хедър секцията */
+}
+
+/* Why this doesn't work */
+/*div.Resultdetails p.RefRangeNote
+{
+    font-weight: bold;
+}*/
+
+/*Table in Resultdetails - look at the selectors!*/
+div.Resultdetails table
+{
+    border-width: 0px;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+/*Rows*/
+
+/*Cells - common*/
+div.Resultdetails td, th
+{
+    padding: 4px 4px 2px 2px; /*Exception in percent rule*/
+    text-align: left;
+}
+/*Heading cells*/
+div.Resultdetails th
+{
+    border: 1px solid black;
+    font-weight: bold;
+}
+div.Resultdetails th.Department
+{
+    background-color: #C0C0C0;
+    border: none;
+    font-size: 1.1em; /*Allways use relative font sizes*/
+}
+div.Resultdetails th.NameHeader
+{
+    width: 35%;
+}
+div.Resultdetails th.ResultHeader
+{
+    text-align: right;
+    width: 15%;
+}
+div.Resultdetails th.UnitstHeader
+{
+    width: 10%;
+}
+div.Resultdetails th.RangeHeader
+{
+    width: 40%;
+}
+/*Ordinary cells*/
+
+div.Resultdetails tbody td
+{
+    border-bottom: 1px dashed black; /*lines separator, but only in tbody section!*/
+}
+div.Resultdetails td.TestInProfile
+{
+    padding-left: 20px; /*Exception in percent rule*/
+    font-style: italic;
+}
+div.Resultdetails td.Result
+{
+    text-align: right;
+}
+div.Resultdetails td.ResultNotReady
+{
+    text-align: right;
+    color: #FF0000;
+}
+
+/*Place styles for Note and heading*/
+div.Footer
+{
+    text-align: center;
+}
+div.Footer p.EndReport
+{
+	font-weight: bold;
+}
+    div.Footer p.RefRangeNote {
+    font-weight : bold;
+    }
+div.Footer p.Copyright
+{
+    border-width: 1px;
+    font-size: 0.85em;
+    border-top-style: solid;
+}
+div.Footer p.Note
+{
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: inherit;
+    font-size: 0.95em;
+    text-align: center;
+    margin-right: 100px;
+    margin-left: 100px;
+}

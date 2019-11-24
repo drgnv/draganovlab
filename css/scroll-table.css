@@ -1,0 +1,28 @@
+#table-wrapper {
+  position: relative;
+}
+
+#table-scroll {
+  height: 350px;
+  overflow: auto;
+  margin-top: 5px;
+}
+
+#table-wrapper table {
+  width: 99%;
+}
+
+#table-wrapper table * {
+  background: whitesmoke;
+  color: black;
+}
+
+#table-wrapper table thead th .text {
+  position: absolute;
+  top: -20px;
+  z-index: 2;
+  height: 20px;
+  width: 35%;
+}
+
+

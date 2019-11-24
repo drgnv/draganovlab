@@ -1,0 +1,192 @@
+﻿/*Whole document*/
+html, body
+{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 7.5pt;
+	margin: 7.5pt;
+}
+/*Containers*/
+div.Main
+{
+	border-style: none;
+	padding: 7.5pt;
+	width: 100%;
+	margin: 0;
+}
+div.Main p
+{
+	margin-left: 2pt;
+	margin-right: 2pt;
+}
+
+div.LeftCell
+{
+	margin-left: 2pt;
+	width: 70pt; 
+}
+
+div.RightCell
+{
+	width: 406pt; 
+	word-wrap: break-word;
+}
+
+/*ResultHeader styles*/
+div.ResultHeader
+{
+	margin-bottom: 7.5pt;
+}
+div.ResultHeader h1, h2, h3, h4, h5
+{
+	margin: 0pt 0pt 3.75pt 0pt;
+	text-align: right;
+	font-weight: bold;
+}
+div.ResultHeader h1
+{
+	font-size: 1.5em;  
+}
+div.ResultHeader h2
+{
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+div.ResultHeader table
+{
+	margin: 0pt;
+	border-width: 0pt;
+	border: none;
+	width: 100%;
+	text-align: left;
+}
+div.ResultHeader td, th
+{
+}
+div.ResultHeader th
+{
+	font-weight: bold;
+	font-size: 1.1em;
+	padding: 3pt 3pt 3pt 3pt;
+}
+div.ResultHeader td
+{
+	padding:  1.5pt 1.5pt 1.5pt 1.5pt;
+}
+div.ResultHeader th.WoB
+{
+	color: #FFFFFF !important;
+	background-color: #000000 !important;
+	width: 75pt;
+}
+div.ResultHeader th.WoG
+{
+	color: #FFFFFF !important;
+	background-color: #808080 !important;
+}
+
+div.Resultdetails
+{
+	/* width: 770px;*/
+	margin-left: 22.5pt; /* малко вдясно от хедър секцията */
+}
+
+/* Why this doesn't work */
+/*div.Resultdetails p.RefRangeNote
+{
+    font-weight: bold;
+}*/
+
+/*Table in Resultdetails - look at the selectors!*/
+div.Resultdetails table
+{
+	border-width: 0pt;
+	border: none;
+	width: 100%;
+	margin-bottom: 7.5pt;
+}
+/*Rows*/
+
+/*Cells - common*/
+div.Resultdetails td, th
+{
+	padding: 1pt 3pt 1.5pt 1.5pt; /*Exception in percent rule*/
+	text-align: left;
+}
+/*Heading cells*/
+div.Resultdetails th
+{
+	border: 0.75pt solid black;
+}
+div.Resultdetails th.Department
+{
+	background-color: #C0C0C0 !important;
+	color: #FFFFFF !important; /*in iReg color is white*/
+	border: none;
+	font-size: 1.1em; /*Allways use relative font sizes*/
+	font-weight: bold; /*Moved here from "div.Resultdetails th" because only this header is bold in iReg*/
+}
+div.Resultdetails th.NameHeader
+{
+	width: 35%;
+}
+div.Resultdetails th.ResultHeader
+{
+	text-align: right;
+	width: 15%;
+}
+div.Resultdetails th.UnitstHeader
+{
+	width: 10%;
+}
+div.Resultdetails th.RangeHeader
+{
+	width: 40%;
+}
+/*Ordinary cells*/
+
+div.Resultdetails tbody td
+{
+	border-bottom: 0.75pt dashed black; /*lines separator, but only in tbody section!*/
+}
+div.Resultdetails td.TestInProfile
+{
+	padding-left: 15pt; /*Exception in percent rule*/
+	font-style: italic;
+}
+div.Resultdetails td.Result
+{
+	text-align: right;
+}
+div.Resultdetails td.ResultNotReady
+{
+	/*text-align: right;
+	color: #000000;*/
+	visibility: collapse;
+}
+/*Place styles for Note and heading*/
+div.Footer
+{
+	text-align: center;
+}
+div.Footer p.EndReport
+{
+	font-weight: bold; /*in iReg EndReport lable is bold*/
+}
+div.Footer p.Copyright
+{
+	border-width: 0.75pt;
+	font-size: 0.85em;
+	border-top-style: outset;
+}
+div.Footer p.Note
+{
+	padding: 3.75pt;
+	border-style: solid;
+	border-width: 0.75pt;
+	border-color: inherit;
+	font-size: 0.95em;
+	text-align: center;
+	margin-right: 2pt; /*in iReg Note is 100% width*/
+	margin-left: 2pt; /*in iReg Note is 100% width*/
+}

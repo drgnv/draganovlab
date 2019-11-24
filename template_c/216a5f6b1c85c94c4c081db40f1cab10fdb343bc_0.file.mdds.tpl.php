@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-24 18:20:17
+/* Smarty version 3.1.32, created on 2019-11-24 22:01:49
   from '/var/www/html/dlab/view/mdds.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5ddaadc19b60a4_29766333',
+  'unifunc' => 'content_5ddae1ad3273d5_42229332',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '216a5f6b1c85c94c4c081db40f1cab10fdb343bc' => 
     array (
       0 => '/var/www/html/dlab/view/mdds.tpl',
-      1 => 1574612415,
+      1 => 1574612431,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddaadc19b60a4_29766333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddae1ad3273d5_42229332 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -351,10 +351,8 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
 
                                                     <input name="idn" size="10" type="text" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 ">
-
                                                     <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['name'];?>
 :</i>
-
                                                     <input name="names" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
 " type="text" size="30px">
                                                 </td>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-10 08:07:35
+/* Smarty version 3.1.32, created on 2019-11-24 18:20:17
   from '/var/www/html/dlab/view/mdds.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dc7a927449171_01486207',
+  'unifunc' => 'content_5ddaadc19b60a4_29766333',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '216a5f6b1c85c94c4c081db40f1cab10fdb343bc' => 
     array (
       0 => '/var/www/html/dlab/view/mdds.tpl',
-      1 => 1558695018,
+      1 => 1574612415,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dc7a927449171_01486207 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddaadc19b60a4_29766333 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -174,14 +174,16 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
                                 <form method="get" action="./mdds.php">
                                     <tr>
-                                        <td style="color: white;" align="right">От:</td>
+                                        <td style="color: white;" align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['from'];?>
+:</td>
                                         <td>
                                             <input type="date" name="from" value="<?php echo $_smarty_tpl->tpl_vars['from_date']->value;?>
 ">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="color: white;" align="right">От:</td>
+                                        <td style="color: white;" align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['to'];?>
+:</td>
                                         <td>
                                             <input type="date" name="to" value="<?php echo $_smarty_tpl->tpl_vars['to_date']->value;?>
 ">
@@ -190,13 +192,15 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <input type="submit" name="searchbydate" value="Търси...">
+                                            <input type="submit" name="searchbydate" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['search'];?>
+">
                                         </td>
                                     </tr>
                                 </form>
 
                                 <tr>
-                                    <td style="color: white;">Баркод: </td>
+                                    <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['barcode'];?>
+: </td>
                                     <td>
                                         <form method="GET" action="./mdds.php">
                                             <input type="hidden" name="from" value="<?php echo $_smarty_tpl->tpl_vars['date']->value;?>
@@ -223,9 +227,11 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
-                                        <th title="Статус">С</th>
+                                        <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
+">С</th>
                                         <th>ID</th>
-                                        <th>Пациент</th>
+                                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+</th>
 
                                     </thead>
                                     <tbody>
@@ -340,12 +346,14 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                                         <table border="0">
                                             <tr>
                                                 <td align="right" colspan="4">
-                                                    <i style="color: white;">ЕГН:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
+:</i>
 
                                                     <input name="idn" size="10" type="text" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 ">
 
-                                                    <i style="color: white;">Имена:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['name'];?>
+:</i>
 
                                                     <input name="names" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
 " type="text" size="30px">
@@ -592,7 +600,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </table>
                         <?php } else { ?>
                         <p>
-                            ⇦Изберете пациент от панел "Пациенти" в ляво за да заредите направленията за него.
+                            ⇦<?php echo $_smarty_tpl->tpl_vars['lang']->value['choose_from_left'];?>
+
                         </p>
                         <?php }?>
         </table>

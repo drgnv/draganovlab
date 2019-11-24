@@ -127,13 +127,13 @@
 
                                 <form method="get" action="./mdds.php">
                                     <tr>
-                                        <td style="color: white;" align="right">От:</td>
+                                        <td style="color: white;" align="right">{$lang.from}:</td>
                                         <td>
                                             <input type="date" name="from" value="{$from_date}">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="color: white;" align="right">От:</td>
+                                        <td style="color: white;" align="right">{$lang.to}:</td>
                                         <td>
                                             <input type="date" name="to" value="{$to_date}">
                                         </td>
@@ -141,13 +141,13 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <input type="submit" name="searchbydate" value="Търси...">
+                                            <input type="submit" name="searchbydate" value="{$lang.search}">
                                         </td>
                                     </tr>
                                 </form>
 
                                 <tr>
-                                    <td style="color: white;">Баркод: </td>
+                                    <td style="color: white;">{$lang.barcode}: </td>
                                     <td>
                                         <form method="GET" action="./mdds.php">
                                             <input type="hidden" name="from" value="{$date}">
@@ -170,9 +170,9 @@
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
-                                        <th title="Статус">С</th>
+                                        <th title="{$lang.status}">С</th>
                                         <th>ID</th>
-                                        <th>Пациент</th>
+                                        <th>{$lang.patient}</th>
 
                                     </thead>
                                     <tbody>
@@ -231,12 +231,10 @@
                                         <table border="0">
                                             <tr>
                                                 <td align="right" colspan="4">
-                                                    <i style="color: white;">ЕГН:</i>
+                                                    <i style="color: white;">{$lang.idn}:</i>
 
                                                     <input name="idn" size="10" type="text" value="{$data.0.idn}">
-
-                                                    <i style="color: white;">Имена:</i>
-
+                                                    <i style="color: white;">{$lang.name}:</i>
                                                     <input name="names" value="{$data.0.names}" type="text" size="30px">
                                                 </td>
 
@@ -427,7 +425,7 @@
                         </table>
                         {else}
                         <p>
-                            ⇦Изберете пациент от панел "Пациенти" в ляво за да заредите направленията за него.
+                            ⇦{$lang.choose_from_left}
                         </p>
                         {/if}
         </table>

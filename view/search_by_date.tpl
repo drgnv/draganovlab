@@ -50,10 +50,10 @@
                             <th style="display:none;">егн</th>
                             <th>С</th>
                             <th>№</th>
-                            <th>Добавено на</th>
-                            <th>Пациент</th>
-                            <th>Лекар</th>
-                            <th>Действия</th>
+                            <th>{$lang.added}</th>
+                            <th>{$lang.patient}</th>
+                            <th>{$lang.doctor}</th>
+                            <th>{$lang.actions}</th>
                         </tr>
                     </thead>
                     <tbody>

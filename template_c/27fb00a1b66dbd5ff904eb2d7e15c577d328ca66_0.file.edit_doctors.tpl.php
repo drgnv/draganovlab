@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-22 10:58:08
+/* Smarty version 3.1.32, created on 2019-11-29 21:19:53
   from '/var/www/html/dlab/view/edit_doctors.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dd7a32070a317_73956116',
+  'unifunc' => 'content_5de16f597bd1c8_14207658',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '27fb00a1b66dbd5ff904eb2d7e15c577d328ca66' => 
     array (
       0 => '/var/www/html/dlab/view/edit_doctors.tpl',
-      1 => 1558695016,
+      1 => 1574952523,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd7a32070a317_73956116 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de16f597bd1c8_14207658 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -62,14 +62,18 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                          'newwindow', 
                          'width=300,height=300')
           return false;   
-          " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">Добави лекар</b></a>
+          " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white"><?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+</b></a>
         </p>
 
         <table id="doctors" class="display">
             <thead>
                 <tr>
-                    <th style="color: white;">Лекар</th>
-                    <th style="color: white;">Действия</th>
+                    <th style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+</th>
+                    <th style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['actions'];?>
+</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,14 +98,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['doctor']->value) {
                          'width=300,height=200')
           return false;
           " ;>
-                            <img src="../images/edit.png" width="25" height="25"> Редактиране
+                            <img src="../images/edit.png" width="25" height="25"><?php echo $_smarty_tpl->tpl_vars['lang']->value['edit'];?>
+
                         </a>
 
                         <a style="text-decoration: none;" href="../controller/edit_doctors.php?deletedoc=<?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor_id'];?>
 " onclick="return confirm('Сигурен ли сте, че искате да изтриете лекар: <?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
 ?')" title="Изтрий <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 ">
-                            <img src="../images/delete.png" width="25" height="25"> Изтриване</a>
+                            <img src="../images/delete.png" width="25" height="25"><?php echo $_smarty_tpl->tpl_vars['lang']->value['delete'];?>
+</a>
                     </td>
 
                 </tr>

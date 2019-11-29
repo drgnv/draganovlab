@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-10 07:50:20
+/* Smarty version 3.1.32, created on 2019-11-29 21:27:31
   from '/var/www/html/dlab/view/edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dc7a51c50e689_78514745',
+  'unifunc' => 'content_5de171232ce325_11391328',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeec302960295ff4a5d286627d6d813346a69f0' => 
     array (
       0 => '/var/www/html/dlab/view/edit.tpl',
-      1 => 1558695014,
+      1 => 1575040163,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dc7a51c50e689_78514745 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de171232ce325_11391328 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -126,15 +126,13 @@ if ($_prefixVariable1 == "on") {?>
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
 $_prefixVariable2 = ob_get_clean();
 if ($_prefixVariable2 !== "on") {?>
-            <input type="checkbox" name="cito"> <?php }?> <?php ob_start();
+            <input type="checkbox" name="cito"> <?php }?>
+             Платено:
+            <input type="checkbox" name="pay" <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['pay'];
 $_prefixVariable3 = ob_get_clean();
-if ($_prefixVariable3 == "on") {?> Платено:
-            <input type="checkbox" name="pay" checked> <?php }?> <?php ob_start();
-echo $_smarty_tpl->tpl_vars['data']->value[0]['pay'];
-$_prefixVariable4 = ob_get_clean();
-if ($_prefixVariable4 !== "on") {?> Платено:
-            <input type="checkbox" name="pay" checked> <?php }?>
+if ($_prefixVariable3 == "on") {?>checked<?php }?>>
+
 
             <hr>
 
@@ -144,14 +142,14 @@ if ($_prefixVariable4 !== "on") {?> Платено:
             <select name="over">
                 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['over'];
-$_prefixVariable5 = ob_get_clean();
-if ($_prefixVariable5 == "on") {?>
+$_prefixVariable4 = ob_get_clean();
+if ($_prefixVariable4 == "on") {?>
                 <option value="on" selected>Приключен</option>
                 <option value="off">Неприключен</option>
                 <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['over'];
-$_prefixVariable6 = ob_get_clean();
-if ($_prefixVariable6 !== "on") {?>
+$_prefixVariable5 = ob_get_clean();
+if ($_prefixVariable5 !== "on") {?>
                 <option value="on">Приключен</option>
                 <option value="off" selected>Неприключен</option>
                 <?php }?>
@@ -190,8 +188,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </table></div>
             <?php ob_start();
 echo $_smarty_tpl->tpl_vars['ldl']->value;
-$_prefixVariable7 = ob_get_clean();
-if (isset($_prefixVariable7)) {
+$_prefixVariable6 = ob_get_clean();
+if (isset($_prefixVariable6)) {
 echo $_smarty_tpl->tpl_vars['ldl']->value;
 }?>
             <a style="text-decoration: none;" href="../controller/edit.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>

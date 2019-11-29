@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-24 00:09:48
+/* Smarty version 3.1.32, created on 2019-11-29 21:15:28
   from '/var/www/html/dlab/view/search_by_date.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dd9ae2c987645_51701326',
+  'unifunc' => 'content_5de16e504bb015_52367496',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14611b2b79646b80a3a8a798ec59b913e7a2fbcb' => 
     array (
       0 => '/var/www/html/dlab/view/search_by_date.tpl',
-      1 => 1574546987,
+      1 => 1575054927,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd9ae2c987645_51701326 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de16e504bb015_52367496 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -90,10 +90,14 @@ function content_5dd9ae2c987645_51701326 (Smarty_Internal_Template $_smarty_tpl)
                             <th style="display:none;">егн</th>
                             <th>С</th>
                             <th>№</th>
-                            <th>Добавено на</th>
-                            <th>Пациент</th>
-                            <th>Лекар</th>
-                            <th>Действия</th>
+                            <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['added'];?>
+</th>
+                            <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+</th>
+                            <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+</th>
+                            <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['actions'];?>
+</th>
                         </tr>
                     </thead>
                     <tbody>

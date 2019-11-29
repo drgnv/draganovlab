@@ -121,7 +121,7 @@
             <tr>
                 <td valign="top" width="30%">
                     <div class="newp" style="width: 350px">
-                        <b>Търсене</b>
+                        <b>{$lang.search}</b>
                         <center>
                             <table>
 
@@ -164,7 +164,6 @@
                         </center>
                         <div id="table-wrapper">
                             <div id="table-scroll">
-                                <p>Пациенти</p>
                                 <table id="journa122" class="lp" width="4350">
                                     <thead>
 

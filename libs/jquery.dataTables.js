@@ -1737,7 +1737,7 @@
 		 * sZeroRecords - assuming that is given.
 		 */
 		if ( ! lang.sEmptyTable && zeroRecords &&
-			defaults.sEmptyTable === "<b style=\"color: clack\">Няма открити</b>" )
+			defaults.sEmptyTable === "<b style=\"color: clack\"></b>" )
 		{
 			_fnMap( lang, lang, 'sZeroRecords', 'sEmptyTable' );
 		}
@@ -11338,7 +11338,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "<b style=\"color: white\">Следваща</b>",
+				"sNext": "<b style=\"color: white\">Next</b>",
 	
 	
 				/**
@@ -11361,7 +11361,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "<b style=\"color: white\">Предишна</b>"
+				"sPrevious": "<b style=\"color: white\">Previos</b>"
 			},
 	
 			/**
@@ -11384,8 +11384,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "<p style=\"color: black\">Все още няма добавени</p>",
-	
+			"sEmptyTable": "<p style=\"color: black\"></p>",
+
 	
 			/**
 			 * This string gives information to the end user about the information
@@ -11416,7 +11416,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "<p style=\"color: white;\">Показани от _START_ до _END_ от общо _TOTAL_</p>",
+			"sInfo": "<p style=\"color: white;\"> _START_ to _END_ from _TOTAL_</p>",
 	
 	
 			/**
@@ -11577,7 +11577,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "<p style=\"color: white\">Покажи _MENU_ на страница</p>",
+			"sLengthMenu": "<p style=\"color: white\">Show _MENU_ on page</p>",
 	
 	
 			/**
@@ -11657,7 +11657,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "<b style=\"color: white\">Търси:</b>",
+			"sSearch": "<b style=\"color: white\">Search:</b>",
 	
 	
 			/**

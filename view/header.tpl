@@ -3,11 +3,21 @@
 
     <head>
         <style>
+
+
+
+
+
+
+
+
             input{
                 border: 2px outset #5d9fd9;
                 border-radius:4px;
             }
-
+            div{
+                font-family: Arial;
+            }
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DraganovLab 4.1</title>

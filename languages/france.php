@@ -82,5 +82,7 @@ $language = array(
     "clinical"=>"Clinique",
     "type"=>"Type",
     "fee"=>"Frais",
+    "empty"=>"Вide",
+    "added"=>"Аjouté",
     "newbe" => 'Apprentissage'
 );

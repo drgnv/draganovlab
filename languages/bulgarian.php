@@ -82,5 +82,7 @@ $language = array(
     "clinical"=>"Клинична",
     "type"=>"Тип",
     "fee"=>"Такса",
+    "empty"=>"Празно",
+    "added"=>"Добавено",
     "newbe" => 'Учащ'
 );

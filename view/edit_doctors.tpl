@@ -26,14 +26,14 @@
                          'newwindow', 
                          'width=300,height=300')
           return false;   
-          " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">Добави лекар</b></a>
+          " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">{$lang.add} {$lang.doctor}</b></a>
         </p>
 
         <table id="doctors" class="display">
             <thead>
                 <tr>
-                    <th style="color: white;">Лекар</th>
-                    <th style="color: white;">Действия</th>
+                    <th style="color: white;">{$lang.doctor}</th>
+                    <th style="color: white;">{$lang.actions}</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,11 +47,11 @@
                          'width=300,height=200')
           return false;
           " ;>
-                            <img src="../images/edit.png" width="25" height="25"> Редактиране
+                            <img src="../images/edit.png" width="25" height="25">{$lang.edit}
                         </a>
 
                         <a style="text-decoration: none;" href="../controller/edit_doctors.php?deletedoc={$doctor.doctor_id}" onclick="return confirm('Сигурен ли сте, че искате да изтриете лекар: {$doctor.doctor}?')" title="Изтрий {$result.names}">
-                            <img src="../images/delete.png" width="25" height="25"> Изтриване</a>
+                            <img src="../images/delete.png" width="25" height="25">{$lang.delete}</a>
                     </td>
 
                 </tr>

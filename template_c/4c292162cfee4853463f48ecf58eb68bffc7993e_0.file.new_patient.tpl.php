@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-23 19:03:04
+/* Smarty version 3.1.32, created on 2019-11-29 21:34:15
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dd9664860f769_32475703',
+  'unifunc' => 'content_5de172b7a84a30_69971444',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1574528583,
+      1 => 1575056055,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd9664860f769_32475703 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de172b7a84a30_69971444 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -134,7 +134,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             }
         <?php echo '</script'; ?>
 >
-        <table border="0" cellspacing="0" cellpadding="3" width="100%" style=" border-collapse: collapse;">
+        <table border="0" cellspacing="0" cellpadding="-" width="100%" style=" border-collapse: collapse;">
             <tr>
                 <td valign="top">
                     <form autocomplete="off" method="POST" action='new_patient.php' name='newp'>

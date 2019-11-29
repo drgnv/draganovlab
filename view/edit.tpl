@@ -77,9 +77,10 @@
             <input type="date" name="date" value="{$data.0.date}"> |
             <b style="color:red;">Спешно:</b> {if {$data.0.cito} == "on"}
             <input type="checkbox" name="cito" checked> {/if} {if {$data.0.cito} !== "on"}
-            <input type="checkbox" name="cito"> {/if} {if {$data.0.pay} == "on"} Платено:
-            <input type="checkbox" name="pay" checked> {/if} {if {$data.0.pay} !== "on"} Платено:
-            <input type="checkbox" name="pay" checked> {/if}
+            <input type="checkbox" name="cito"> {/if}
+             Платено:
+            <input type="checkbox" name="pay" {if {$data.0.pay} == "on"}checked{/if}>
+
 
             <hr>
 

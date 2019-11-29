@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-23 20:47:04
+/* Smarty version 3.1.32, created on 2019-11-29 21:33:48
   from '/var/www/html/dlab/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dd97ea8d29f27_11543333',
+  'unifunc' => 'content_5de1729c9d61b3_24124056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2dc9bb225b9f1fd7311790f530310462c7e8dc59' => 
     array (
       0 => '/var/www/html/dlab/view/header.tpl',
-      1 => 1574534822,
+      1 => 1575056027,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dd97ea8d29f27_11543333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de1729c9d61b3_24124056 (Smarty_Internal_Template $_smarty_tpl) {
 ?><DOCTYPE html>
     <html>
 
     <head>
         <style>
+
+
+
+
+
+
+
+
             input{
                 border: 2px outset #5d9fd9;
                 border-radius:4px;
             }
-
+            div{
+                font-family: Arial;
+            }
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DraganovLab 4.1</title>

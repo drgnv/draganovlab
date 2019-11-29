@@ -14,6 +14,13 @@ $Smarty->compile_dir='../template_c/';
 $Settings = new Settings();
 $Settings->accessControl($_SESSION['user_info'][0]['lvl']);
 $doctors = $Settings->getAllDoctors();
+
+//LANGUAGE START
+$def_lang = $Settings->getLanguage();
+include_once "../languages/".$def_lang[0]['default_lang'].".php";
+$Smarty->assign('lang', $language);
+//LANGUAGE STOP
+
 if(isset($_GET['deletedoc'])){
     $doctor_id = filter_input(INPUT_GET, 'deletedoc');
     $Settings->deleteDoctor($doctor_id);

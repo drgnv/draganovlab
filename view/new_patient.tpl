@@ -94,7 +94,7 @@
                 }
             }
         </script>
-        <table border="0" cellspacing="0" cellpadding="3" width="100%" style=" border-collapse: collapse;">
+        <table border="0" cellspacing="0" cellpadding="-" width="100%" style=" border-collapse: collapse;">
             <tr>
                 <td valign="top">
                     <form autocomplete="off" method="POST" action='new_patient.php' name='newp'>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 08:48:49
+/* Smarty version 3.1.32, created on 2019-11-30 13:26:32
   from '/var/www/html/dlab/view/print.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de210d1c0e8e8_77341955',
+  'unifunc' => 'content_5de251e80f9374_01571165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd343a2a20f60835d849f275ca51db2cc5c3fe601' => 
     array (
       0 => '/var/www/html/dlab/view/print.tpl',
-      1 => 1558695022,
+      1 => 1575113191,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de210d1c0e8e8_77341955 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de251e80f9374_01571165 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     @media print {
         /* insert your style declarations here */
@@ -87,26 +87,32 @@ echo $_smarty_tpl->tpl_vars['cito']->value;
 $_prefixVariable5 = ob_get_clean();
 if ($_prefixVariable5 == 'on') {?>background="../images/cito.png" <?php }?> id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['lab_req'];?>
+</td></tr>
             <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
+                    &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
 
                     <br> <?php ob_start();
 echo preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'], $tmp);
 $_prefixVariable6 = ob_get_clean();
-if ($_prefixVariable6 < 3) {?> <?php } else { ?> &nbsp;<b>Лекар:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
+if ($_prefixVariable6 < 3) {?> <?php } else { ?> &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
  <?php }?>
                         <p><?php echo $_smarty_tpl->tpl_vars['code']->value;?>
 </p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
- &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['number'];?>
+                <td style="width: 647px;">&nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
+ &nbsp;&nbsp<b>№</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['number'];?>
 </td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> <?php ob_start();
+                <td style="width: 647px;"><b><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+: <br></b> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['tests']->value['ur'];
 $_prefixVariable7 = ob_get_clean();
 if ($_prefixVariable7) {?> ph-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SG-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIL-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URB-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRO-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GLU-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KET-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NIT-
@@ -146,29 +152,35 @@ echo $_smarty_tpl->tpl_vars['cito']->value;
 $_prefixVariable14 = ob_get_clean();
 if ($_prefixVariable14 == 'on') {?>background="../images/cito.png" <?php }?> id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['lab_req'];?>
+</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
+                    &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
 
                     <br> <?php ob_start();
 echo preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'], $tmp);
 $_prefixVariable15 = ob_get_clean();
-if ($_prefixVariable15 < 3) {?> <?php } else { ?> &nbsp;<b>Лекар:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
+if ($_prefixVariable15 < 3) {?> <?php } else { ?> &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
  <?php }?>
                         <p><?php echo $_smarty_tpl->tpl_vars['code']->value;?>
 </p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
+                <td style="width: 647px;">&nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
 &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['number'];?>
 </td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> <?php ob_start();
+                <td style="width: 647px;"><b><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+: <br></b> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['tests']->value['cbc'];
 $_prefixVariable16 = ob_get_clean();
-if ($_prefixVariable16) {?> Пълна кръвна картина<?php }?> <?php ob_start();
+if ($_prefixVariable16) {?> CBC<?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['tests']->value['cbc'];
 $_prefixVariable17 = ob_get_clean();
 ob_start();
@@ -201,26 +213,32 @@ echo $_smarty_tpl->tpl_vars['cito']->value;
 $_prefixVariable23 = ob_get_clean();
 if ($_prefixVariable23 == 'on') {?>background="../images/cito.png" <?php }?> id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['lab_req'];?>
+</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
+                    &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
 
                     <br> <?php ob_start();
 echo preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'], $tmp);
 $_prefixVariable24 = ob_get_clean();
-if ($_prefixVariable24 < 3) {?> <?php } else { ?> &nbsp;<b>Лекар:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
+if ($_prefixVariable24 < 3) {?> <?php } else { ?> &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
  <?php }
 echo $_smarty_tpl->tpl_vars['code']->value;?>
 
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
+                <td style="width: 647px;">&nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
 &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['number'];?>
 </td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> <?php ob_start();
+                <td style="width: 647px;"><b><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+: <br></b> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['tests']->value['blood'];
 $_prefixVariable25 = ob_get_clean();
 if ($_prefixVariable25) {?> <?php
@@ -278,26 +296,32 @@ echo $_smarty_tpl->tpl_vars['cito']->value;
 $_prefixVariable28 = ob_get_clean();
 if ($_prefixVariable28 == 'on') {?>background="../images/cito.png" <?php }?> id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['lab_req'];?>
+</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
+                    &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
 
                     <br> <?php ob_start();
 echo preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'], $tmp);
 $_prefixVariable29 = ob_get_clean();
-if ($_prefixVariable29 < 3) {?> <?php } else { ?> &nbsp;<b>Лекар:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
+if ($_prefixVariable29 < 3) {?> <?php } else { ?> &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
  <?php }?>
                         <p><?php echo $_smarty_tpl->tpl_vars['code']->value;?>
 </p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
+                <td style="width: 647px;">&nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
  &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['number'];?>
 </td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> <?php
+                <td style="width: 647px;"><b><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+: <br></b> <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tests']->value['hormon'], 'test', false, NULL, 'foo', array (
   'last' => true,
   'iteration' => true,
@@ -334,26 +358,32 @@ echo $_smarty_tpl->tpl_vars['cito']->value;
 $_prefixVariable31 = ob_get_clean();
 if ($_prefixVariable31 == 'on') {?>background="../images/cito.png" <?php }?> id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['lab_req'];?>
+</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
+                    &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['names'];?>
 
                     <br> <?php ob_start();
 echo preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'], $tmp);
 $_prefixVariable32 = ob_get_clean();
-if ($_prefixVariable32 < 3) {?> <?php } else { ?> &nbsp;<b>Лекар:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
+if ($_prefixVariable32 < 3) {?> <?php } else { ?> &nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['doctor'];?>
  <?php }?>
                         <p><?php echo $_smarty_tpl->tpl_vars['code']->value;?>
 </p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
+                <td style="width: 647px;">&nbsp;<b><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:</b> <?php echo $_smarty_tpl->tpl_vars['d']->value;?>
  &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> <?php echo $_smarty_tpl->tpl_vars['patient_info']->value['patient']['number'];?>
 </td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> <?php
+                <td style="width: 647px;"><b><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+: <br></b> <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tests']->value['coag'], 'test', false, NULL, 'foo', array (
   'last' => true,
   'iteration' => true,

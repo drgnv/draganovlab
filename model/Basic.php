@@ -71,7 +71,7 @@ class Basic extends Host{
     
     
     public function getPatientData($id) {
-        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code WHERE patients.id=".mysqli_real_escape_string($this->connect(), $id)." ORDER BY results.id";
+        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor = doctors.doctor_id WHERE patients.id=".mysqli_real_escape_string($this->connect(), $id)." ORDER BY results.id";
         
         $raw_data=$this->sqliexecute($sql);
         return $raw_data;
@@ -99,7 +99,7 @@ class Basic extends Host{
     }
 
     public function printRequestById($id) {
-        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code WHERE patients.id=".mysqli_real_escape_string($this->connect(), $id)."";
+        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE patients.id=".mysqli_real_escape_string($this->connect(), $id)."";
         
         $raw_data=$this->sqliexecute($sql);
         

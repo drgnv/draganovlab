@@ -87,5 +87,6 @@ $language = array(
     "comment"=>"Commentaire",
     "note"=>"Notes",
     "all"=>"tout",
+    "lab_req"=>"Demande de test de laboratoire",
     "newbe" => 'Apprentissage'
 );

@@ -49,19 +49,20 @@
     {if {$tests.ur} || {$tests.s} || {$tests.shit}|| {$tests.ourine}}
     <table {if {$cito}=='on' }background="../images/cito.png" {/if} id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;">{$lang.lab_req}</td></tr>
             <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> {$patient_info.patient.names}
+                    &nbsp;<b>{$lang.patient}:</b> {$patient_info.patient.names}
                     <br> {if {$patient_info.patient.doctor|count_characters}
-                    < 3} {else} &nbsp;<b>Лекар:</b> {$patient_info.patient.doctor} {/if}
+                    < 3} {else} &nbsp;<b>{$lang.doctor}:</b> {$patient_info.patient.doctor} {/if}
                         <p>{$code}</p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> {$d} &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
+                <td style="width: 647px;">&nbsp;<b>{$lang.date}:</b> {$d} &nbsp;&nbsp<b>№</b> {$patient_info.patient.number}</td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> {if {$tests.ur}} ph-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SG-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIL-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URB-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRO-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GLU-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KET-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NIT-
+                <td style="width: 647px;"><b>{$lang.tests}: <br></b> {if {$tests.ur}} ph-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SG-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIL-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URB-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRO-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GLU-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KET-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NIT-
                     <br>{/if} {if {$tests.s}} Седимент: {/if} {if {$tests.shit}} Окултен кръвоизлив:
                     <br>{/if} {if {$tests.ourine}} Микроалбуминурия:
                     <br>{/if}
@@ -77,19 +78,20 @@
     {if {$tests.cbc} || {$tests.akr} || {$tests.dif}}
     <table {if {$cito}=='on' }background="../images/cito.png" {/if} id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;">{$lang.lab_req}</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> {$patient_info.patient.names}
+                    &nbsp;<b>{$lang.patient}:</b> {$patient_info.patient.names}
                     <br> {if {$patient_info.patient.doctor|count_characters}
-                    < 3} {else} &nbsp;<b>Лекар:</b> {$patient_info.patient.doctor} {/if}
+                    < 3} {else} &nbsp;<b>{$lang.doctor}:</b> {$patient_info.patient.doctor} {/if}
                         <p>{$code}</p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> {$d}&nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
+                <td style="width: 647px;">&nbsp;<b>{$lang.date}:</b> {$d}&nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> {if {$tests.cbc}} Пълна кръвна картина{/if} {if {$tests.cbc} && {$tests.akr}} , {/if} {if {$tests.akr}} АКР - капилярно {/if} {if {$tests.dif}} Диференциално броене на левкоцити {/if}
+                <td style="width: 647px;"><b>{$lang.tests}: <br></b> {if {$tests.cbc}} CBC{/if} {if {$tests.cbc} && {$tests.akr}} , {/if} {if {$tests.akr}} АКР - капилярно {/if} {if {$tests.dif}} Диференциално броене на левкоцити {/if}
                 </td>
             </tr>
         </tbody>
@@ -101,18 +103,19 @@
     {if {$tests.blood} || {$tests.ele}}
     <table {if {$cito}=='on' }background="../images/cito.png" {/if} id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;">{$lang.lab_req}</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> {$patient_info.patient.names}
+                    &nbsp;<b>{$lang.patient}:</b> {$patient_info.patient.names}
                     <br> {if {$patient_info.patient.doctor|count_characters}
-                    < 3} {else} &nbsp;<b>Лекар:</b> {$patient_info.patient.doctor} {/if}{$code}
+                    < 3} {else} &nbsp;<b>{$lang.doctor}:</b> {$patient_info.patient.doctor} {/if}{$code}
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> {$d}&nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
+                <td style="width: 647px;">&nbsp;<b>{$lang.date}:</b> {$d}&nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> {if {$tests.blood}} {foreach from=$tests.blood name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach} {/if} {if {$tests.ele}} {foreach from=$tests.ele name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach} {/if}
+                <td style="width: 647px;"><b>{$lang.tests}: <br></b> {if {$tests.blood}} {foreach from=$tests.blood name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach} {/if} {if {$tests.ele}} {foreach from=$tests.ele name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach} {/if}
                 </td>
             </tr>
         </tbody>
@@ -126,19 +129,20 @@
     {if {$tests.hormon}}
     <table {if {$cito}=='on' }background="../images/cito.png" {/if} id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;">{$lang.lab_req}</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> {$patient_info.patient.names}
+                    &nbsp;<b>{$lang.patient}:</b> {$patient_info.patient.names}
                     <br> {if {$patient_info.patient.doctor|count_characters}
-                    < 3} {else} &nbsp;<b>Лекар:</b> {$patient_info.patient.doctor} {/if}
+                    < 3} {else} &nbsp;<b>{$lang.doctor}:</b> {$patient_info.patient.doctor} {/if}
                         <p>{$code}</p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> {$d} &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
+                <td style="width: 647px;">&nbsp;<b>{$lang.date}:</b> {$d} &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> {foreach from=$tests.hormon name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach}
+                <td style="width: 647px;"><b>{$lang.tests}: <br></b> {foreach from=$tests.hormon name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach}
                 </td>
             </tr>
         </tbody>
@@ -153,19 +157,20 @@
     {if {$tests.coag}}
     <table {if {$cito}=='on' }background="../images/cito.png" {/if} id="main" border="1" style="width: 648px;" cellspacing="4">
         <tbody>
-            <tr>
+        <tr><td style="border-color: white; font-size: 18px;text-align: center; font-weight: bold;">{$lang.lab_req}</td></tr>
+        <tr>
                 <td style="width: 647px; height: 50px;">
-                    &nbsp;<b>Пациент:</b> {$patient_info.patient.names}
+                    &nbsp;<b>{$lang.patient}:</b> {$patient_info.patient.names}
                     <br> {if {$patient_info.patient.doctor|count_characters}
-                    < 3} {else} &nbsp;<b>Лекар:</b> {$patient_info.patient.doctor} {/if}
+                    < 3} {else} &nbsp;<b>{$lang.doctor}:</b> {$patient_info.patient.doctor} {/if}
                         <p>{$code}</p>
                 </td>
             </tr>
             <tr>
-                <td style="width: 647px;">&nbsp;<b>Дата:</b> {$d} &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
+                <td style="width: 647px;">&nbsp;<b>{$lang.date}:</b> {$d} &nbsp;&nbsp;&nbsp;&nbsp; <b>№</b> {$patient_info.patient.number}</td>
             </tr>
             <tr>
-                <td style="width: 647px;"><b>Изследвания: <br></b> {foreach from=$tests.coag name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach}
+                <td style="width: 647px;"><b>{$lang.tests}: <br></b> {foreach from=$tests.coag name=foo item=test} &nbsp;{if $smarty.foreach.foo.last}{$test}{else} {$test}, {/if} {/foreach}
                 </td>
             </tr>
         </tbody>

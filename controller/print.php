@@ -9,9 +9,15 @@ include_once '../model/Basic.php';
 $Smarty = new Smarty();
 $Smarty->template_dir='../view/';
 $Smarty->compile_dir='../template_c/';
-$var = 'test';
+
 
 $Basic = new Basic();
+
+//LANGUAGE START
+$def_lang = $Basic->getLanguage();
+include_once "../languages/".$def_lang[0]['default_lang'].".php";
+$Smarty->assign('lang', $language);
+//LANGUAGE STOP
 
 if(isset($_GET['id'])){
     $datas = $Basic->printRequestById($_GET['id']);
@@ -26,8 +32,9 @@ $Smarty->assign('code', $code);
 $Smarty->assign('cito', $pd[0]['cito']);
     $Smarty->assign('patient_info', $datas);
     $Smarty->assign('tests', $datas['patient']['tests']);
-    $d = date('G:i:s ч. d.m.Yг.');
+    $d = date('d.m.Yг.');
      $Smarty->assign('d', $d);
+
 }
 
 $Smarty->display('print.tpl');

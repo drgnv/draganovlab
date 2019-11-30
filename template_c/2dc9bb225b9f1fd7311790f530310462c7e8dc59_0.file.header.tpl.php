@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:33:48
+/* Smarty version 3.1.32, created on 2019-11-30 07:33:44
   from '/var/www/html/dlab/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de1729c9d61b3_24124056',
+  'unifunc' => 'content_5de1ff38758606_60938065',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2dc9bb225b9f1fd7311790f530310462c7e8dc59' => 
     array (
       0 => '/var/www/html/dlab/view/header.tpl',
-      1 => 1575056027,
+      1 => 1575091789,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de1729c9d61b3_24124056 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de1ff38758606_60938065 (Smarty_Internal_Template $_smarty_tpl) {
 ?><DOCTYPE html>
     <html>
 
     <head>
         <style>
-
+            <?php echo '<script'; ?>
+ src="https://www.google.com/recaptcha/api.js" async defer><?php echo '</script'; ?>
+>
 
 
 

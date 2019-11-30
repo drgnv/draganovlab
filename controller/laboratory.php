@@ -9,7 +9,7 @@ include_once '../model/Basic.php';
 $Smarty = new Smarty();
 $Smarty->template_dir='../view/';
 $Smarty->compile_dir='../template_c/';
-$var = 'test';
+
 
 $Basic = new Basic();
 
@@ -18,6 +18,7 @@ $def_lang = $Basic->getLanguage();
 include_once "../languages/".$def_lang[0]['default_lang'].".php";
 $Smarty->assign('lang', $language);
 //LANGUAGE STOP
+
 if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
 $from_date = filter_input(INPUT_GET, 'from');;
     $to_date = filter_input(INPUT_GET, 'to');;

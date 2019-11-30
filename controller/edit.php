@@ -12,7 +12,13 @@ $Smarty->compile_dir='../template_c/';
 $var = 'test';
 
 $Basic = new Basic();
-//$Basic->getPatientData($id);
+
+//LANGUAGE START
+$def_lang = $Basic->getLanguage();
+include_once "../languages/".$def_lang[0]['default_lang'].".php";
+$Smarty->assign('lang', $language);
+//LANGUAGE STOP
+
 
 if(isset($_GET['id'])){
     $id = filter_input(INPUT_GET, 'id');

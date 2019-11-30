@@ -83,5 +83,7 @@ $language = array(
     "fee"=>"Fee",
     "empty"=>"Empty",
     "added"=>"Added",
+    "comment"=>"Comment",
+    "note"=>"Notes",
     "newbe" => 'Learning'
 );

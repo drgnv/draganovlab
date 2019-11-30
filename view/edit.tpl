@@ -50,11 +50,11 @@
     <center>
         <form autocomplete="off" action="../controller/edit.php?id={$data.0.patient_id}" method="POST" id="form1">
             №
-            <input required type="number" name="number" style="width: 40px;" value="{$data.0.number}"> | Пациент:
-            <input required type="text" name="patient" value="{$data.0.names}" size="26"> | ЕГН:
+            <input required type="number" name="number" style="width: 40px;" value="{$data.0.number}"> | {$lang.patient}:
+            <input required type="text" name="patient" value="{$data.0.names}" size="26"> | {$lang.idn}:
             <input type="text" name="idn" value="{$data.0.idn}" size="9">
             <br>
-            <br> Лекар:
+            <br> {$lang.doctor}:
             <input list="hosting-plan" type="text" value="{$data.0.doctor}" size="14" name='doctor'>
             <datalist id="hosting-plan">
                 {foreach from=$doctors item=doctor}
@@ -73,36 +73,36 @@
                 // Add the optionNode to the datalist
                 document.getElementById("hosting-plan").appendChild(optionNode);
             </script>
-            | Дата:
+            | {$lang.date}:
             <input type="date" name="date" value="{$data.0.date}"> |
-            <b style="color:red;">Спешно:</b> {if {$data.0.cito} == "on"}
+            <b style="color:red;">{$lang.cito}:</b> {if {$data.0.cito} == "on"}
             <input type="checkbox" name="cito" checked> {/if} {if {$data.0.cito} !== "on"}
             <input type="checkbox" name="cito"> {/if}
-             Платено:
+            {$lang.paid}:
             <input type="checkbox" name="pay" {if {$data.0.pay} == "on"}checked{/if}>
 
 
             <hr>
 
             <a href="../controller/old_results.php?idn={$data.0.idn}" target="_blank" style="text-decoration:none; color: black;">
-                <img src="../images/archive.png" width="20" height="20"> Предишни резултати</a> | Статус:
+                <img src="../images/archive.png" width="20" height="20"> {$lang.old_results}</a> | {$lang.status}:
             <select name="over">
                 {if {$data.0.over} == "on"}
-                <option value="on" selected>Приключен</option>
-                <option value="off">Неприключен</option>
+                <option value="on" selected>{$lang.over}</option>
+                <option value="off">{$lang.not_over}</option>
                 {/if} {if {$data.0.over} !== "on"}
-                <option value="on">Приключен</option>
-                <option value="off" selected>Неприключен</option>
+                <option value="on">{$lang.over}</option>
+                <option value="off" selected>{$lang.not_over}</option>
                 {/if}
             </select>
             <br>
             <br>
 <div style="overflow-y: scroll; height:300px;">
             <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
-                <th style="background-color: #29559b; color: white;">Показател</th>
-                <th style="background-color: #29559b; color: white;">Резултат</th>
-                <th style="background-color: #29559b; color: white;">Мерна единица</th>
-                <th style="background-color: #29559b; color: white;">Норма</th>
+                <th style="background-color: #29559b; color: white;">{$lang.test}</th>
+                <th style="background-color: #29559b; color: white;">{$lang.result}</th>
+                <th style="background-color: #29559b; color: white;">{$lang.unit}</th>
+                <th style="background-color: #29559b; color: white;">{$lang.referent_norms}</th>
                 {foreach from=$data key=k item=result}
                 <tr style="background-color: #c6dcff;">
                     <td>{$data.$k.name} </td>
@@ -132,12 +132,12 @@
 
             <table border="1" style="border-collapse: collapse;" cellspacing="0">
                 <th style="background-color: #ffbd28;">
-                    <div class="tooltip">Коментар
+                    <div class="tooltip">{$lang.comment}
                         <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
                     </div>
                 </th>
                 <th style="background-color: #ffbd28;">
-                    <div class="tooltip">Бележки
+                    <div class="tooltip">{$lang.note}
                         <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
   за работни записки.</span>
                     </div>
@@ -152,14 +152,14 @@
                 </tr>
             </table>
             <br>
-            <input type="submit" name="save" value="Запис">
+            <input type="submit" name="save" value="{$lang.save_btn}">
         </form>
 
         <table>
 
             <tr>
                 <td>
-                    <p class="flip"><img src="../images/add.png" width="22" height="22"> Добави изследвания</p>
+                    <p class="flip"><img src="../images/add.png" width="22" height="22"> {$lang.add_tests}</p>
                     <div class="panel">
 
                         <form action="../controller/edit.php?id={$data.0.patient_id}" method="POST">
@@ -184,7 +184,7 @@
 
                 </td>
                 <td>
-                    <p class="flip2"><img src="../images/delete.png" width="22" height="22"> Премахни изследвания</p>
+                    <p class="flip2"><img src="../images/delete.png" width="22" height="22"> {$lang.remove_tests}</p>
                     <div class="paneldel">
 
                         <form action="../controller/edit.php?id={$data.0.patient_id}" method="POST">

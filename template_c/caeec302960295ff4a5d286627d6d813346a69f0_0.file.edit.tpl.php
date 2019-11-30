@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:27:31
+/* Smarty version 3.1.32, created on 2019-11-30 07:56:45
   from '/var/www/html/dlab/view/edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de171232ce325_11391328',
+  'unifunc' => 'content_5de2049de80b82_49090881',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeec302960295ff4a5d286627d6d813346a69f0' => 
     array (
       0 => '/var/www/html/dlab/view/edit.tpl',
-      1 => 1575040163,
+      1 => 1575093403,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de171232ce325_11391328 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de2049de80b82_49090881 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -79,13 +79,16 @@ function content_5de171232ce325_11391328 (Smarty_Internal_Template $_smarty_tpl)
 " method="POST" id="form1">
             №
             <input required type="number" name="number" style="width: 40px;" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['number'];?>
-"> | Пациент:
+"> | <?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:
             <input required type="text" name="patient" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
-" size="26"> | ЕГН:
+" size="26"> | <?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
+:
             <input type="text" name="idn" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " size="9">
             <br>
-            <br> Лекар:
+            <br> <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:
             <input list="hosting-plan" type="text" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['doctor'];?>
 " size="14" name='doctor'>
             <datalist id="hosting-plan">
@@ -115,10 +118,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 document.getElementById("hosting-plan").appendChild(optionNode);
             <?php echo '</script'; ?>
 >
-            | Дата:
+            | <?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:
             <input type="date" name="date" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['date'];?>
 "> |
-            <b style="color:red;">Спешно:</b> <?php ob_start();
+            <b style="color:red;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['cito'];?>
+:</b> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
 $_prefixVariable1 = ob_get_clean();
 if ($_prefixVariable1 == "on") {?>
@@ -127,7 +132,8 @@ echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
 $_prefixVariable2 = ob_get_clean();
 if ($_prefixVariable2 !== "on") {?>
             <input type="checkbox" name="cito"> <?php }?>
-             Платено:
+            <?php echo $_smarty_tpl->tpl_vars['lang']->value['paid'];?>
+:
             <input type="checkbox" name="pay" <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['pay'];
 $_prefixVariable3 = ob_get_clean();
@@ -138,30 +144,40 @@ if ($_prefixVariable3 == "on") {?>checked<?php }?>>
 
             <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " target="_blank" style="text-decoration:none; color: black;">
-                <img src="../images/archive.png" width="20" height="20"> Предишни резултати</a> | Статус:
+                <img src="../images/archive.png" width="20" height="20"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['old_results'];?>
+</a> | <?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
+:
             <select name="over">
                 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['over'];
 $_prefixVariable4 = ob_get_clean();
 if ($_prefixVariable4 == "on") {?>
-                <option value="on" selected>Приключен</option>
-                <option value="off">Неприключен</option>
+                <option value="on" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                <option value="off"><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
                 <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['over'];
 $_prefixVariable5 = ob_get_clean();
 if ($_prefixVariable5 !== "on") {?>
-                <option value="on">Приключен</option>
-                <option value="off" selected>Неприключен</option>
+                <option value="on"><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                <option value="off" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
                 <?php }?>
             </select>
             <br>
             <br>
 <div style="overflow-y: scroll; height:300px;">
             <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
-                <th style="background-color: #29559b; color: white;">Показател</th>
-                <th style="background-color: #29559b; color: white;">Резултат</th>
-                <th style="background-color: #29559b; color: white;">Мерна единица</th>
-                <th style="background-color: #29559b; color: white;">Норма</th>
+                <th style="background-color: #29559b; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
+</th>
+                <th style="background-color: #29559b; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['result'];?>
+</th>
+                <th style="background-color: #29559b; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['unit'];?>
+</th>
+                <th style="background-color: #29559b; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['referent_norms'];?>
+</th>
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'result', false, 'k');
 if ($_from !== null) {
@@ -219,12 +235,14 @@ echo $_smarty_tpl->tpl_vars['ldl']->value;
 
             <table border="1" style="border-collapse: collapse;" cellspacing="0">
                 <th style="background-color: #ffbd28;">
-                    <div class="tooltip">Коментар
+                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
+
                         <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
                     </div>
                 </th>
                 <th style="background-color: #ffbd28;">
-                    <div class="tooltip">Бележки
+                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['note'];?>
+
                         <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
   за работни записки.</span>
                     </div>
@@ -241,14 +259,16 @@ echo $_smarty_tpl->tpl_vars['ldl']->value;
                 </tr>
             </table>
             <br>
-            <input type="submit" name="save" value="Запис">
+            <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
+">
         </form>
 
         <table>
 
             <tr>
                 <td>
-                    <p class="flip"><img src="../images/add.png" width="22" height="22"> Добави изследвания</p>
+                    <p class="flip"><img src="../images/add.png" width="22" height="22"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['add_tests'];?>
+</p>
                     <div class="panel">
 
                         <form action="../controller/edit.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
@@ -287,7 +307,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                 </td>
                 <td>
-                    <p class="flip2"><img src="../images/delete.png" width="22" height="22"> Премахни изследвания</p>
+                    <p class="flip2"><img src="../images/delete.png" width="22" height="22"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['remove_tests'];?>
+</p>
                     <div class="paneldel">
 
                         <form action="../controller/edit.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>

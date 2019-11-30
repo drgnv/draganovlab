@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:34:15
+/* Smarty version 3.1.32, created on 2019-11-30 11:27:08
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de172b7a84a30_69971444',
+  'unifunc' => 'content_5de235ec40a502_77585816',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1575056055,
+      1 => 1575106027,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de172b7a84a30_69971444 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de235ec40a502_77585816 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -75,6 +75,24 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
 <link href="../css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
 <style>
+
+
+
+    @media only screen and (max-width: 900px) {
+        #t{
+            display:block;
+        }
+        table{
+            width: 100%;
+        }
+
+        td{
+            width: 100%;
+        }
+
+    }
+
+
     #parent #popup {
         display: none;
     }
@@ -134,9 +152,9 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             }
         <?php echo '</script'; ?>
 >
-        <table border="0" cellspacing="0" cellpadding="-" width="100%" style=" border-collapse: collapse;">
+        <table border="0" cellspacing="0" cellpadding="-"  style="width: 100%; border-collapse: collapse;">
             <tr>
-                <td valign="top">
+                <td valign="top" id="t">
                     <form autocomplete="off" method="POST" action='new_patient.php' name='newp'>
                         <div class="newp">
                             ID:
@@ -201,16 +219,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </form>
                     </div>
                 </td>
-                <td valign="top">
+                <td valign="top"  id="t">
                     <div class="lp">
 
-                        <table border="0" id="journal" class="display" width="790">
+                        <table border="0" id="journal" class="display" width="700px" >
                             <thead>
-                                <tr width="3" style="background-color: #122b40; color: white; ">
-                                    <th style="display:none;">егн</th>
-                                    <th style="display:none;">id</th>
+                                <tr  style="background-color: #122b40; color: white; ">
                                     <th title="Статус" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>
-                                    <th style="font-size: 13px; padding: 2px; margin: 2px;">ID</th>
+                                    <th style="font-size: 13px; padding: 0px; margin: 0px;">ID</th>
                                     <th style="font-size: 13px; padding: 2px; margin: 2px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
 </th>
                                     <th style="font-size: 13px;padding: 0px; margin: 0px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
@@ -228,10 +244,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['result']->value) {
 ?>
 
                                 <tr height="0">
-                                    <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['idn'];?>
-</td>
-                                    <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
-</td>
                                     <td style="padding: 2px; margin: 2px;">
                                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['over'];

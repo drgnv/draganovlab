@@ -2,14 +2,8 @@
     <html>
 
     <head>
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
         <style>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-
-
-
-
 
             input{
                 border: 2px outset #5d9fd9;

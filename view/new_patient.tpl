@@ -40,6 +40,24 @@
 
 <link href="../css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
 <style>
+
+
+
+    @media only screen and (max-width: 900px) {
+        #t{
+            display:block;
+        }
+        table{
+            width: 100%;
+        }
+
+        td{
+            width: 100%;
+        }
+
+    }
+
+
     #parent #popup {
         display: none;
     }
@@ -94,9 +112,9 @@
                 }
             }
         </script>
-        <table border="0" cellspacing="0" cellpadding="-" width="100%" style=" border-collapse: collapse;">
+        <table border="0" cellspacing="0" cellpadding="-"  style="width: 100%; border-collapse: collapse;">
             <tr>
-                <td valign="top">
+                <td valign="top" id="t">
                     <form autocomplete="off" method="POST" action='new_patient.php' name='newp'>
                         <div class="newp">
                             ID:
@@ -135,16 +153,14 @@
                     </form>
                     </div>
                 </td>
-                <td valign="top">
+                <td valign="top"  id="t">
                     <div class="lp">
 
-                        <table border="0" id="journal" class="display" width="790">
+                        <table border="0" id="journal" class="display" width="700px" >
                             <thead>
-                                <tr width="3" style="background-color: #122b40; color: white; ">
-                                    <th style="display:none;">егн</th>
-                                    <th style="display:none;">id</th>
+                                <tr  style="background-color: #122b40; color: white; ">
                                     <th title="Статус" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>
-                                    <th style="font-size: 13px; padding: 2px; margin: 2px;">ID</th>
+                                    <th style="font-size: 13px; padding: 0px; margin: 0px;">ID</th>
                                     <th style="font-size: 13px; padding: 2px; margin: 2px;">{$lang.patient}</th>
                                     <th style="font-size: 13px;padding: 0px; margin: 0px;">{$lang.doctor}</th>
                                     <th style="font-size: 13px;padding: 0px; margin: 0px;;">{$lang.actions}</th>
@@ -155,8 +171,6 @@
                                 {assign var="un" value="1"} {foreach from=$dayList item=result}
 
                                 <tr height="0">
-                                    <td style="display:none;">{$result.idn}</td>
-                                    <td style="display:none;">{$result.id}</td>
                                     <td style="padding: 2px; margin: 2px;">
                                         {if {$result.over} == "on"}
 

@@ -20,15 +20,18 @@ $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 
 if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
-$from_date = filter_input(INPUT_GET, 'from');;
-    $to_date = filter_input(INPUT_GET, 'to');;
+$from_date = filter_input(INPUT_GET, 'from');
+    $to_date = filter_input(INPUT_GET, 'to');
+    $status = filter_input(INPUT_GET, 'status');
 }else{
     $from_date = date('Y-m-d');
     $to_date = date('Y-m-d');
+    $status = "all";
 }
 
 $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);
+$Smarty->assign('status', $status);
 if(isset($_GET['patient_id'])){
     $patient_data = $Basic->getPatientData($_GET['patient_id']);
    // print_r($patient_data);
@@ -64,7 +67,7 @@ if(isset($_POST['save'])){
 
     $Basic->updatePatient($patient);
 
-    header("Location: laboratory.php?patient_id=".$patient['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date);
+    header("Location: laboratory.php?patient_id=".$patient['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date."&status=".$status);
 }
 
 
@@ -85,7 +88,7 @@ if(isset($_POST['add'])){
     $Basic->sqliexecute($sql);
     $sql="DELETE FROM `results` WHERE `test_code` = \"01.08\" ";
     $Basic->sqliexecute($sql);
-    header("Location: laboratory.php?patient_id=".$patient_id."&from=".$from_date."&to=".$to_date);
+    header("Location: laboratory.php?patient_id=".$patient_id."&from=".$from_date."&to=".$to_date."&status=".$status);
 }
 
 //премахване на изследвания
@@ -93,13 +96,14 @@ if(isset($_POST['remove'])){
     $patient_id = filter_input(INPUT_GET, 'patient_id');
     $tests_for_remove = $_POST['my-selectdel'];
     $Basic->deleteTestsFromPatient($patient_id, $tests_for_remove);
-    header("Location: laboratory.php?patient_id=".$patient_id."&from=".$from_date."&to=".$to_date);
+    header("Location: laboratory.php?patient_id=".$patient_id."&from=".$from_date."&to=".$to_date."&status=".$status);
 }
 
 //пациенти по дата
 $start = $_GET['from'];
 $end = $_GET['to'];
-$dayList = $Basic->searchByDate($start, $end);
+$status = $_GET['status'];
+$dayList = $Basic->searchByDateAndStatus($start, $end, $status);
 
 //ИЗТРИВАНЕ НА ПАЦИЕНТ ПО ИД
 if (isset($_GET['delete'])) {

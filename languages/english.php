@@ -85,5 +85,6 @@ $language = array(
     "added"=>"Added",
     "comment"=>"Comment",
     "note"=>"Notes",
+    "all"=>"All",
     "newbe" => 'Learning'
 );

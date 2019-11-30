@@ -1,7 +1,7 @@
 <div id='navbar'>
     <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant.png" width="65" height="25">4.1v ©</a>
     <a href='./new_patient.php'>{$lang.registry}</a>
-    <a href='./laboratory.php?from={$from_date}&to={$to_date}&searchbydate=Търси...'>{$lang.laboratory}</a>
+    <a href='./laboratory.php?from={$from_date}&to={$to_date}&status={$status}&searchbydate=Търси...'>{$lang.laboratory}</a>
     <a href='./mdds.php?from={$from_date}&to={$to_date}&searchbydate=Търси...'>{$lang.mdds}</a>
     <a href='./search_by_date.php'>{$lang.search_by_date}</a> {if {$lvl}
     <3}{else}<a href='./settings.php'>{$lang.settings}</a>{/if}

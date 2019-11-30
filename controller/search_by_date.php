@@ -31,14 +31,18 @@ if(isset($_GET['delete'])){
 }
 
 }
-//днешна дата
+
 if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
     $from_date = filter_input(INPUT_GET, 'from');
     $to_date = filter_input(INPUT_GET, 'to');
+    $status = filter_input(INPUT_GET, 'status');
 }else{
     $from_date = date('Y-m-d');
     $to_date = date('Y-m-d');
+    $status = "all";
 }
+$Smarty->assign('status', $status);
+
 $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);
 //днешна дата

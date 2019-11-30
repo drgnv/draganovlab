@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:36:03
+/* Smarty version 3.1.32, created on 2019-11-30 08:54:55
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de173237dc546_83430484',
+  'unifunc' => 'content_5de2123fc5be64_01143168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1575056108,
+      1 => 1575096893,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de173237dc546_83430484 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de2123fc5be64_01143168 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -190,6 +190,39 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td style="color: white;" align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
+:</td>
+                                        <td>
+                                            <select name="status">
+                                                <?php if ($_smarty_tpl->tpl_vars['status']->value == "all" || !isset($_smarty_tpl->tpl_vars['status']->value)) {?>
+                                                    <option value="all" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['all'];?>
+</option>
+                                                    <option value="over"><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                                                    <option value="notover"><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
+                                                <?php }?>
+                                                <?php if ($_smarty_tpl->tpl_vars['status']->value == "over") {?>
+                                                    <option value="all"><?php echo $_smarty_tpl->tpl_vars['lang']->value['all'];?>
+</option>
+                                                    <option value="over" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                                                    <option value="notover"><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
+                                                <?php }?>
+                                                <?php if ($_smarty_tpl->tpl_vars['status']->value == "notover") {?>
+                                                    <option value="all"><?php echo $_smarty_tpl->tpl_vars['lang']->value['all'];?>
+</option>
+                                                    <option value="over"><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                                                    <option value="notover" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
+                                                <?php }?>
+
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td></td>
                                         <td>
                                             <input type="submit" name="searchbydate" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['search'];?>
@@ -197,7 +230,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                         </td>
                                     </tr>
                                 </form>
-
                                 <tr>
                                     <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['barcode'];?>
 : </td>
@@ -243,6 +275,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['result']->value) {
                                         <tr  style="background-color: green; cursor: pointer;" data-href="../controller/laboratory.php?patient_id=<?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
 &from=<?php echo $_smarty_tpl->tpl_vars['from_date']->value;?>
 &to=<?php echo $_smarty_tpl->tpl_vars['to_date']->value;?>
+&status=<?php echo $_smarty_tpl->tpl_vars['status']->value;?>
 &searchbydate=Търси...">
                                             <td>
                                                 <?php ob_start();
@@ -372,6 +405,7 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                                     <form autocomplete="off" action="../controller/laboratory.php?patient_id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
 &from=<?php echo $_smarty_tpl->tpl_vars['from_date']->value;?>
 &to=<?php echo $_smarty_tpl->tpl_vars['to_date']->value;?>
+&status=<?php echo $_smarty_tpl->tpl_vars['status']->value;?>
 " method="POST" id="form1">
                                         <div style="overflow-y: scroll; height:360px;">
                                         <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">

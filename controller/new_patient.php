@@ -20,6 +20,8 @@ $def_lang = $Basic->getLanguage();
 include_once "../languages/".$def_lang[0]['default_lang'].".php";
 $Smarty->assign('lang', $language);
 //LANGUAGE STOP
+
+
 if(isset($_POST['record'])){
     
     $pname = filter_input(INPUT_POST, 'names');
@@ -163,12 +165,15 @@ $a2 = $max_id[0]['MAX(number)']+1;
 $Smarty->assign('pid', $a2);
 
 if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
-    $from_date = $_GET['from'];
-    $to_date = $_GET['to'];
+    $from_date = filter_input(INPUT_GET, 'from');
+    $to_date = filter_input(INPUT_GET, 'to');
+    $status = filter_input(INPUT_GET, 'status');
 }else{
     $from_date = date('Y-m-d');
     $to_date = date('Y-m-d');
+    $status = "all";
 }
+$Smarty->assign('status', $status);
 
 //===========ВЗЕМАНЕ НА ПАНЕЛ============
 include_once '../model/Settings.php';

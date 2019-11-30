@@ -139,13 +139,35 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td style="color: white;" align="right">{$lang.status}:</td>
+                                        <td>
+                                            <select name="status">
+                                                {if $status == "all" || !isset($status)}
+                                                    <option value="all" selected>{$lang.all}</option>
+                                                    <option value="over">{$lang.over}</option>
+                                                    <option value="notover">{$lang.not_over}</option>
+                                                {/if}
+                                                {if $status == "over"}
+                                                    <option value="all">{$lang.all}</option>
+                                                    <option value="over" selected>{$lang.over}</option>
+                                                    <option value="notover">{$lang.not_over}</option>
+                                                {/if}
+                                                {if $status == "notover"}
+                                                    <option value="all">{$lang.all}</option>
+                                                    <option value="over">{$lang.over}</option>
+                                                    <option value="notover" selected>{$lang.not_over}</option>
+                                                {/if}
+
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td></td>
                                         <td>
                                             <input type="submit" name="searchbydate" value="{$lang.search}...">
                                         </td>
                                     </tr>
                                 </form>
-
                                 <tr>
                                     <td style="color: white;">{$lang.barcode}: </td>
                                     <td>
@@ -177,7 +199,7 @@
                                     <tbody>
                                         {assign var="un" value="1"} {foreach from=$dayList item=result}
 
-                                        <tr  style="background-color: green; cursor: pointer;" data-href="../controller/laboratory.php?patient_id={$result.id}&from={$from_date}&to={$to_date}&searchbydate=Търси...">
+                                        <tr  style="background-color: green; cursor: pointer;" data-href="../controller/laboratory.php?patient_id={$result.id}&from={$from_date}&to={$to_date}&status={$status}&searchbydate=Търси...">
                                             <td>
                                                 {if {$result.over} == "on"}
 
@@ -239,7 +261,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <form autocomplete="off" action="../controller/laboratory.php?patient_id={$data.0.patient_id}&from={$from_date}&to={$to_date}" method="POST" id="form1">
+                                    <form autocomplete="off" action="../controller/laboratory.php?patient_id={$data.0.patient_id}&from={$from_date}&to={$to_date}&status={$status}" method="POST" id="form1">
                                         <div style="overflow-y: scroll; height:360px;">
                                         <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
                                             <th style="background-color: #1b6d85; color: white;">{$lang.test}</th>

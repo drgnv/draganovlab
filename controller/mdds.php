@@ -17,13 +17,17 @@ $def_lang = $Mdds->getLanguage();
 include_once "../languages/".$def_lang[0]['default_lang'].".php";
 $Smarty->assign('lang', $language);
 //LANGUAGE STOP
+
 if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
-    $from_date = $_GET['from'];
-    $to_date = $_GET['to'];
+    $from_date = filter_input(INPUT_GET, 'from');
+    $to_date = filter_input(INPUT_GET, 'to');
+    $status = "all";
 }else{
     $from_date = date('Y-m-d');
     $to_date = date('Y-m-d');
+    $status = "all";
 }
+$Smarty->assign('status', $status);
 
 
 

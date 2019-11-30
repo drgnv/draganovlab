@@ -271,8 +271,8 @@
                                             {foreach from=$data key=k item=result}
                                             <tr style="background-color: #c6dcff;">
                                                 <td>{$data.$k.name} </td>
-                                                <td>
-                                                    <input type="text" name="{$data.$k.test_code}" value="{$data.$k.result}" size="15">
+                                                <td style="margin: 0;padding: 0;">
+                                                    <input type="text" name="{$data.$k.test_code}" value="{$data.$k.result}" size="15" style="margin: 0;padding: 0;">
                                                 </td>
                                                 <td>{$data.$k.unit}</td>
                                                 <td>{$data.$k.up} - {$data.$k.down}</td>

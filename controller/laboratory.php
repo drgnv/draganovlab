@@ -78,10 +78,9 @@ $doctors=$Basic->getAllDoctors();
 if(isset($_POST['add'])){
     $patient_new_tests = $_POST['my-select'];
     $patient_id = filter_input(INPUT_POST, 'patient_id');
-    echo 1;
-    $date = $data[0]['date'];
+    $data1 = $data[0]['date'];
     $patient_nfo = $Basic->getPatientNfo($patient_id);
-    $Basic->addTests($patient_new_tests, $patient_id, $date, $patient_nfo[0]['idn']);
+    $Basic->addTests($patient_new_tests, $patient_id, $data1, $patient_nfo[0]['idn']);
     $sql="DELETE FROM `results` WHERE `test_code` = \"01.01\" ";
     $Basic->sqliexecute($sql);
     $sql="DELETE FROM `results` WHERE `test_code` = \"01.40\" ";

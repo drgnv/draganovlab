@@ -1,0 +1,103 @@
+[33mcommit b73293c0021e095738a99fd37068c19eafa5f78d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sat Nov 30 11:35:03 2019 +0200
+
+    Responsive new_patient
+
+[33mcommit 0841c6bfaa47df59ae3fd9ee68aa510e6d428bc6[m
+Merge: a7dd2a8 42cfe00
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sat Nov 30 09:51:22 2019 +0200
+
+    Merge branch 'master' of https://github.com/drgnv/draganovlab
+
+[33mcommit a7dd2a8865c4b2084f4711183d77efdff11b86f0[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sat Nov 30 09:48:26 2019 +0200
+
+    a
+
+[33mcommit 07fc1088475a8e31e38c015f5d02a0726001408d[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sat Nov 30 09:15:27 2019 +0200
+
+    Added status option in search bar of laboratory.php
+
+[33mcommit 42cfe0021f635504b747cee7b4ba008d6fcfe0fc[m
+Author: drgnv <37972436+drgnv@users.noreply.github.com>
+Date:   Sat Nov 30 08:06:47 2019 +0200
+
+    Update README.TXT
+
+[33mcommit 1b8b99448b66c50162d9425aca2a3bd8c1c6cfd0[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sat Nov 30 08:00:22 2019 +0200
+
+    Translate edit,tpl; Adding some words to translation arrays
+
+[33mcommit 02b7dbdfa0f321e185324cd2453af8a35d23eda1[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Fri Nov 29 21:56:25 2019 +0200
+
+    Adding Database without personal patient data
+
+[33mcommit 0decb960e74922b1ad45432d7a231e94eaa322df[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Fri Nov 29 21:54:11 2019 +0200
+
+    removing database with patients
+
+[33mcommit 661608481fb89b1491cafe4f72172d918904e693[m
+Merge: 532867c 01e5107
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Fri Nov 29 21:44:49 2019 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 532867ce6b2fd0ec0f3b06d05d7a9b51d6efedbc[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Fri Nov 29 21:41:16 2019 +0200
+
+    Translation to datatables
+
+[33mcommit 01e5107ddb8fe147c940ba3ca7b8a27422d19725[m
+Author: drgnv <37972436+drgnv@users.noreply.github.com>
+Date:   Fri Nov 29 17:10:49 2019 +0200
+
+    DATABASE
+
+[33mcommit 205418b9abed88e77205fb72c9e85f6f93beb39a[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Mon Nov 25 07:39:45 2019 +0200
+
+    Adding translation phrases for mdds
+
+[33mcommit 9f62c16af5256a2cf409af2b2447198c47376d7d[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sun Nov 24 22:23:21 2019 +0200
+
+    Adding translation phrases for mdds
+
+[33mcommit 7dd18794fac651ba82a75c8f03d462757f18aacc[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sun Nov 24 18:22:14 2019 +0200
+
+    Translation on mdds.tpl
+
+[33mcommit 1894908b227546e03c9900a886637593b0c92483[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sun Nov 24 13:05:11 2019 +0200
+
+    Just anothe one
+
+[33mcommit 06b19c7ed704aef502091c993ca8b4a925b8c36e[m
+Author: dbdraganov <dbdraganov@gmail.com>
+Date:   Sun Nov 24 10:32:35 2019 +0200
+
+    First initial commit of draganovlab. Hello world :)
+
+[33mcommit 79844e1cec4ce500943132878cbefc88a4ec7ddf[m
+Author: dbdra <dbdraganov@gmail.com>
+Date:   Tue Apr 2 15:50:36 2019 +0300
+
+    Default Changelist

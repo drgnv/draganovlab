@@ -455,6 +455,7 @@ class Basic extends Host{
 
                 $sql = "INSERT INTO `results` (`test_code`, `patient_id`, `id`, `date`, `patient_idn`) VALUES ('".mysqli_real_escape_string($this->connect(),$test_code)."', ".mysqli_real_escape_string($this->connect(),$patient_id).", NULL, '".mysqli_real_escape_string($this->connect(),$date)."', '".$patient_idn."')";
                 $this->sqliexecute($sql);
+
             }
         }
         

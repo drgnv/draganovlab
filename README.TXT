@@ -10,7 +10,7 @@ D.-DIRECTORIES- lowercase_separated_by_underscores
 3.------Main branch-----
 =====Master=======
 
-4.-------Used technologis------
+4.-------Used technologies------
 A.Smarty template system
 B.Data tables
 C.jQuery

@@ -98,7 +98,7 @@ if(isset($_POST['save'])){
     $no_money = $_POST['no_money'];
      $Mdds->setMdd($no_money, $out_date, $complete_date, $num_mdd, $al_num, $doctor_id, $rzc_code, $zam_naet,
              $mkb, $mkb2, $mdd_type, $paket, $code1t, $code2t, $code3t, $code4t, $code5t, $code6t, $code1, $code2, $nzok, $_GET['patient_id']);
-    // header('Location: add_mdd.php?patient_id='.$_GET['patient_id']);
+     header('Location: add_mdd.php?patient_id='.$_GET['patient_id']);
     
 }
 

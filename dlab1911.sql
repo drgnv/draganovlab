@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 29 ное 2019 в 21:49
--- Версия на сървъра: 5.7.28-0ubuntu0.18.04.4
+-- Generation Time:  3 дек 2019 в 09:08
+-- Версия на сървъра: 5.7.28-0ubuntu0.19.04.2
 -- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -392,7 +392,7 @@ CREATE TABLE `hospital` (
 --
 
 INSERT INTO `hospital` (`name`, `doctor`, `address`, `phone`, `mail`, `id`, `web`, `note`, `default_lang`) VALUES
-('МБАЛ  СВ. Николай Чудотворец', 'д-р Мариана Попова', 'Лом, ул. „Каблешков“ 2', '097 160 051', 'bolnicalom@mballom.bg', 1, 'www.mballom.bg', 'Внимание : Лабораторните резултати не са диагноза, а основание за такава. Приемането на каквито и да било лекарствени средства без лекарско предписание, може да бъде опасно за Вашето здраве. Моля, обръщайте се за тълкуване на резултатите само към квалифицирани лекари. Препоръчваме винаги да показвате резултатите си на лекуващия си лекар !', 'english');
+('МБАЛ  СВ. Николай Чудотворец', 'д-р Мариана Попова', 'Лом, ул. „Каблешков“ 2', '097 160 051', 'bolnicalom@mballom.bg', 1, 'www.mballom.bg', 'Внимание : Лабораторните резултати не са диагноза, а основание за такава. Приемането на каквито и да било лекарствени средства без лекарско предписание, може да бъде опасно за Вашето здраве. Моля, обръщайте се за тълкуване на резултатите само към квалифицирани лекари. Препоръчваме винаги да показвате резултатите си на лекуващия си лекар !', 'bulgarian');
 
 -- --------------------------------------------------------
 
@@ -404,10 +404,10 @@ CREATE TABLE `mdds` (
   `num_mdd` int(11) NOT NULL,
   `out_date` date NOT NULL,
   `complete_date` date NOT NULL,
-  `doctor_id` int(11) NOT NULL,
-  `rzk` int(11) NOT NULL COMMENT 'рзц код',
-  `zam_doc_id` int(11) DEFAULT NULL,
-  `nzok_num` int(11) NOT NULL,
+  `doctor_id` varchar(15) NOT NULL,
+  `rzk` varchar(11) NOT NULL COMMENT 'рзц код',
+  `zam_doc_id` varchar(5) DEFAULT NULL,
+  `nzok_num` varchar(11) NOT NULL,
   `mkb` varchar(6) NOT NULL,
   `paket_id` int(11) NOT NULL,
   `mkb2` varchar(6) DEFAULT NULL,
@@ -418,12 +418,12 @@ CREATE TABLE `mdds` (
   `test_code4` varchar(5) DEFAULT NULL,
   `test_code5` varchar(5) DEFAULT NULL,
   `test_code6` varchar(5) DEFAULT NULL,
-  `no_money` int(11) DEFAULT NULL,
+  `no_money` varchar(4) DEFAULT NULL,
   `id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
-  `al_num` bigint(20) NOT NULL,
-  `code1` int(11) NOT NULL,
-  `code2` int(11) NOT NULL
+  `al_num` varchar(20) NOT NULL,
+  `code1` varchar(11) NOT NULL,
+  `code2` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -431,19 +431,7 @@ CREATE TABLE `mdds` (
 --
 
 INSERT INTO `mdds` (`num_mdd`, `out_date`, `complete_date`, `doctor_id`, `rzk`, `zam_doc_id`, `nzok_num`, `mkb`, `paket_id`, `mkb2`, `type_mdd_id`, `test_code1`, `test_code2`, `test_code3`, `test_code4`, `test_code5`, `test_code6`, `no_money`, `id`, `patient_id`, `al_num`, `code1`, `code2`) VALUES
-(321, '2019-05-14', '2019-05-15', 10, 3242, 0, 2, 'Z00.0', 1, 'Z01.0', 7, '01.01', '01.11', '01.22', '01.13', '01.19', '01.21', 0, 1, 6823, 2342, 7, 1),
-(3211, '2019-05-23', '2019-05-23', 3, 4329, 0, 32422, 'I11.8', 1, 'Z00.0', 5, '01.11', '01.21', '', '', '', '', 0, 2, 6823, 456, 1, 1),
-(12321, '2019-05-24', '2019-05-24', 7, 3122, 0, 2, 'Z00.1', 1, 'Z01.00', 2, '01.11', '01.01', '', '', '', '', 0, 4, 6823, 2321, 1, 2),
-(3424, '2019-05-02', '2019-05-16', 4, 123, 43, 12, 'z000', 1, '', 0, '', '', '', '', '', '', 0, 5, 0, 0, 0, 0),
-(422, '2019-05-24', '2019-05-24', 7, 92393, 0, 9559, 'Z00.2', 1, '', 1, '01.11', '01.12', '', '', '', '', 0, 7, 6823, 5433, 1, 0),
-(4200, '2019-05-24', '2019-05-24', 18, 5435, 0, 343, 'K29.1', 1, '', 8, '10.09', '', '', '', '', '', 0, 11, 6837, 447, 2, 2),
-(1, '2019-05-24', '2019-05-24', 1, 1, 0, 1, 'Z00.2', 1, '', 1, '01.22', '', '', '', '', '', 0, 12, 6842, 0, 0, 0),
-(34247, '2019-05-23', '2019-05-24', 0, 32990, 0, 1, 'I11.8', 1, '', 1, '01.01', '01.09', '', '', '', '', 0, 13, 6842, 45355, 1, 1),
-(422, '2019-05-24', '2019-05-24', 46, 342, 0, 0, 'Z00.2', 1, 'Z01.0', 6, '01.11', '01.01', '', '', '', '', 0, 14, 6821, 0, 1, 1),
-(324, '2019-11-05', '2019-11-06', 1, 8978, 98789, 89787, 'МУ8', 1, 'Й8', 6, '1', '2', '0', '0', '0', '0', 1, 15, 6828, 98, 2, 1),
-(88, '2019-11-05', '2019-11-06', 2, 987687, 987, 987, '8', 1, '7', 4, '79', '', '', '', '', '', 1, 16, 6828, 98, 76, 6),
-(213, '2019-11-13', '2019-11-28', 1, 9, 890, 98, '98', 1, '098', 1, '21', '', '', '', '', '', 1, 17, 6828, 98, 980, 908),
-(8, '2019-11-12', '2019-11-13', 4, 8, 8, 8, '008', 1, '', 1, '008', '', '', '', '', '', 1, 18, 6828, 8, 8, 1);
+(21312, '2019-12-03', '2019-12-23', '1', '2323', '34', '234', '2342', 1, '', 1, '01.11', '', '', '', '', '', '1', 1, 5, '324', '11', '');
 
 -- --------------------------------------------------------
 
@@ -517,6 +505,16 @@ CREATE TABLE `patients` (
   `work_place` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Схема на данните от таблица `patients`
+--
+
+INSERT INTO `patients` (`number`, `names`, `doctor`, `date`, `id`, `username`, `password`, `over`, `comment`, `pay`, `idn`, `address`, `mkb`, `cito`, `phone`, `note`, `gender`, `country_id`, `municipality`, `street`, `mail`, `area`, `post_code`, `blood_type`, `work_place`) VALUES
+(1, 'dragan borisov draganov', '1', '2019-11-30', 2, 'K6GXzAh6PI', 'qraxtUIAu2', 'off', NULL, '', '9308253229', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'asdasd', '2', '2019-11-30', 3, '4uuzFrYBBw', 'lMvWTBfCKF', 'off', NULL, '', '', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'qwerfqwdf', '1', '2019-11-30', 4, 'QsOLos6k8E', '3fBnQAk1Gc', 'off', NULL, '', '', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'ДРАГАН БОРИСОВ ДРАГАНОВ', '3', '2019-12-01', 5, 'lEG2SGOmLI', 'xwaBVaGY6L', 'off', NULL, '', '9308253229', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -525,12 +523,56 @@ CREATE TABLE `patients` (
 
 CREATE TABLE `results` (
   `test_code` varchar(6) COLLATE utf8_bin NOT NULL,
-  `result` varchar(200) COLLATE utf8_bin NOT NULL,
+  `result` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `patient_id` bigint(20) NOT NULL,
   `id` int(11) NOT NULL,
   `date` varchar(20) COLLATE utf8_bin NOT NULL,
   `patient_idn` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Схема на данните от таблица `results`
+--
+
+INSERT INTO `results` (`test_code`, `result`, `patient_id`, `id`, `date`, `patient_idn`) VALUES
+('99.01', '', 2, 18, '2019-11-30', '9308253229'),
+('99.02', '', 2, 19, '2019-11-30', '9308253229'),
+('99.03', '', 2, 20, '2019-11-30', '9308253229'),
+('99.04', '', 2, 21, '2019-11-30', '9308253229'),
+('99.05', '', 2, 22, '2019-11-30', '9308253229'),
+('99.06', '', 2, 23, '2019-11-30', '9308253229'),
+('99.07', '', 2, 24, '2019-11-30', '9308253229'),
+('99.08', '', 2, 25, '2019-11-30', '9308253229'),
+('99.09', '', 2, 26, '2019-11-30', '9308253229'),
+('99.010', '', 2, 27, '2019-11-30', '9308253229'),
+('99.011', '', 2, 28, '2019-11-30', '9308253229'),
+('99.012', '', 2, 29, '2019-11-30', '9308253229'),
+('99.013', '', 2, 30, '2019-11-30', '9308253229'),
+('99.014', '', 2, 31, '2019-11-30', '9308253229'),
+('10.26', '', 3, 32, '2019-11-30', ''),
+('88.01', '', 4, 33, '2019-11-30', ''),
+('88.02', '', 4, 34, '2019-11-30', ''),
+('88.03', '', 4, 35, '2019-11-30', ''),
+('88.04', '', 4, 36, '2019-11-30', ''),
+('88.05', '', 4, 37, '2019-11-30', ''),
+('88.06', '', 4, 38, '2019-11-30', ''),
+('88.07', '', 4, 39, '2019-11-30', ''),
+('88.08', '', 4, 40, '2019-11-30', ''),
+('01.03', '', 5, 41, '2019-12-01', '9308253229'),
+('99.01', '', 5, 42, '2019-12-01', '9308253229'),
+('99.02', '', 5, 43, '2019-12-01', '9308253229'),
+('99.03', '', 5, 44, '2019-12-01', '9308253229'),
+('99.04', '', 5, 45, '2019-12-01', '9308253229'),
+('99.05', '', 5, 46, '2019-12-01', '9308253229'),
+('99.06', '', 5, 47, '2019-12-01', '9308253229'),
+('99.07', '', 5, 48, '2019-12-01', '9308253229'),
+('99.08', '', 5, 49, '2019-12-01', '9308253229'),
+('99.09', '', 5, 50, '2019-12-01', '9308253229'),
+('99.010', '', 5, 51, '2019-12-01', '9308253229'),
+('99.011', '', 5, 52, '2019-12-01', '9308253229'),
+('99.012', '', 5, 53, '2019-12-01', '9308253229'),
+('99.013', '', 5, 54, '2019-12-01', '9308253229'),
+('99.014', '', 5, 55, '2019-12-01', '9308253229');
 
 -- --------------------------------------------------------
 
@@ -877,7 +919,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `mdds`
 --
 ALTER TABLE `mdds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `mdd_types`
 --
@@ -892,12 +934,12 @@ ALTER TABLE `mkb`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `schedule`
 --

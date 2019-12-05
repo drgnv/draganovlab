@@ -100,6 +100,6 @@ if(isset($_GET['id']) && isset($_GET['ag'])){
 }
 if(isset($_GET['itsok'])){
     $itsok = filter_input(INPUT_GET, 'itsok');
-    $Smarty->assign('ok', $$itsok);
+    $Smarty->assign('ok', $itsok);
 }
 $Smarty->display('edit.tpl');

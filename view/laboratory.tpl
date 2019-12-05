@@ -260,7 +260,7 @@
                         <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                         <table>
                             <tr>
-                                <td>
+                                <td style="vertical-align:top;">
                                     <form autocomplete="off" action="../controller/laboratory.php?patient_id={$data.0.patient_id}&from={$from_date}&to={$to_date}&status={$status}" method="POST" id="form1">
                                         <div style="overflow-y: scroll; height:360px;">
                                         <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
@@ -272,7 +272,7 @@
                                             <tr style="background-color: #c6dcff;">
                                                 <td>{$data.$k.name} </td>
                                                 <td style="margin: 0;padding: 0;">
-                                                    <input type="text" name="{$data.$k.test_code}" value="{$data.$k.result}" size="15" style="margin: 0;padding: 0;">
+                                                    <input type="text" name="{$data.$k.test_code}" value="{$data.$k.result}" size="15" style="margin: 0;padding: 0; height: 20px;">
                                                 </td>
                                                 <td>{$data.$k.unit}</td>
                                                 <td>{$data.$k.up} - {$data.$k.down}</td>
@@ -335,9 +335,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-
-                            </td>
+                            <td></td>
                             <td>
                                 <a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
                                     <img src="../images/archive.png" width="30" height="30"><b style="color: white;">{$lang.old_results}</b></a>
@@ -362,10 +360,10 @@
                         </th>
                         <tr>
                             <td>
-                                <textarea style="background-color: #ffedc4;" name="comment">{$data.0.comment}</textarea>
+                                <textarea style="background-color: #ffedc4; resize: none;" name="comment" >{$data.0.comment}</textarea>
                             </td>
                             <td>
-                                <textarea style="background-color: #ffedc4;" name="note">{$data.0.note}</textarea>
+                                <textarea style="background-color: #ffedc4; resize: none;" name="note">{$data.0.note}</textarea>
                             </td>
                         </tr>
                     </table>

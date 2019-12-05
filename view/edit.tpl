@@ -48,6 +48,7 @@
 
 <body>
     <center>
+        <table border="0"><tr><td style="vertical-align:top;">
         <form autocomplete="off" action="../controller/edit.php?id={$data.0.patient_id}" method="POST" id="form1">
             №
             <input required type="number" name="number" style="width: 40px;" value="{$data.0.number}"> | {$lang.patient}:
@@ -95,10 +96,38 @@
                 <option value="off" selected>{$lang.not_over}</option>
                 {/if}
             </select>
+
+            <table border="1" style="border-collapse: collapse;" cellspacing="0">
+                <th style="background-color: #ffbd28;">
+                    <div class="tooltip">{$lang.comment}
+                        <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                    </div>
+                </th>
+                <th style="background-color: #ffbd28;">
+                    <div class="tooltip">{$lang.note}
+                        <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                    </div>
+                </th>
+                <tr>
+                    <td>
+                        <textarea style="background-color: #ffedc4; resize: none;" name="comment">{$data.0.comment}</textarea>
+                    </td>
+                    <td>
+                        <textarea style="background-color: #ffedc4; resize: none;" name="note">{$data.0.note}</textarea>
+                    </td>
+                </tr>
+            </table>
             <br>
-            <br>
-<div style="overflow-y: scroll; height:300px;">
-            <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
+            <b style="background-color: #3c763d; color: white; padding: 5px;">{$ok}</b>
+            <br><br>
+            <input type="submit" name="save" value="{$lang.save_btn}">
+
+
+
+                </td><td>
+<div style="overflow-y: scroll; height:500px;">
+            <table class="gridexample"  border="1" style="border-collapse: collapse;" cellspacing="0">
                 <th style="background-color: #29559b; color: white;">{$lang.test}</th>
                 <th style="background-color: #29559b; color: white;">{$lang.result}</th>
                 <th style="background-color: #29559b; color: white;">{$lang.unit}</th>
@@ -118,9 +147,6 @@
             <a style="text-decoration: none;" href="../controller/edit.php?id={$data.0.patient_id}&ag=1">Изчисли Анионна дупка</a> |
             <a style="text-decoration: none;" href="../controller/edit.php?id={$data.0.patient_id}&ldl=1">Изчисли LDL</a>
             <br>
-            <font color="green">{$ok}</font>
-            <br>
-
             <script src="../js/jquery.min.js"></script>
             <script src="../js/jquery.formnavigation.js"></script>
             <script>
@@ -129,30 +155,6 @@
                 });
             </script>
             <input type="hidden" name="id" value="{$data.0.id}">
-
-            <table border="1" style="border-collapse: collapse;" cellspacing="0">
-                <th style="background-color: #ffbd28;">
-                    <div class="tooltip">{$lang.comment}
-                        <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
-                    </div>
-                </th>
-                <th style="background-color: #ffbd28;">
-                    <div class="tooltip">{$lang.note}
-                        <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
-  за работни записки.</span>
-                    </div>
-                </th>
-                <tr>
-                    <td>
-                        <textarea style="background-color: #ffedc4;" name="comment">{$data.0.comment}</textarea>
-                    </td>
-                    <td>
-                        <textarea style="background-color: #ffedc4;" name="note">{$data.0.note}</textarea>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <input type="submit" name="save" value="{$lang.save_btn}">
         </form>
 
         <table>
@@ -204,7 +206,7 @@
                 </td>
             </tr>
         </table>
-
+                </td></tr></table>
     </center>
 
 </body>

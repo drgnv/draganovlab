@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-04 16:21:08
+/* Smarty version 3.1.32, created on 2019-12-05 19:39:31
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de7c0d48a5879_98576421',
+  'unifunc' => 'content_5de940d3b4a6f5_53320265',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1575469263,
+      1 => 1575567570,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de7c0d48a5879_98576421 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de940d3b4a6f5_53320265 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -401,7 +401,7 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                         <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                         <table>
                             <tr>
-                                <td>
+                                <td style="vertical-align:top;">
                                     <form autocomplete="off" action="../controller/laboratory.php?patient_id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
 &from=<?php echo $_smarty_tpl->tpl_vars['from_date']->value;?>
 &to=<?php echo $_smarty_tpl->tpl_vars['to_date']->value;?>
@@ -428,7 +428,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars[
                                                 <td style="margin: 0;padding: 0;">
                                                     <input type="text" name="<?php echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['k']->value]['test_code'];?>
 " value="<?php echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['k']->value]['result'];?>
-" size="15" style="margin: 0;padding: 0;">
+" size="15" style="margin: 0;padding: 0; height: 20px;">
                                                 </td>
                                                 <td><?php echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['k']->value]['unit'];?>
 </td>
@@ -533,9 +533,7 @@ if ($_prefixVariable15 !== "on") {?>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-
-                            </td>
+                            <td></td>
                             <td>
                                 <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " style="text-decoration:none; color: black;">
@@ -565,11 +563,11 @@ if ($_prefixVariable15 !== "on") {?>
                         </th>
                         <tr>
                             <td>
-                                <textarea style="background-color: #ffedc4;" name="comment"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['comment'];?>
+                                <textarea style="background-color: #ffedc4; resize: none;" name="comment" ><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['comment'];?>
 </textarea>
                             </td>
                             <td>
-                                <textarea style="background-color: #ffedc4;" name="note"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['note'];?>
+                                <textarea style="background-color: #ffedc4; resize: none;" name="note"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['note'];?>
 </textarea>
                             </td>
                         </tr>

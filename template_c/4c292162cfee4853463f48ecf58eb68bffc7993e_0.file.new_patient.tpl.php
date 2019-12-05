@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 11:27:08
+/* Smarty version 3.1.32, created on 2019-12-05 19:23:38
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de235ec40a502_77585816',
+  'unifunc' => 'content_5de93d1a6fcd28_10762670',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1575106027,
+      1 => 1575566617,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de235ec40a502_77585816 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de93d1a6fcd28_10762670 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -282,7 +282,7 @@ $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 ',
                                                'newwindow',
-                                               'width=690,height=650');
+                                               'width=1090,height=650');
                                                return false;"
                                        alt="Редактирай резултати" >
                                     <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
@@ -315,7 +315,7 @@ $_prefixVariable12 = ob_get_clean();
 echo $_prefixVariable12;?>
 ',
                                             'newwindow',
-                                            'width=690,height=650');
+                                            'width=1090,height=650');
                                             return false;" alt="Редактирай резултати">
                                         <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 </a><?php ob_start();

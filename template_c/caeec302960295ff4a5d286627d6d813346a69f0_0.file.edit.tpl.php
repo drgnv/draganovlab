@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 07:56:45
+/* Smarty version 3.1.32, created on 2019-12-05 20:07:38
   from '/var/www/html/dlab/view/edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de2049de80b82_49090881',
+  'unifunc' => 'content_5de9476a3251d3_29893834',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeec302960295ff4a5d286627d6d813346a69f0' => 
     array (
       0 => '/var/www/html/dlab/view/edit.tpl',
-      1 => 1575093403,
+      1 => 1575569256,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de2049de80b82_49090881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de9476a3251d3_29893834 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -75,6 +75,7 @@ function content_5de2049de80b82_49090881 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
     <center>
+        <table border="0"><tr><td style="vertical-align:top;">
         <form autocomplete="off" action="../controller/edit.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
 " method="POST" id="form1">
             №
@@ -166,10 +167,44 @@ if ($_prefixVariable5 !== "on") {?>
 </option>
                 <?php }?>
             </select>
+
+            <table border="1" style="border-collapse: collapse;" cellspacing="0">
+                <th style="background-color: #ffbd28;">
+                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
+
+                        <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                    </div>
+                </th>
+                <th style="background-color: #ffbd28;">
+                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['note'];?>
+
+                        <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                    </div>
+                </th>
+                <tr>
+                    <td>
+                        <textarea style="background-color: #ffedc4; resize: none;" name="comment"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['comment'];?>
+</textarea>
+                    </td>
+                    <td>
+                        <textarea style="background-color: #ffedc4; resize: none;" name="note"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['note'];?>
+</textarea>
+                    </td>
+                </tr>
+            </table>
             <br>
-            <br>
-<div style="overflow-y: scroll; height:300px;">
-            <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
+            <b style="background-color: #3c763d; color: white; padding: 5px;"><?php echo $_smarty_tpl->tpl_vars['ok']->value;?>
+</b>
+            <br><br>
+            <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
+">
+
+
+
+                </td><td>
+<div style="overflow-y: scroll; height:500px;">
+            <table class="gridexample"  border="1" style="border-collapse: collapse;" cellspacing="0">
                 <th style="background-color: #29559b; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
 </th>
                 <th style="background-color: #29559b; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['result'];?>
@@ -213,10 +248,6 @@ echo $_smarty_tpl->tpl_vars['ldl']->value;
             <a style="text-decoration: none;" href="../controller/edit.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
 &ldl=1">Изчисли LDL</a>
             <br>
-            <font color="green"><?php echo $_smarty_tpl->tpl_vars['ok']->value;?>
-</font>
-            <br>
-
             <?php echo '<script'; ?>
  src="../js/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -231,35 +262,6 @@ echo $_smarty_tpl->tpl_vars['ldl']->value;
             <?php echo '</script'; ?>
 >
             <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['id'];?>
-">
-
-            <table border="1" style="border-collapse: collapse;" cellspacing="0">
-                <th style="background-color: #ffbd28;">
-                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
-
-                        <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
-                    </div>
-                </th>
-                <th style="background-color: #ffbd28;">
-                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['note'];?>
-
-                        <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
-  за работни записки.</span>
-                    </div>
-                </th>
-                <tr>
-                    <td>
-                        <textarea style="background-color: #ffedc4;" name="comment"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['comment'];?>
-</textarea>
-                    </td>
-                    <td>
-                        <textarea style="background-color: #ffedc4;" name="note"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['note'];?>
-</textarea>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
 ">
         </form>
 
@@ -342,7 +344,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </td>
             </tr>
         </table>
-
+                </td></tr></table>
     </center>
 
 </body>

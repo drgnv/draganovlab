@@ -185,7 +185,7 @@
                                     <a style="text-decoration: none; color: #2e6da4; font-size: 13px;" href="../controller/edit.php?id={{$result.id}}"
                                        onclick="window.open('../controller/edit.php?id={{$result.id}}',
                                                'newwindow',
-                                               'width=690,height=650');
+                                               'width=1090,height=650');
                                                return false;"
                                        alt="Редактирай резултати" >
                                     {$result.names}</a>
@@ -199,7 +199,7 @@
                                         <div class="tooltip">
                                             <a style="text-decoration: none; color: #2e6da4; font-size: 13px;" href="../controller/edit.php?id={{$result.id}}" onclick="window.open('../controller/edit.php?id={{$result.id}}',
                                             'newwindow',
-                                            'width=690,height=650');
+                                            'width=1090,height=650');
                                             return false;" alt="Редактирай резултати">
                                         {$result.names}</a>{if strlen({$result.comment})>1}<span class="tooltiptext">{$result.comment}</span>{/if}
                                         </div>

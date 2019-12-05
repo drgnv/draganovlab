@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 10:54:11
+/* Smarty version 3.1.32, created on 2019-12-04 16:16:58
   from '/var/www/html/dlab/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de22e33a5ac88_05917325',
+  'unifunc' => 'content_5de7bfdae32d65_36897967',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2dc9bb225b9f1fd7311790f530310462c7e8dc59' => 
     array (
       0 => '/var/www/html/dlab/view/header.tpl',
-      1 => 1575103999,
+      1 => 1575469018,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de22e33a5ac88_05917325 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de7bfdae32d65_36897967 (Smarty_Internal_Template $_smarty_tpl) {
 ?><DOCTYPE html>
     <html>
 
@@ -36,6 +36,7 @@ function content_5de22e33a5ac88_05917325 (Smarty_Internal_Template $_smarty_tpl)
                 font-family: Arial;
             }
         </style>
+        <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DraganovLab 4.1</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

@@ -13,6 +13,7 @@
                 font-family: Arial;
             }
         </style>
+        <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DraganovLab 4.1</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

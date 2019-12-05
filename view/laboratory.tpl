@@ -348,15 +348,37 @@
                                 {$ok}</td></tr>
                     </table>
 
+                    <table border="1" style="border-collapse: collapse;" cellspacing="0">
+                        <th style="background-color: #ffbd28;">
+                            <div class="tooltip">{$lang.comment}
+                                <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                            </div>
+                        </th>
+                        <th style="background-color: #ffbd28;">
+                            <div class="tooltip">{$lang.note}
+                                <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                            </div>
+                        </th>
+                        <tr>
+                            <td>
+                                <textarea style="background-color: #ffedc4;" name="comment">{$data.0.comment}</textarea>
+                            </td>
+                            <td>
+                                <textarea style="background-color: #ffedc4;" name="note">{$data.0.note}</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="submit" name="save" value="{$lang.save_btn}">
+                    </form>
+
+                    <table>
+
+
                 </td>
                 </tr>
 
-
-                <tr>
-                    <td>
-                        <input type="submit" name="save" value="{$lang.save_btn}">
-                    </td>
-                </tr>
                 </form>
                 <tr>
                     </td>

@@ -11,6 +11,13 @@ $Smarty->template_dir='../view/';
 $Smarty->compile_dir='../template_c/';
 
 $Basic = new Basic();
+
+//LANGUAGE START
+$def_lang = $Basic->getLanguage();
+include_once "../languages/".$def_lang[0]['default_lang'].".php";
+$Smarty->assign('lang', $language);
+//LANGUAGE STOP
+
 if(isset($_GET['send'])){
     $type = filter_input(INPUT_GET, 'type');
     $search = filter_input(INPUT_GET, 'search');

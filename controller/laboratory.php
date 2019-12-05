@@ -51,6 +51,8 @@ if(isset($_POST['save'])){
     $patient['note'] = filter_input(INPUT_POST, 'note');
     $patient['idn'] = filter_input(INPUT_POST, 'idn');
     $patient['cito'] = filter_input(INPUT_POST, 'cito');
+    $patient['comment'] = filter_input(INPUT_POST, 'comment');
+    $patient['note'] = filter_input(INPUT_POST, 'note');
 //print_r($data);
   //  echo 1;
     $patient['id']=$data[0]['patient_id'];

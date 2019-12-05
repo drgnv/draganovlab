@@ -68,7 +68,10 @@
                             </td>
                             <td style="color: black;">{$result.number}</td>
                             <td style="color: black;">{$result.date}</td>
-                            <td style="color: black;">{$result.names}</td>
+                            <td style="color: black;"><a href="../controller/edit.php?id={{$result.id}}" onclick="window.open('../controller/edit.php?id={{$result.id}}',
+                                        'newwindow',
+                                        'width=690,height=650');
+                                        return false;">{$result.names}</a></td>
                             <td style="color: black;">{$result.doctor}</td>
                             <td align="center">
                                 <a href="../controller/print.php?id={{$result.id}}" target="_blank" style="text-decoration: none;">

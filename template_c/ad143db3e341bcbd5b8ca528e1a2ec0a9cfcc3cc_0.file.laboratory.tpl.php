@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 11:58:52
+/* Smarty version 3.1.32, created on 2019-12-04 16:21:08
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de23d5c53ff88_27844444',
+  'unifunc' => 'content_5de7c0d48a5879_98576421',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1575107931,
+      1 => 1575469263,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de23d5c53ff88_27844444 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de7c0d48a5879_98576421 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -549,16 +549,42 @@ if ($_prefixVariable15 !== "on") {?>
 </td></tr>
                     </table>
 
+                    <table border="1" style="border-collapse: collapse;" cellspacing="0">
+                        <th style="background-color: #ffbd28;">
+                            <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
+
+                                <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                            </div>
+                        </th>
+                        <th style="background-color: #ffbd28;">
+                            <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['note'];?>
+
+                                <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                            </div>
+                        </th>
+                        <tr>
+                            <td>
+                                <textarea style="background-color: #ffedc4;" name="comment"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['comment'];?>
+</textarea>
+                            </td>
+                            <td>
+                                <textarea style="background-color: #ffedc4;" name="note"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['note'];?>
+</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
+">
+                    </form>
+
+                    <table>
+
+
                 </td>
                 </tr>
 
-
-                <tr>
-                    <td>
-                        <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
-">
-                    </td>
-                </tr>
                 </form>
                 <tr>
                     </td>

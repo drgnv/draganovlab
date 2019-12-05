@@ -58,7 +58,7 @@
             <input list="hosting-plan" type="text" value="{$data.0.doctor}" size="14" name='doctor'>
             <datalist id="hosting-plan">
                 {foreach from=$doctors item=doctor}
-                <option value="{$doctor.doctor}" alt="1212" /> {/foreach}
+                    <option value="{$doctor.doctor_id}">{$doctor.doctor}</option> {/foreach}
             </datalist>
             <script>
                 // Create a new option element.
@@ -76,7 +76,8 @@
             <br><hr> {$lang.date}:
             <input type="date" name="date" value="{$data.0.date}">
             <b style="color:red;">{$lang.cito}:</b> {if {$data.0.cito} == "on"}
-            <input type="checkbox" name="cito" checked> {/if} {if {$data.0.cito} !== "on"}
+            <input type="checkbox" name="cito" checked> {/if}
+            {if {$data.0.cito} !== "on"}
             <input type="checkbox" name="cito"> {/if}
             {$lang.paid}:
             <input type="checkbox" name="pay" {if {$data.0.pay} == "on"}checked{/if}>

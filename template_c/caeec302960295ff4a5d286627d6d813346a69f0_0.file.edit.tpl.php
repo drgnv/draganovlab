@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-05 20:23:57
+/* Smarty version 3.1.32, created on 2019-12-05 21:44:40
   from '/var/www/html/dlab/view/edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de94b3dd7a1e9_20099225',
+  'unifunc' => 'content_5de95e28d440a1_43755066',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeec302960295ff4a5d286627d6d813346a69f0' => 
     array (
       0 => '/var/www/html/dlab/view/edit.tpl',
-      1 => 1575570235,
+      1 => 1575575077,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de94b3dd7a1e9_20099225 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de95e28d440a1_43755066 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -97,8 +97,9 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['doctor']->value) {
 ?>
-                <option value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
-" alt="1212" /> <?php
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
+</option> <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -127,7 +128,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
 $_prefixVariable1 = ob_get_clean();
 if ($_prefixVariable1 == "on") {?>
-            <input type="checkbox" name="cito" checked> <?php }?> <?php ob_start();
+            <input type="checkbox" name="cito" checked> <?php }?>
+            <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
 $_prefixVariable2 = ob_get_clean();
 if ($_prefixVariable2 !== "on") {?>

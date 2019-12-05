@@ -46,16 +46,15 @@
 
 </head>
 
-<body>
+<body style="background-color: #d3e7f5">
     <center>
         <table border="0"><tr><td style="vertical-align:top;">
         <form autocomplete="off" action="../controller/edit.php?id={$data.0.patient_id}" method="POST" id="form1">
             №
             <input required type="number" name="number" style="width: 40px;" value="{$data.0.number}"> | {$lang.patient}:
-            <input required type="text" name="patient" value="{$data.0.names}" size="26"> | {$lang.idn}:
+            <input required type="text" name="patient" value="{$data.0.names}" size="26"> <br><hr> {$lang.idn}:
             <input type="text" name="idn" value="{$data.0.idn}" size="9">
-            <br>
-            <br> {$lang.doctor}:
+            {$lang.doctor}:
             <input list="hosting-plan" type="text" value="{$data.0.doctor}" size="14" name='doctor'>
             <datalist id="hosting-plan">
                 {foreach from=$doctors item=doctor}
@@ -74,16 +73,14 @@
                 // Add the optionNode to the datalist
                 document.getElementById("hosting-plan").appendChild(optionNode);
             </script>
-            | {$lang.date}:
-            <input type="date" name="date" value="{$data.0.date}"> |
+            <br><hr> {$lang.date}:
+            <input type="date" name="date" value="{$data.0.date}">
             <b style="color:red;">{$lang.cito}:</b> {if {$data.0.cito} == "on"}
             <input type="checkbox" name="cito" checked> {/if} {if {$data.0.cito} !== "on"}
             <input type="checkbox" name="cito"> {/if}
             {$lang.paid}:
             <input type="checkbox" name="pay" {if {$data.0.pay} == "on"}checked{/if}>
-
-
-            <hr>
+<br><br>
 
             <a href="../controller/old_results.php?idn={$data.0.idn}" target="_blank" style="text-decoration:none; color: black;">
                 <img src="../images/archive.png" width="20" height="20"> {$lang.old_results}</a> | {$lang.status}:
@@ -96,7 +93,7 @@
                 <option value="off" selected>{$lang.not_over}</option>
                 {/if}
             </select>
-
+<br><br>
             <table border="1" style="border-collapse: collapse;" cellspacing="0">
                 <th style="background-color: #ffbd28;">
                     <div class="tooltip">{$lang.comment}
@@ -118,9 +115,13 @@
                     </td>
                 </tr>
             </table>
-            <br>
+            {if isset($ok)}
+
+                <br>
             <b style="background-color: #3c763d; color: white; padding: 5px;">{$ok}</b>
-            <br><br>
+
+                <br>
+            {/if}<br>
             <input type="submit" name="save" value="{$lang.save_btn}">
 
 

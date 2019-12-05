@@ -43,17 +43,18 @@
             </script>
 
             <div class="newp2">
-                <h2 style="color: white;">Журнал</h2>
+                <h2 style="color: white;">{$lang.search}</h2>
+                <p style="color: white">{$lang.search} {$lang.by} <b>{$type}</b> {$lang.for} <b>{$search}</b></p>
                 <hr>
                 <table id="journal" class="display" width="990">
                     <thead>
                         <tr>
                             <th style="color: white;">С</th>
                             <th style="color: white;">№</th>
-                            <th style="color: white;">Добавено на</th>
-                            <th style="color: white;">Пациент</th>
-                            <th style="color: white;">Лекар</th>
-                            <th style="color: white;">Действия</th>
+                            <th style="color: white;">{$lang.added}</th>
+                            <th style="color: white;">{$lang.patient}</th>
+                            <th style="color: white;">{$lang.doctor}</th>
+                            <th style="color: white;">{$lang.actions}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,24 +77,19 @@
                             <td style="color: black;">{$result.doctor}</td>
                             <td align="center">
                                 <a style="text-decoration: none;" href="../controller/print.php?id={{$result.id}}" target="_blank">
-                                    <img src="../images/request.png" width="25" height="25" title="Принтирай заявка на {$result.names}">
+                                    <img src="../images/request.png" width="20" height="20" title="Принтирай заявка на {$result.names}">
                                 </a>
                                 <a style="text-decoration: none;" href="../controller/resultbyid.php?id={{$result.id}}" target="_blank">
-                                    <img src="../images/results.png" width="25" height="25" title="Принтирай резултати на {$result.names}">
+                                    <img src="../images/results.png" width="20" height="20" title="Принтирай резултати на {$result.names}">
                                 </a>
-                                <a style="text-decoration: none;" href="../controller/edit.php?id={{$result.id}}" onclick="window.open('../controller/edit.php?id={{$result.id}}', 
-                         'newwindow', 
-                         'width=550,height=600'); 
-              return false;" alt="Редактирай резултати">
-                                    <img src="../images/edit.png" width="25" height="25" title="Редактирай {$result.names}">
-                                </a>
+
                                 <a style="text-decoration: none;" href="../controller/onlineresults.php?id={{$result.id}}" target="_blank">
-                                    <img src="../images/online.png" width="25" height="25" title="Онлайн достъп на {$result.names}">
+                                    <img src="../images/online.png" width="20" height="20" title="Онлайн достъп на {$result.names}">
                                 </a>
                                 {if {$lvl}
                                 <3}{else} <a href="../controller/search.php?delete={{$result.id}}&search={$search}&type={$type}" alt="Изтриване" onclick="return confirm('Сигурен ли сте, че искате да изтриете пациент: {$result.names}?')" title="Изтрий {$result.names}">
-                                    <img src="../images/delete.png" width="25" height="25" alt="Изтриване">
-                                   <b style="visibility: hidden;"> {$un++}</b>  </a>{/if}
+                                    <img src="../images/delete.png" width="20" height="20" alt="Изтриване">
+                                  {/if}
                             </td>
                         </tr>
                         {/foreach}

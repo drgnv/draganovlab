@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-05 20:07:38
+/* Smarty version 3.1.32, created on 2019-12-05 20:23:57
   from '/var/www/html/dlab/view/edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de9476a3251d3_29893834',
+  'unifunc' => 'content_5de94b3dd7a1e9_20099225',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeec302960295ff4a5d286627d6d813346a69f0' => 
     array (
       0 => '/var/www/html/dlab/view/edit.tpl',
-      1 => 1575569256,
+      1 => 1575570235,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de9476a3251d3_29893834 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de94b3dd7a1e9_20099225 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -73,7 +73,7 @@ function content_5de9476a3251d3_29893834 (Smarty_Internal_Template $_smarty_tpl)
 
 </head>
 
-<body>
+<body style="background-color: #d3e7f5">
     <center>
         <table border="0"><tr><td style="vertical-align:top;">
         <form autocomplete="off" action="../controller/edit.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
@@ -83,12 +83,11 @@ function content_5de9476a3251d3_29893834 (Smarty_Internal_Template $_smarty_tpl)
 "> | <?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
 :
             <input required type="text" name="patient" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
-" size="26"> | <?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
+" size="26"> <br><hr> <?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
 :
             <input type="text" name="idn" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " size="9">
-            <br>
-            <br> <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+            <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
 :
             <input list="hosting-plan" type="text" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['doctor'];?>
 " size="14" name='doctor'>
@@ -119,10 +118,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 document.getElementById("hosting-plan").appendChild(optionNode);
             <?php echo '</script'; ?>
 >
-            | <?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+            <br><hr> <?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
 :
             <input type="date" name="date" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['date'];?>
-"> |
+">
             <b style="color:red;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['cito'];?>
 :</b> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
@@ -139,9 +138,7 @@ if ($_prefixVariable2 !== "on") {?>
 echo $_smarty_tpl->tpl_vars['data']->value[0]['pay'];
 $_prefixVariable3 = ob_get_clean();
 if ($_prefixVariable3 == "on") {?>checked<?php }?>>
-
-
-            <hr>
+<br><br>
 
             <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " target="_blank" style="text-decoration:none; color: black;">
@@ -167,7 +164,7 @@ if ($_prefixVariable5 !== "on") {?>
 </option>
                 <?php }?>
             </select>
-
+<br><br>
             <table border="1" style="border-collapse: collapse;" cellspacing="0">
                 <th style="background-color: #ffbd28;">
                     <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
@@ -193,10 +190,14 @@ if ($_prefixVariable5 !== "on") {?>
                     </td>
                 </tr>
             </table>
-            <br>
+            <?php if (isset($_smarty_tpl->tpl_vars['ok']->value)) {?>
+
+                <br>
             <b style="background-color: #3c763d; color: white; padding: 5px;"><?php echo $_smarty_tpl->tpl_vars['ok']->value;?>
 </b>
-            <br><br>
+
+                <br>
+            <?php }?><br>
             <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
 ">
 

@@ -461,13 +461,13 @@ class Basic extends Host{
         
         public function searchNameId($search, $type) {
             if($type == "name"){
-                   $sql="SELECT *FROM patients WHERE names LIKE '%".mysqli_real_escape_string($this->connect(), $search)."%'";
+                   $sql="SELECT *FROM patients LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE names  LIKE '%".mysqli_real_escape_string($this->connect(), $search)."%'";
             }
             if($type == "id"){
-                $sql="SELECT *FROM patients WHERE number = '".mysqli_real_escape_string($this->connect(), $search)."'";
+                $sql="SELECT *FROM patients LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE number = '".mysqli_real_escape_string($this->connect(), $search)."'";
             }
             if($type == "idn"){
-                $sql="SELECT *FROM patients WHERE idn = '".mysqli_real_escape_string($this->connect(), $search)."'";
+                $sql="SELECT *FROM patients LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE idn = '".mysqli_real_escape_string($this->connect(), $search)."'";
             }
             return $this->sqliexecute($sql);
             

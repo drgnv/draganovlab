@@ -65,7 +65,7 @@
                                 <tr>
                                     <td align="right">{$lang.warning}:</td>
                                     <td>
-                                        <textarea name="note" rows="10" cols="35">{$hospital.0.note}</textarea>
+                                        <textarea name="note" rows="10" cols="35" style="resize: none;">{$hospital.0.note}</textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -75,6 +75,7 @@
                                             <option value="english" {if {$hospital.0.default_lang} == "english"}selected{/if}>English</option>
                                             <option value="bulgarian" {if {$hospital.0.default_lang} == "bulgarian"}selected{/if}>Български</option>
                                             <option value="france" {if {$hospital.0.default_lang} == "france"}selected{/if}>Le français</option>
+                                            <option value="spanish" {if {$hospital.0.default_lang} == "spanish"}selected{/if}>Español</option>
                                         </select>
                                     </td>
                                 </tr>

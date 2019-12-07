@@ -235,7 +235,7 @@
                 </tr>
                 </table>
                 <p style="background-color: green; text-align: center;">{$ok}</p>
-                <input type="submit" name="save" value="{$lang.save_btn}">
+                <input type="submit" name="save" value="{$lang.save_btn }">
                 </form>
                 {else}
                 <p>

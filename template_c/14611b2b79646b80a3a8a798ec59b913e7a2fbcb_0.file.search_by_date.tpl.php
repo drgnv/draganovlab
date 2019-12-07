@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 20:00:33
+/* Smarty version 3.1.32, created on 2019-12-07 21:21:31
   from '/var/www/html/dlab/view/search_by_date.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5debe8c148ad18_38202224',
+  'unifunc' => 'content_5debfbbb1e4fe8_28830584',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14611b2b79646b80a3a8a798ec59b913e7a2fbcb' => 
     array (
       0 => '/var/www/html/dlab/view/search_by_date.tpl',
-      1 => 1575741631,
+      1 => 1575746490,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5debe8c148ad18_38202224 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5debfbbb1e4fe8_28830584 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -72,7 +72,6 @@ function content_5debe8c148ad18_38202224 (Smarty_Internal_Template $_smarty_tpl)
                 <table style="border-spacing: 5px;"><tr><td valign="top" cellspacing="10"><center>
                 <p style="color: whitesmoke; font-size: 25px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['search_by_date'];?>
 </p>
-                <p style="color: whitesmoke; font-size: 14px;">Задайте начална и крайна дата</p>
                 <form action="../controller/search_by_date.php" method="GET">
                     <p style="color: white; font-size: 16px;">
                         <?php echo $_smarty_tpl->tpl_vars['lang']->value['from'];?>

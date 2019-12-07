@@ -35,7 +35,6 @@
             <div class="newp2">
                 <table style="border-spacing: 5px;"><tr><td valign="top" cellspacing="10"><center>
                 <p style="color: whitesmoke; font-size: 25px;">{$lang.search_by_date}</p>
-                <p style="color: whitesmoke; font-size: 14px;">Задайте начална и крайна дата</p>
                 <form action="../controller/search_by_date.php" method="GET">
                     <p style="color: white; font-size: 16px;">
                         {$lang.from}: <input type="date" name="start"><br>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:10:13
+/* Smarty version 3.1.32, created on 2019-12-07 21:20:36
   from '/var/www/html/dlab/view/settings.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de16d15172ce4_06676079',
+  'unifunc' => 'content_5debfb84bf16d2_23497361',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3ea3ce0652260fe17aa045ceebc1a0992edca16' => 
     array (
       0 => '/var/www/html/dlab/view/settings.tpl',
-      1 => 1574547300,
+      1 => 1575746432,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de16d15172ce4_06676079 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5debfb84bf16d2_23497361 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php $_smarty_tpl->_subTemplateRender("file:top_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php $_smarty_tpl->_subTemplateRender("file:side_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -112,7 +112,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                     <td align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['warning'];?>
 :</td>
                                     <td>
-                                        <textarea name="note" rows="10" cols="35"><?php echo $_smarty_tpl->tpl_vars['hospital']->value[0]['note'];?>
+                                        <textarea name="note" rows="10" cols="35" style="resize: none;"><?php echo $_smarty_tpl->tpl_vars['hospital']->value[0]['note'];?>
 </textarea>
                                     </td>
                                 </tr>
@@ -133,6 +133,10 @@ if ($_prefixVariable2 == "bulgarian") {?>selected<?php }?>>Български</o
 echo $_smarty_tpl->tpl_vars['hospital']->value[0]['default_lang'];
 $_prefixVariable3 = ob_get_clean();
 if ($_prefixVariable3 == "france") {?>selected<?php }?>>Le français</option>
+                                            <option value="spanish" <?php ob_start();
+echo $_smarty_tpl->tpl_vars['hospital']->value[0]['default_lang'];
+$_prefixVariable4 = ob_get_clean();
+if ($_prefixVariable4 == "spanish") {?>selected<?php }?>>Español</option>
                                         </select>
                                     </td>
                                 </tr>

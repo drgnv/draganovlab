@@ -28,7 +28,7 @@
 
     <div class="center">
         <div class="edit-doctors">
-            <h1 style=" font-size: 25px;">Урина - Химично изследване</h1> {include file="tests_menu.tpl"}
+            <h1 style=" font-size: 25px;">{$lang.urine}</h1> {include file="tests_menu.tpl"}
             <hr>
             <p style="text-align: left">
                 <a href="../controller/add_urine.php?flag=ur" onclick="window.open('../controller/add_urine.php?flag=ur', 
@@ -36,17 +36,17 @@
                          'width=300,height=310')
           return false;   
           " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">
-                Добави показател</b></a>
+                        {$lang.add} {$lang.test}</b></a>
             </p>
 
             <table id="tests" class="display">
                 <thead>
                     <tr>
-                        <th>Показател</th>
+                        <th>{$lang.test}</th>
                         <th>↓</th>
                         <th>↑</th>
                         <th>⚖️</th>
-                        <th>Действия</th>
+                        <th>{$lang.actions}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,11 +60,11 @@
                             <a style="text-decoration: none;" href="../controller/edit__urine_component.php?id={{$test.id}}" onclick="window.open('../controller/edit_urine_component.php?id={{$test.id}}', 
                          'newwindow', 
                          'width=320,height=260');
-              return false;" alt="Редактирай резултати">
-                                <img src="../images/edit.png" width="30" height="30" title="Редактирай {$result.names}"> Редактиране
+              return false;" >
+                                <img src="../images/edit.png" width="30" height="30" title="Редактирай {$result.names}"> {$lang.edit}
                             </a>
 
-                            <a style="text-decoration: none;" href="../controller/edit_urine.php?delete={$test.id}" onclick="return confirm('Сигурен ли сте, че искате да изтриете: {$test.name}?')" title="Изтрий {$result.names}"><img src="../images/delete.png" width="25" height="25"> Изтриване</a>
+                            <a style="text-decoration: none;" href="../controller/edit_urine.php?delete={$test.id}" onclick="return confirm('{$lang.warning}: {$test.name}?')" ><img src="../images/delete.png" width="25" height="25">{$lang.delete}</a>
 
                         </td>
                     </tr>

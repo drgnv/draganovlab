@@ -28,7 +28,7 @@
 
     <div class="center">
         <div class="edit-doctors">
-            <h1 style=" font-size: 25px;">Пълна кръвна карина</h1> {include file="tests_menu.tpl"}
+            <h1 style=" font-size: 25px;">{$lang.cbc_full}</h1> {include file="tests_menu.tpl"}
             <hr>
             <p style="text-align: left">
                 <a href="../controller/add_cbc.php?flag=cbc" onclick="window.open('../controller/add_cbc.php?flag=cbc', 
@@ -36,17 +36,17 @@
                          'width=300,height=310')
           return false;   
           " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">
-                Добави показател</b></a>
+                        {$lang.add} {$lang.test}</b></a>
             </p>
 
             <table id="tests" class="display">
                 <thead>
                     <tr>
-                        <th>Показател</th>
+                        <th>{$lang.test}</th>
                         <th>↓</th>
                         <th>↑</th>
                         <th>⚖️</th>
-                        <th>Действия</th>
+                        <th>{$lang.actions}</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-05 22:20:47
+/* Smarty version 3.1.32, created on 2019-12-07 22:47:37
   from '/var/www/html/dlab/view/edit_akr.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de9669fc4f3e9_76506473',
+  'unifunc' => 'content_5dec0fe9a45616_38076440',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c982b08701fabd240f59147f394e8b05cd4c1942' => 
     array (
       0 => '/var/www/html/dlab/view/edit_akr.tpl',
-      1 => 1558695014,
+      1 => 1575751649,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de9669fc4f3e9_76506473 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dec0fe9a45616_38076440 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -65,7 +65,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
     <div class="center">
         <div class="edit-doctors">
-            <h1 style=" font-size: 25px;">Алкално-киселинно равновесие</h1> <?php $_smarty_tpl->_subTemplateRender("file:tests_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+            <h1 style=" font-size: 25px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['akr_full'];?>
+</h1> <?php $_smarty_tpl->_subTemplateRender("file:tests_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
             <hr>
             <p style="text-align: left">
@@ -74,17 +75,21 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                          'width=300,height=310')
           return false;   
           " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">
-                Добави показател</b></a>
+                        <?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
+</b></a>
             </p>
 
             <table id="tests" class="display">
                 <thead>
                     <tr>
-                        <th>Показател</th>
+                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
+</th>
                         <th>↓</th>
                         <th>↑</th>
                         <th>⚖️</th>
-                        <th>Действия</th>
+                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['actions'];?>
+</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,13 +121,16 @@ echo $_prefixVariable2;?>
                          'width=320,height=260');
               return false;" alt="Редактирай резултати">
                                 <img src="../images/edit.png" width="30" height="30" title="Редактирай <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
-"> Редактиране
+"><?php echo $_smarty_tpl->tpl_vars['lang']->value['edit'];?>
+
                             </a>
 
                             <a style="text-decoration: none;" href="../controller/edit_akr.php?delete=<?php echo $_smarty_tpl->tpl_vars['test']->value['id'];?>
-" onclick="return confirm('Сигурен ли сте, че искате да изтриете: <?php echo $_smarty_tpl->tpl_vars['test']->value['name'];?>
+" onclick="return confirm('<?php echo $_smarty_tpl->tpl_vars['lang']->value['delete_warning'];?>
+: <?php echo $_smarty_tpl->tpl_vars['test']->value['name'];?>
 ?')" title="Изтрий <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
-"><img src="../images/delete.png" width="25" height="25"> Изтриване</a>
+"><img src="../images/delete.png" width="25" height="25"><?php echo $_smarty_tpl->tpl_vars['lang']->value['edit'];?>
+</a>
 
                         </td>
                     </tr>

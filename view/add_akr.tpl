@@ -2,7 +2,7 @@
 
 <head>
 
-    <title>Добавяне на показател към АКР</title>
+    <title>{$lang.add} на показател към АКР</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 

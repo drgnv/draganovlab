@@ -90,5 +90,11 @@ $language = array(
     "support_text"=>"Contact with us if you need help",
     "founded"=>"Founded",
     "by"=>"by",
-    "newbe" => 'Learning'
+    "newbe" => 'Learning',
+    "akr_full"=>'Blood Gas Test',
+    "akr"=>'ABGs',
+    "urine"=>'Urine',
+    "cbc"=>"CBC",
+    "electro"=>'Electrolytes',
+    "cbc_full"=>'Full Blood Count'
 );

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 21:20:36
+/* Smarty version 3.1.32, created on 2019-12-07 23:38:58
   from '/var/www/html/dlab/view/settings.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5debfb84bf16d2_23497361',
+  'unifunc' => 'content_5dec1bf2239295_03422653',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3ea3ce0652260fe17aa045ceebc1a0992edca16' => 
     array (
       0 => '/var/www/html/dlab/view/settings.tpl',
-      1 => 1575746432,
+      1 => 1575754737,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5debfb84bf16d2_23497361 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dec1bf2239295_03422653 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php $_smarty_tpl->_subTemplateRender("file:top_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php $_smarty_tpl->_subTemplateRender("file:side_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -96,7 +96,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                 <tr>
                                     <td align="right"> Mail:</td>
                                     <td>
-                                        <input type="text" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['hospital']->value[0]['mail'];?>
+                                        <input type="email" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['hospital']->value[0]['mail'];?>
 ">
                                     </td>
                                 </tr>
@@ -142,7 +142,8 @@ if ($_prefixVariable4 == "spanish") {?>selected<?php }?>>Español</option>
                                 </tr>
 
                             </table>
-                            <p>
+                            <p><p style="color: white; background-color: #3c763d"><?php echo $_smarty_tpl->tpl_vars['saved']->value;?>
+</p>
                                 <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
 ">
                             </p>

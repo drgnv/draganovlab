@@ -53,7 +53,7 @@
                                 <tr>
                                     <td align="right"> Mail:</td>
                                     <td>
-                                        <input type="text" name="mail" value="{$hospital.0.mail}">
+                                        <input type="email" name="mail" value="{$hospital.0.mail}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -81,7 +81,7 @@
                                 </tr>
 
                             </table>
-                            <p>
+                            <p><p style="color: white; background-color: #3c763d">{$saved}</p>
                                 <input type="submit" name="save" value="{$lang.save_btn}">
                             </p>
                         </form>

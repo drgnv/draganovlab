@@ -39,9 +39,10 @@ if($_POST['save']){
     $note = filter_input(INPUT_POST, 'note');
     $lang = filter_input(INPUT_POST, 'lang');
     $Settings->setBasicSettings($hospital, $doctor, $address, $phone, $mail, $web, $note, $lang);
-   header("Location: settings.php");
-}
+   header("Location: settings.php?saved=".$language['saved_msg']."");
 
+}
+$Smarty->assign('saved', $_GET['saved']);
 //------НАСТРОЙКИ ЗА ПАНЕЛ ИЗСЛЕДВАНИЯ (РЕГИСТРАТУРА)--------
 $test_panel = $Settings->getTestPanel();
 //print_r($test_panel);

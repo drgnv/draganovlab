@@ -5,10 +5,6 @@
         <meta name="vieport" content="width=device-width, initial-scale=1.0">
         <style>
 
-            input{
-                border: 2px outset #5d9fd9;
-                border-radius:4px;
-            }
             div{
                 font-family: Arial;
             }

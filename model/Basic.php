@@ -47,7 +47,7 @@ class Basic extends Host{
     }
     
     public function searchByDate($start, $end) {
-        $sql = "SELECT * FROM patients WHERE date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";
+        $sql = "SELECT * FROM patients LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";
                
         $data = $this->sqliexecute($sql);
         return $data;

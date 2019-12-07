@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-05 21:44:40
+/* Smarty version 3.1.32, created on 2019-12-07 19:59:13
   from '/var/www/html/dlab/view/edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de95e28d440a1_43755066',
+  'unifunc' => 'content_5debe87123bf88_29387035',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeec302960295ff4a5d286627d6d813346a69f0' => 
     array (
       0 => '/var/www/html/dlab/view/edit.tpl',
-      1 => 1575575077,
+      1 => 1575741552,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de95e28d440a1_43755066 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5debe87123bf88_29387035 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -167,7 +167,7 @@ if ($_prefixVariable5 !== "on") {?>
                 <?php }?>
             </select>
 <br><br>
-            <table border="1" style="border-collapse: collapse;" cellspacing="0">
+            <table border="1"  cellspacing="0">
                 <th style="background-color: #ffbd28;">
                     <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
 

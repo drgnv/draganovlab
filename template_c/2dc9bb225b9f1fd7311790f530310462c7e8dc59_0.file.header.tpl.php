@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-04 16:16:58
+/* Smarty version 3.1.32, created on 2019-12-07 20:04:59
   from '/var/www/html/dlab/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de7bfdae32d65_36897967',
+  'unifunc' => 'content_5debe9cb913a38_89613268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2dc9bb225b9f1fd7311790f530310462c7e8dc59' => 
     array (
       0 => '/var/www/html/dlab/view/header.tpl',
-      1 => 1575469018,
+      1 => 1575741898,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de7bfdae32d65_36897967 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5debe9cb913a38_89613268 (Smarty_Internal_Template $_smarty_tpl) {
 ?><DOCTYPE html>
     <html>
 
@@ -28,10 +28,6 @@ function content_5de7bfdae32d65_36897967 (Smarty_Internal_Template $_smarty_tpl)
         <meta name="vieport" content="width=device-width, initial-scale=1.0">
         <style>
 
-            input{
-                border: 2px outset #5d9fd9;
-                border-radius:4px;
-            }
             div{
                 font-family: Arial;
             }

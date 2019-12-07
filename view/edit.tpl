@@ -95,7 +95,7 @@
                 {/if}
             </select>
 <br><br>
-            <table border="1" style="border-collapse: collapse;" cellspacing="0">
+            <table border="1"  cellspacing="0">
                 <th style="background-color: #ffbd28;">
                     <div class="tooltip">{$lang.comment}
                         <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>

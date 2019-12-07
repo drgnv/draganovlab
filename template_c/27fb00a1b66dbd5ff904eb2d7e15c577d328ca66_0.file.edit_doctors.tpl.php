@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:19:53
+/* Smarty version 3.1.32, created on 2019-12-07 13:54:46
   from '/var/www/html/dlab/view/edit_doctors.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de16f597bd1c8_14207658',
+  'unifunc' => 'content_5deb9306d8f753_78254807',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '27fb00a1b66dbd5ff904eb2d7e15c577d328ca66' => 
     array (
       0 => '/var/www/html/dlab/view/edit_doctors.tpl',
-      1 => 1574952523,
+      1 => 1575719685,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de16f597bd1c8_14207658 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5deb9306d8f753_78254807 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -36,11 +36,21 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 <?php echo '<script'; ?>
  type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"><?php echo '</script'; ?>
 >
+
+<?php echo '<script'; ?>
+ type="text/javascript" charset="utf8" src="../libs/dataTables.responsive.min.js"><?php echo '</script'; ?>
+>
 <?php echo '<script'; ?>
 >
     $(document).ready(function() {
         $('#doctors').DataTable({
-            "pageLength": 10
+            "pageLength": 10,
+            "paging": false,
+            "scrollY":        "350px",
+            "scrollCollapse": true,
+            "paging":         false,
+            "bInfo" : false,
+            "responsive": true
         });
     });
 <?php echo '</script'; ?>
@@ -53,19 +63,17 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 <div class="content">
     <?php $_smarty_tpl->_subTemplateRender("file:side_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
     <div class="edit-doctors">
-        <h1 style=" font-size: 25px;">Лекари</h1>
-        <hr>
         <p style="text-align: left">
-            <a style="text-decoration: none;" href="../controller/add_doctor.php" onclick="window.open('../controller/add_doctor.php', 
-                         'newwindow', 
+            <a style="text-decoration: none;" href="../controller/add_doctor.php" onclick="window.open('../controller/add_doctor.php',
+                         'newwindow',
                          'width=300,height=300')
-          return false;   
+          return false;
           " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white"><?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
 </b></a>
-        </p>
+            <h3><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctors'];?>
+</h3></p>
 
         <table id="doctors" class="display">
             <thead>

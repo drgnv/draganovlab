@@ -4,10 +4,18 @@
 <script type="text/javascript" charset="utf8" src="../js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../libs/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"></script>
+
+<script type="text/javascript" charset="utf8" src="../libs/dataTables.responsive.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#doctors').DataTable({
-            "pageLength": 10
+            "pageLength": 10,
+            "paging": false,
+            "scrollY":        "350px",
+            "scrollCollapse": true,
+            "paging":         false,
+            "bInfo" : false,
+            "responsive": true
         });
     });
 </script>
@@ -17,17 +25,14 @@
 </div>
 <div class="content">
     {include file="side_menu.tpl"}
-
     <div class="edit-doctors">
-        <h1 style=" font-size: 25px;">Лекари</h1>
-        <hr>
         <p style="text-align: left">
-            <a style="text-decoration: none;" href="../controller/add_doctor.php" onclick="window.open('../controller/add_doctor.php', 
-                         'newwindow', 
+            <a style="text-decoration: none;" href="../controller/add_doctor.php" onclick="window.open('../controller/add_doctor.php',
+                         'newwindow',
                          'width=300,height=300')
-          return false;   
+          return false;
           " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">{$lang.add} {$lang.doctor}</b></a>
-        </p>
+            <h3>{$lang.doctors}</h3></p>
 
         <table id="doctors" class="display">
             <thead>

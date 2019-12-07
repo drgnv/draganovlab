@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 08:38:53
+/* Smarty version 3.1.32, created on 2019-12-07 19:28:50
   from '/var/www/html/dlab/view/top_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de20e7d96b702_07999569',
+  'unifunc' => 'content_5debe1523929c7_71537407',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeb65d6d440ca503901cc66f9c83042224e4a53' => 
     array (
       0 => '/var/www/html/dlab/view/top_menu.tpl',
-      1 => 1575095929,
+      1 => 1575739729,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de20e7d96b702_07999569 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5debe1523929c7_71537407 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id='navbar'>
-    <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant.png" width="65" height="25">4.1v ©</a>
+    <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant%20-%20Copy.png" width="35" height="25"></a>
     <a href='./new_patient.php'><?php echo $_smarty_tpl->tpl_vars['lang']->value['registry'];?>
 </a>
     <a href='./laboratory.php?from=<?php echo $_smarty_tpl->tpl_vars['from_date']->value;?>

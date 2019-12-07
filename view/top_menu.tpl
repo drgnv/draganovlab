@@ -1,5 +1,5 @@
 <div id='navbar'>
-    <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant.png" width="65" height="25">4.1v ©</a>
+    <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant%20-%20Copy.png" width="35" height="25"></a>
     <a href='./new_patient.php'>{$lang.registry}</a>
     <a href='./laboratory.php?from={$from_date}&to={$to_date}&status={$status}&searchbydate=Търси...'>{$lang.laboratory}</a>
     <a href='./mdds.php?from={$from_date}&to={$to_date}&searchbydate=Търси...'>{$lang.mdds}</a>

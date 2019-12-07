@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-30 13:29:10
+/* Smarty version 3.1.32, created on 2019-12-07 20:52:41
   from '/var/www/html/dlab/view/old_results.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de25286e59241_64210897',
+  'unifunc' => 'content_5debf4f9056956_71560982',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfcc426a400661823471a43724746b4350b2c6a8' => 
     array (
       0 => '/var/www/html/dlab/view/old_results.tpl',
-      1 => 1558695020,
+      1 => 1575744760,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de25286e59241_64210897 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5debf4f9056956_71560982 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -123,8 +123,10 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             <tr>
                 <td valign="top" width="30%">
                     <div class="newp" style="width: 350px">
-                        <h3>Предишни резултати</h3>
-                        <b>Пациент: </b><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
+                        <h3><?php echo $_smarty_tpl->tpl_vars['lang']->value['old_results'];?>
+</h3>
+                        <b><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+: </b><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
 
                         <div id="table-wrapper">
                             <div id="table-scroll">
@@ -133,9 +135,11 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
-                                        <th title="Статус">С</th>
+                                        <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
+">С</th>
                                         <th>ID</th>
-                                        <th>ДАТА</th>
+                                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+</th>
 
                                     </thead>
                                     <tbody>
@@ -236,24 +240,32 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                                <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                        <a style="text-decoration: none; color: white;" href="../controller/print.php?id=<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];?>
 " target="_blank">
-                            <img src="../images/reqgreen.png" width="20" height="20" title="Принтирай заявка на <?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
-"> ЗАЯВКА
+                            <img src="../images/reqgreen.png" width="20" height="20" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['print'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['request'];?>
+ <?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['request'];?>
+
                         </a> |
                         <a style="text-decoration: none; color: white;" href="../controller/resultbyid.php?id=<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];?>
 " target="_blank">
-                            <img src="../images/results.png" width="20" height="20" title="Принтирай резултати на <?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['names'];?>
-"> РЕЗУЛТАТИ
+                            <img src="../images/results.png" width="20" height="20" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['print'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['results'];?>
+ <?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['names'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['results'];?>
+
                         </a> |
                         <a style="text-decoration: none; color: white;" href="../controller/onlineresults.php?id=<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];?>
 " target="_blank">
                             <img src="../images/online.png" width="20" height="20" title="Онлайн достъп на <?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['names'];?>
-"> ОНЛАЙН ДОСТЪП
+"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['online_cart'];?>
+
                         </a> |
                         <a style="text-decoration: none; color: white;" href="../controller/laboratory.php?delete=<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];?>
 " alt="Изтриване" onclick="return confirm('Сигурен ли сте, че искате да изтриете пациент: <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 ?')" title="Изтрий <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 ">
-                            <img src="../images/delete.png" width="20" height="20" alt="Изтриване"> ИЗТРИВАНЕ
+                            <img src="../images/delete.png" width="20" height="20" alt="Изтриване"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['delete'];?>
+
                         </a>
                         <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                         <table>
@@ -263,10 +275,14 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
 &idn=<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['idn'];?>
 " method="POST" id="form1">
                                         <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
-                                            <th style="background-color: #1b6d85; color: white;">Показател</th>
-                                            <th style="background-color: #1b6d85; color: white;">Резултат</th>
-                                            <th style="background-color: #1b6d85; color: white;">Мерна единица</th>
-                                            <th style="background-color: #1b6d85; color: white;">Норма</th>
+                                            <th style="background-color: #1b6d85; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+</th>
+                                            <th style="background-color: #1b6d85; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['results'];?>
+</th>
+                                            <th style="background-color: #1b6d85; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['unit'];?>
+</th>
+                                            <th style="background-color: #1b6d85; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['referent_norms'];?>
+</th>
                                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data2']->value, 'result', false, 'k');
 if ($_from !== null) {
@@ -303,21 +319,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">Пациент:</td>
+                            <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+:</td>
                             <td>
                                 <input required type="text" name="patient" value="<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['names'];?>
 " size="26">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">ЕГН:</td>
+                            <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
+:</td>
                             <td>
                                 <input type="text" name="idn" value="<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['idn'];?>
 " size="9">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"> Лекар:</td>
+                            <td style="color: white;"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</td>
                             <td>
                                <input list="hosting-plan" value="<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['doctor'];?>
 " type="text" size="12" name='doctor'>
@@ -338,14 +357,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">Дата:</td>
+                            <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+:</td>
                             <td>
                                 <input type="date" name="date" value="<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['date'];?>
 ">
                             </td>
                         </tr>
                         <tr>
-                            <td> <b style="color:red;">Спешно:</b></td>
+                            <td> <b style="color:red;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['cito'];?>
+:</b></td>
                             <td> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['cito'];
 $_prefixVariable12 = ob_get_clean();
@@ -354,20 +375,25 @@ if ($_prefixVariable12 == "on") {?>
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['cito'];
 $_prefixVariable13 = ob_get_clean();
 if ($_prefixVariable13 !== "on") {?>
-                                <input type="checkbox" name="cito"> <?php }?><b style="color:white;">Статус:</b>
+                                <input type="checkbox" name="cito"> <?php }?><b style="color:white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
+:</b>
                                 <select name="over">
                                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['over'];
 $_prefixVariable14 = ob_get_clean();
 if ($_prefixVariable14 == "on") {?>
-                                    <option value="on" selected>Приключен</option>
-                                    <option value="off">Неприключен</option>
+                                    <option value="on" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                                    <option value="off"><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
                                     <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['over'];
 $_prefixVariable15 = ob_get_clean();
 if ($_prefixVariable15 !== "on") {?>
-                                    <option value="on">Приключен</option>
-                                    <option value="off" selected>Неприключен</option>
+                                    <option value="on"><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
+</option>
+                                    <option value="off" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
+</option>
                                     <?php }?>
                                 </select>
                             </td>
@@ -378,7 +404,8 @@ if ($_prefixVariable15 !== "on") {?>
                 </table>
                 <p style="background-color: green; text-align: center;"><?php echo $_smarty_tpl->tpl_vars['ok']->value;?>
 </p>
-                <input type="submit" name="save" value="Запиши променитe">
+                <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
+">
                 </form>
                 <?php } else { ?>
                 <p>

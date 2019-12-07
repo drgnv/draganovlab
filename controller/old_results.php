@@ -12,6 +12,13 @@ $Smarty->compile_dir='../template_c/';
 $var = 'test';
 
 $Basic = new Basic();
+
+//LANGUAGE START
+$def_lang = $Basic->getLanguage();
+include_once "../languages/".$def_lang[0]['default_lang'].".php";
+$Smarty->assign('lang', $language);
+//LANGUAGE STOP
+
 //днешна дата
 $date=date('Y-m-d');
 if(isset($_GET['idn'])){

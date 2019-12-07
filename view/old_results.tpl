@@ -81,8 +81,8 @@
             <tr>
                 <td valign="top" width="30%">
                     <div class="newp" style="width: 350px">
-                        <h3>Предишни резултати</h3>
-                        <b>Пациент: </b>{$data.0.names}
+                        <h3>{$lang.old_results}</h3>
+                        <b>{$lang.patient}: </b>{$data.0.names}
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journa122" class="lp" width="4350">
@@ -90,9 +90,9 @@
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
-                                        <th title="Статус">С</th>
+                                        <th title="{$lang.status}">С</th>
                                         <th>ID</th>
-                                        <th>ДАТА</th>
+                                        <th>{$lang.date}</th>
 
                                     </thead>
                                     <tbody>
@@ -142,16 +142,16 @@
                         {if isset({$data2.0.patient_id}) && {$data2.0.patient_id} >0}
                                <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                        <a style="text-decoration: none; color: white;" href="../controller/print.php?id={$data2.0.patient_id}" target="_blank">
-                            <img src="../images/reqgreen.png" width="20" height="20" title="Принтирай заявка на {$data.0.names}"> ЗАЯВКА
+                            <img src="../images/reqgreen.png" width="20" height="20" title="{$lang.print} {$lang.request} {$data.0.names}"> {$lang.request}
                         </a> |
                         <a style="text-decoration: none; color: white;" href="../controller/resultbyid.php?id={$data2.0.patient_id}" target="_blank">
-                            <img src="../images/results.png" width="20" height="20" title="Принтирай резултати на {$data2.0.names}"> РЕЗУЛТАТИ
+                            <img src="../images/results.png" width="20" height="20" title="{$lang.print} {$lang.results} {$data2.0.names}"> {$lang.results}
                         </a> |
                         <a style="text-decoration: none; color: white;" href="../controller/onlineresults.php?id={$data2.0.patient_id}" target="_blank">
-                            <img src="../images/online.png" width="20" height="20" title="Онлайн достъп на {$data2.0.names}"> ОНЛАЙН ДОСТЪП
+                            <img src="../images/online.png" width="20" height="20" title="Онлайн достъп на {$data2.0.names}"> {$lang.online_cart}
                         </a> |
                         <a style="text-decoration: none; color: white;" href="../controller/laboratory.php?delete={$data2.0.patient_id}" alt="Изтриване" onclick="return confirm('Сигурен ли сте, че искате да изтриете пациент: {$result.names}?')" title="Изтрий {$result.names}">
-                            <img src="../images/delete.png" width="20" height="20" alt="Изтриване"> ИЗТРИВАНЕ
+                            <img src="../images/delete.png" width="20" height="20" alt="Изтриване"> {$lang.delete}
                         </a>
                         <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                         <table>
@@ -159,10 +159,10 @@
                                 <td>
                                     <form autocomplete="off" action="../controller/old_results.php?patient_id={$data2.0.patient_id}&idn={$data2.0.idn}" method="POST" id="form1">
                                         <table class="gridexample" border="1" style="border-collapse: collapse;" cellspacing="0">
-                                            <th style="background-color: #1b6d85; color: white;">Показател</th>
-                                            <th style="background-color: #1b6d85; color: white;">Резултат</th>
-                                            <th style="background-color: #1b6d85; color: white;">Мерна единица</th>
-                                            <th style="background-color: #1b6d85; color: white;">Норма</th>
+                                            <th style="background-color: #1b6d85; color: white;">{$lang.tests}</th>
+                                            <th style="background-color: #1b6d85; color: white;">{$lang.results}</th>
+                                            <th style="background-color: #1b6d85; color: white;">{$lang.unit}</th>
+                                            <th style="background-color: #1b6d85; color: white;">{$lang.referent_norms}</th>
                                             {foreach from=$data2 key=k item=result}
                                             <tr style="background-color: #c6dcff;">
                                                 <td>{$data2.$k.name} </td>
@@ -185,19 +185,19 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">Пациент:</td>
+                            <td style="color: white;">{$lang.patient}:</td>
                             <td>
                                 <input required type="text" name="patient" value="{$data2.0.names}" size="26">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">ЕГН:</td>
+                            <td style="color: white;">{$lang.idn}:</td>
                             <td>
                                 <input type="text" name="idn" value="{$data2.0.idn}" size="9">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"> Лекар:</td>
+                            <td style="color: white;"> {$lang.doctor}:</td>
                             <td>
                                <input list="hosting-plan" value="{$data2.0.doctor}" type="text" size="12" name='doctor'>
                             <datalist id="hosting-plan">
@@ -209,23 +209,23 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">Дата:</td>
+                            <td style="color: white;">{$lang.date}:</td>
                             <td>
                                 <input type="date" name="date" value="{$data2.0.date}">
                             </td>
                         </tr>
                         <tr>
-                            <td> <b style="color:red;">Спешно:</b></td>
+                            <td> <b style="color:red;">{$lang.cito}:</b></td>
                             <td> {if {$data2.0.cito} == "on"}
                                 <input type="checkbox" name="cito" checked> {/if} {if {$data2.0.cito} !== "on"}
-                                <input type="checkbox" name="cito"> {/if}<b style="color:white;">Статус:</b>
+                                <input type="checkbox" name="cito"> {/if}<b style="color:white;">{$lang.status}:</b>
                                 <select name="over">
                                     {if {$data2.0.over} == "on"}
-                                    <option value="on" selected>Приключен</option>
-                                    <option value="off">Неприключен</option>
+                                    <option value="on" selected>{$lang.over}</option>
+                                    <option value="off">{$lang.not_over}</option>
                                     {/if} {if {$data2.0.over} !== "on"}
-                                    <option value="on">Приключен</option>
-                                    <option value="off" selected>Неприключен</option>
+                                    <option value="on">{$lang.over}</option>
+                                    <option value="off" selected>{$lang.not_over}</option>
                                     {/if}
                                 </select>
                             </td>
@@ -235,7 +235,7 @@
                 </tr>
                 </table>
                 <p style="background-color: green; text-align: center;">{$ok}</p>
-                <input type="submit" name="save" value="Запиши променитe">
+                <input type="submit" name="save" value="{$lang.save_btn}">
                 </form>
                 {else}
                 <p>

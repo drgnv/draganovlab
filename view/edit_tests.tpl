@@ -7,7 +7,13 @@
 <script>
     $(document).ready(function() {
         $('#tests').DataTable({
-            "pageLength": 50
+            "pageLength": 10,
+            "paging": false,
+            "scrollY":        "380px",
+            "scrollCollapse": true,
+            "paging":         false,
+            "bInfo" : false,
+            "responsive": true
         });
     });
 </script>
@@ -25,26 +31,28 @@
 
     <div class="center">
         <div class="edit-doctors">
-            <h1 style=" font-size: 25px;">Изследвания</h1> {include file="tests_menu.tpl"}
+            <h1 style=" font-size: 25px;">{$lang.tests}</h1>
+            <l style="text-align: left">
+                <a href="../controller/add_test.php" onclick="window.open('../controller/add_test.php',
+                         'newwindow',
+                         'width=300,height=310')
+          return false;
+          " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">{$lang.add} {$lang.test}</b></a>
+            </l>
+            {include file="tests_menu.tpl"}
 
             <hr>
-            <p style="text-align: left">
-                <a href="../controller/add_test.php" onclick="window.open('../controller/add_test.php', 
-                         'newwindow', 
-                         'width=300,height=310')
-          return false;   
-          " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">Добави изследване</b></a>
-            </p>
+
 
             <table id="tests" class="display">
                 <thead>
                     <tr>
-                        <th>Изследване</th>
+                        <th>{$lang.test}</th>
                         <th>↓</th>
                         <th>↑</th>
                         <th>⚖️</th>
-                        <th>Цена</th>
-                        <th>Действия</th>
+                        <th>{$lang.price}</th>
+                        <th>{$lang.actions}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,11 +68,11 @@
                          'newwindow', 
                          'width=320,height=260');
               return false;" alt="Редактирай резултати">
-                                <img src="../images/edit.png" width="30" height="30" title="Редактирай {$result.names}">
+                                <img src="../images/edit.png" width="30" height="30" title="{$lang.edit} {$result.names}">
 
                             </a>
 
-                            <a style="text-decoration: none;" href="../controller/edit_tests.php?delete={$test.id}" onclick="return confirm('Сигурен ли сте, че искате да изтриете: {$test.name}?')" title="Изтрий {$result.names}"><img src="../images/delete.png" width="25" height="25"></a>
+                            <a style="text-decoration: none;" href="../controller/edit_tests.php?delete={$test.id}" onclick="return confirm('Сигурен ли сте, че искате да изтриете: {$test.name}?')" title="{$lang.delete} {$result.name}"><img src="../images/delete.png" width="25" height="25"></a>
 
                         </td>
                     </tr>

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body style="text-align: center; font-family: monospace">
+<body style="text-align: center; font-family: monospace; background-color: #34495E;color:white;">
     <form action="../controller/add_test.php" method="POST">
         <h2>Добавяне на показател</h2>
         <table border="0" cellspacing="0">

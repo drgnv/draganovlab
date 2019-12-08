@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body style="background-color: #34495E; color:white">
     <div>
         <h3>{$lang.add} {$lang.doctor}</h3>
         <form action="../controller/add_doctor.php" method="POST">
-            <table border="1" cellspacing="0">
+            <table border="0" cellspacing="0">
                 <tr>
                     <td>{$lang.name}:</td>
                     <td>
@@ -38,7 +38,7 @@
             </table>
 
             <p>
-                <input type="submit" value="{$lang.add}">
+                <input type="submit" value="{$lang.add}" style="width: 150px;">
             </p>
         </form>
 

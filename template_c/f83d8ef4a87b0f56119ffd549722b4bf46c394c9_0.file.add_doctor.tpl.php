@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 13:39:26
+/* Smarty version 3.1.32, created on 2019-12-08 10:46:53
   from '/var/www/html/dlab/view/add_doctor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5deb8f6ec18572_04464529',
+  'unifunc' => 'content_5decb87d1c1de5_71286974',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f83d8ef4a87b0f56119ffd549722b4bf46c394c9' => 
     array (
       0 => '/var/www/html/dlab/view/add_doctor.tpl',
-      1 => 1575718764,
+      1 => 1575794809,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5deb8f6ec18572_04464529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5decb87d1c1de5_71286974 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -31,13 +31,13 @@ function content_5deb8f6ec18572_04464529 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body style="background-color: #34495E; color:white">
     <div>
         <h3><?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
 </h3>
         <form action="../controller/add_doctor.php" method="POST">
-            <table border="1" cellspacing="0">
+            <table border="0" cellspacing="0">
                 <tr>
                     <td><?php echo $_smarty_tpl->tpl_vars['lang']->value['name'];?>
 :</td>
@@ -70,7 +70,7 @@ function content_5deb8f6ec18572_04464529 (Smarty_Internal_Template $_smarty_tpl)
 
             <p>
                 <input type="submit" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
-">
+" style="width: 150px;">
             </p>
         </form>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-05 22:19:09
+/* Smarty version 3.1.32, created on 2019-12-08 11:05:58
   from '/var/www/html/dlab/view/edit_tests.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de9663d39bc05_62051897',
+  'unifunc' => 'content_5decbcf61f9033_18430991',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '32b3ad80d087a809c185b65fdb21435bb18072f2' => 
     array (
       0 => '/var/www/html/dlab/view/edit_tests.tpl',
-      1 => 1558695016,
+      1 => 1575795957,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de9663d39bc05_62051897 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5decbcf61f9033_18430991 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -41,7 +41,13 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 >
     $(document).ready(function() {
         $('#tests').DataTable({
-            "pageLength": 50
+            "pageLength": 10,
+            "paging": false,
+            "scrollY":        "380px",
+            "scrollCollapse": true,
+            "paging":         false,
+            "bInfo" : false,
+            "responsive": true
         });
     });
 <?php echo '</script'; ?>
@@ -62,27 +68,35 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
     <div class="center">
         <div class="edit-doctors">
-            <h1 style=" font-size: 25px;">Изследвания</h1> <?php $_smarty_tpl->_subTemplateRender("file:tests_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+            <h1 style=" font-size: 25px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['tests'];?>
+</h1>
+            <l style="text-align: left">
+                <a href="../controller/add_test.php" onclick="window.open('../controller/add_test.php',
+                         'newwindow',
+                         'width=300,height=310')
+          return false;
+          " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white"><?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
+</b></a>
+            </l>
+            <?php $_smarty_tpl->_subTemplateRender("file:tests_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
             <hr>
-            <p style="text-align: left">
-                <a href="../controller/add_test.php" onclick="window.open('../controller/add_test.php', 
-                         'newwindow', 
-                         'width=300,height=310')
-          return false;   
-          " ; style="text-decoration: none;"> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">Добави изследване</b></a>
-            </p>
+
 
             <table id="tests" class="display">
                 <thead>
                     <tr>
-                        <th>Изследване</th>
+                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
+</th>
                         <th>↓</th>
                         <th>↑</th>
                         <th>⚖️</th>
-                        <th>Цена</th>
-                        <th>Действия</th>
+                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['price'];?>
+</th>
+                        <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['actions'];?>
+</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -115,14 +129,16 @@ echo $_prefixVariable2;?>
                          'newwindow', 
                          'width=320,height=260');
               return false;" alt="Редактирай резултати">
-                                <img src="../images/edit.png" width="30" height="30" title="Редактирай <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
+                                <img src="../images/edit.png" width="30" height="30" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['edit'];?>
+ <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 ">
 
                             </a>
 
                             <a style="text-decoration: none;" href="../controller/edit_tests.php?delete=<?php echo $_smarty_tpl->tpl_vars['test']->value['id'];?>
 " onclick="return confirm('Сигурен ли сте, че искате да изтриете: <?php echo $_smarty_tpl->tpl_vars['test']->value['name'];?>
-?')" title="Изтрий <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
+?')" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['delete'];?>
+ <?php echo $_smarty_tpl->tpl_vars['result']->value['name'];?>
 "><img src="../images/delete.png" width="25" height="25"></a>
 
                         </td>

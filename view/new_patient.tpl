@@ -146,7 +146,7 @@
                             <input required type="date" name="date" value="{$date}" style="width: 135px">
                                 | &nbsp&nbsp
 
-                            <input type="submit" name="record" style="border: none; background-color: #ff9b30; width: 80px;height: 25px; font-weight: bold; font-size: 14px" value="&#10133; {$lang.add}">&nbsp&nbsp |
+                            <input type="submit" name="record" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px" value="&#10133; {$lang.add}">&nbsp&nbsp |
                             <a href="../controller/print.php?id={$patient_id}" target="_blank" style="text-decoration: none;"><img src="../images/print.png" width="24" height="24"><b style="font-size: 13px; color: white;">{$lang.print} {$lang.request}</b></a>
 
                     </form>

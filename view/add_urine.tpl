@@ -2,23 +2,23 @@
 
 <head>
 
-    <title>Добавяне на показател към ПКК</title>
+    <title>{$lang.add} {$lang.test} {$lang.utirine}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body style="text-align: center; font-family: monospace">
+<body style="background-color: #34495E; color:white;text-align: center; font-family: monospace">
     <form action="../controller/add_urine.php" method="POST">
-        <h2>Добавяне на показател към Урина - Химично изследване</h2>
+        <h2>{$lang.add} {$lang.test} {$lang.urine}</h2>
         <table border="0" cellspacing="0">
             <tr>
-                <td style="text-align: right; font-family: monospace"><b>Показател:</b> </td>
+                <td style="text-align: right; font-family: monospace"><b>{$lang.test}:</b> </td>
                 <td>
-                    <input type="text" name="name" value="{$test.0.name}">
+                    <input type="text" name="name" value="{$test.0.name}" required>
                 </td>
             </tr>
 
             <tr>
-                <td style="text-align: right;font-family: monospace"><b>Мерна единица:</b> </td>
+                <td style="text-align: right;font-family: monospace"><b>{$lang.unit}:</b> </td>
                 <td>
                     <input type="text" name="unit" value="{$test.0.unit}">
                 </td>
@@ -26,9 +26,9 @@
         </table>
         <br>
         <center style="font-family: monospace">
-            <b style="font-family: monospace">Референтен интервал</b>
-            <br> от:
-            <input type="text" name="up" size="3"> | до:
+            <b style="font-family: monospace">{$lang.referent_norms}</b>
+            <br> {$lang.from}:
+            <input type="text" name="up" size="3"> | to:
             <input type="text" name="down" size="3">
             <br>
             <br>

@@ -13,7 +13,7 @@
             <tr>
                 <td style="text-align: right; font-family: monospace"><b>Изследване:</b> </td>
                 <td>
-                    <input type="text" name="name" value="{$test.0.name}">
+                    <input type="text" name="name" value="{$test.0.name}" required>
                 </td>
             </tr>
             <tr>

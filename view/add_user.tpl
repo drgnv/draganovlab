@@ -3,16 +3,16 @@
     <form action="../controller/add_user.php" method="POST">
         </p>
         <p>
-            <input name="new_name" type="text" placeholder="Имена" maxlength="30">
+            <input name="new_name" type="text" placeholder="Имена" maxlength="30" required>
         </p>
         <p>
-            <input name="new_username" type="text" placeholder="Потребителско име" maxlength="20">
+            <input name="new_username" type="text" placeholder="Потребителско име" maxlength="20" required>
         </p>
         <p>
-            <input name="new_password" type="password" placeholder="Парола" maxlength="20">
+            <input name="new_password" type="password" placeholder="Парола" maxlength="20" required>
         </p>
         <p>
-            <input name="new_password2" type="password" placeholder="Повтори парола" maxlength="20">
+            <input name="new_password2" type="password" placeholder="Повтори парола" maxlength="20" required>
         </p>
         <p> <b style="font-family: fantasy; font-size: 14px;">Ниво: </b>
             <select placeholder="1" name="lvl">

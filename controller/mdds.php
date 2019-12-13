@@ -132,7 +132,7 @@ if(isset($_POST['save'])){
      $Mdds->updateMdd($_SESSION['mdd_id'], $out_date, $complete_date, $num_mdd, $al_num, $doctor_id,
             $rzc_code, $mkb, $mkb2, $mdd_type, $paket, $code1t, $code2t, $code3t, 
             $code4t, $code5t, $code6t, $code1, $code2, $nzok, $patient_idn, $patient_names, $patient_id);
-    header('Location: mdds.php?mdd_id='.$_SESSION['mdd_id'].'&patient_id='.$_GET['patient_id'].'&from='.$from_date.'&to='.$to_date.'&searchbydate=Търси...');
+    header('Location: mdds.php?updated='.$language['saved_msg'].'&mdd_id='.$_SESSION['mdd_id'].'&patient_id='.$_GET['patient_id'].'&from='.$from_date.'&to='.$to_date.'&searchbydate=Търси...');
     
 }
 
@@ -148,6 +148,7 @@ $Smarty->assign('dayList', $dayList);
 $Smarty->assign('doctors', $doctors);
 $Smarty->assign('dayr', $dayResults);
 $Smarty->assign('date', $date);
+$Smarty->assign('updated', $_GET['updated']);
 
 $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-11-29 21:19:30
+/* Smarty version 3.1.32, created on 2019-12-13 21:19:15
   from '/var/www/html/dlab/view/mdds.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5de16f42b3aae6_65676224',
+  'unifunc' => 'content_5df3e433e2dca0_27787469',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '216a5f6b1c85c94c4c081db40f1cab10fdb343bc' => 
     array (
       0 => '/var/www/html/dlab/view/mdds.tpl',
-      1 => 1575055169,
+      1 => 1576264754,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de16f42b3aae6_65676224 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df3e433e2dca0_27787469 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -334,7 +334,7 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
 ?></td>
                             </tr>
                             <tr>
-                                <!--===========РЕДАКТИРАНЕ НА НАПРАВЛЕНИЕ НАЧАЛО=========-->
+                                <!--===========EDIT MDD=========-->
                                 <td width="810px">
                                     <?php if ($_smarty_tpl->tpl_vars['mdd_is_set']->value == true) {?> 
                                     <form action="./mdds.php?mdd_id=<?php echo $_smarty_tpl->tpl_vars['mddid']->value;?>
@@ -360,28 +360,32 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <i style="color: white;">Издадено:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['issued'];?>
+:</i>
                                                 </td>
                                                 <td>
                                                     <input name="out_date" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['out_date'];?>
 " style="width: 120px" type="date">
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;">Изпълнено:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['done'];?>
+:</i>
                                                 </td>
                                                 <td>
                                                     <input name="complete_date" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['complete_date'];?>
 " style="width: 120px" type="date">
                                                 </td>
                                                 <td align="right" style="width: 75px">
-                                                    <i style="color: white;">НМДД: </i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['nmdd'];?>
+: </i>
                                                 </td>
                                                 <td>
                                                     <input name="nmdd" style="width: 97px" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['num_mdd'];?>
 " type="text">
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;"> АЛ №:</i>
+                                                    <i style="color: white;"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['al'];?>
+ №:</i>
                                                 </td>
                                                 <td>
                                                     <input name="alnum" style="width: 50px" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['al_num'];?>
@@ -390,7 +394,8 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                                             </tr>
                                             <tr>
                                                 <td align="right">
-                                                    <i style="color: white;">Лекар:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+:</i>
                                                 </td>
                                                 <td>
                                                     <select name="doctor_id">
@@ -414,19 +419,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;">Код:</i>
+                                                    
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['code'];?>
+:</i>
                                                     <input name="code1" style="width: 40px" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['code1'];?>
 " type="text">
                                                 </td>
 
                                                 <td align="right">
-                                                    <i style="color: white;">УИН:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['uin'];?>
+:</i>
                                                     <input name="uin" style="width: 100px" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['uin'];?>
 " type="text">
                                                 </td>
 
                                                 <td align="right">
-                                                    <i style="color: white;">РЗЦ Код:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['rzc'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['code'];?>
+:</i>
                                                 </td>
                                                 <td>
                                                     <input name="rzc_code" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['rzk'];?>
@@ -435,16 +445,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </tr>
                                             <tr>
                                                 <td colspan="2">
-                                                    <i style="color: white;">Зам. / Нает:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['zam_naet'];?>
+:</i>
                                                     <input name="zam_naet" style="width: 100px" type="text">
                                                 </td>
                                                 <td align="right" colspan="2">
-                                                    <i style="color: white;">УИН Зам. / Нает:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['uin'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['zam_naet'];?>
+:</i>
 
                                                     <input name="uin_zam_naet" style="width: 100px" type="text">
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;">НЗОК №:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['nzok'];?>
+ №:</i>
                                                 </td>
                                                 <td>
                                                     <input name="nzok" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['nzok_num'];?>
@@ -453,7 +467,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </tr>
                                             <tr>
                                                 <td align="right" colspan="3">
-                                                    <i style="color: white;">Извършено от външна лаборатория:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['done'];?>
+  <?php echo $_smarty_tpl->tpl_vars['lang']->value['laboratory'];?>
+:</i>
                                                 </td>
                                                 <td colspan="4">
                                                     <input name="uin_zam_naet" style="width: 400px" type="text">
@@ -461,7 +477,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </tr>
                                             <tr>
                                                 <td align="right">
-                                                    <i style="color: white;">МКБ 10:</i>
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['mkb'];?>
+ 10:</i>
                                                 </td>
                                                 <td colspan="4">
                                                     <input name="mkb" style="width: 45px" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['mkb'];?>
@@ -484,10 +501,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                 <td align="right" style="color: white">Пакет:</td>
                                                 <td>
                                                     <select name="paket">
-                                                        <option value="1">Пакет клинична лаборатория</option>
+                                                        <option value="1"><?php echo $_smarty_tpl->tpl_vars['lang']->value['pack'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['clinical'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['laboratory'];?>
+</option>
                                                     </select>
                                                 </td>
-                                                <td align="right" style="color: white">Код:</td>
+                                                <td align="right" style="color: white"><?php echo $_smarty_tpl->tpl_vars['lang']->value['code'];?>
+:</td>
                                                 <td colspan="3">
                                                     <input type="number" name="code2" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['code2'];?>
 " style="width: 40px;">
@@ -518,7 +539,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </tr>
                                             <tr>
                                                 <td colspan="5">
-                                                    <i style="color: white;">Код по назначени изследвания:
+                                                    <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['codes_by_tests'];?>
+:
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -549,6 +571,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <div style="background-color: green;color: white;"><?php echo $_smarty_tpl->tpl_vars['updated']->value;?>
+</div>
                                                     <input type="submit" name="save" value="Запиши">
                                                 </td>
                                             </tr>

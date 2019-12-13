@@ -96,5 +96,6 @@ $language = array(
     "urine"=>'Urine',
     "cbc"=>"CBC",
     "electro"=>'Electrolytes',
+    "codes_by_tests"=>'Assigned test code',
     "cbc_full"=>'Full Blood Count'
 );

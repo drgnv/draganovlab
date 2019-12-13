@@ -368,7 +368,7 @@
                         </tr>
                     </table>
                     <br>
-                    <input type="submit" name="save" value="{$lang.save_btn}">
+                    <input type="submit" name="save" value="{$lang.save_btn}" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">
                     </form>
 
                     <table>

@@ -222,7 +222,7 @@
                                 <td>{include file="mdd_menu.tpl"}</td>
                             </tr>
                             <tr>
-                                <!--===========РЕДАКТИРАНЕ НА НАПРАВЛЕНИЕ НАЧАЛО=========-->
+                                <!--===========EDIT MDD=========-->
                                 <td width="810px">
                                     {if $mdd_is_set == true} 
                                     <form action="./mdds.php?mdd_id={$mddid}&patient_id={$data.0.patient_id}&from={$from_date}&to={$to_date}&searchbydate=Търси..." method="post">
@@ -240,25 +240,25 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <i style="color: white;">Издадено:</i>
+                                                    <i style="color: white;">{$lang.issued}:</i>
                                                 </td>
                                                 <td>
                                                     <input name="out_date" value="{$mdd.0.out_date}" style="width: 120px" type="date">
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;">Изпълнено:</i>
+                                                    <i style="color: white;">{$lang.done}:</i>
                                                 </td>
                                                 <td>
                                                     <input name="complete_date" value="{$mdd.0.complete_date}" style="width: 120px" type="date">
                                                 </td>
                                                 <td align="right" style="width: 75px">
-                                                    <i style="color: white;">НМДД: </i>
+                                                    <i style="color: white;">{$lang.nmdd}: </i>
                                                 </td>
                                                 <td>
                                                     <input name="nmdd" style="width: 97px" value="{$mdd.0.num_mdd}" type="text">
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;"> АЛ №:</i>
+                                                    <i style="color: white;"> {$lang.al} №:</i>
                                                 </td>
                                                 <td>
                                                     <input name="alnum" style="width: 50px" value="{$mdd.0.al_num}" type="text">
@@ -266,7 +266,7 @@
                                             </tr>
                                             <tr>
                                                 <td align="right">
-                                                    <i style="color: white;">Лекар:</i>
+                                                    <i style="color: white;">{$lang.doctor}:</i>
                                                 </td>
                                                 <td>
                                                     <select name="doctor_id">
@@ -279,17 +279,18 @@
 
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;">Код:</i>
+                                                    
+                                                    <i style="color: white;">{$lang.code}:</i>
                                                     <input name="code1" style="width: 40px" value="{$mdd.0.code1}" type="text">
                                                 </td>
 
                                                 <td align="right">
-                                                    <i style="color: white;">УИН:</i>
+                                                    <i style="color: white;">{$lang.uin}:</i>
                                                     <input name="uin" style="width: 100px" value="{$mdd.0.uin}" type="text">
                                                 </td>
 
                                                 <td align="right">
-                                                    <i style="color: white;">РЗЦ Код:</i>
+                                                    <i style="color: white;">{$lang.rzc} {$lang.code}:</i>
                                                 </td>
                                                 <td>
                                                     <input name="rzc_code" value="{$mdd.0.rzk}" style="width: 100px" type="text">
@@ -297,16 +298,16 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="2">
-                                                    <i style="color: white;">Зам. / Нает:</i>
+                                                    <i style="color: white;">{$lang.zam_naet}:</i>
                                                     <input name="zam_naet" style="width: 100px" type="text">
                                                 </td>
                                                 <td align="right" colspan="2">
-                                                    <i style="color: white;">УИН Зам. / Нает:</i>
+                                                    <i style="color: white;">{$lang.uin} {$lang.zam_naet}:</i>
 
                                                     <input name="uin_zam_naet" style="width: 100px" type="text">
                                                 </td>
                                                 <td align="right">
-                                                    <i style="color: white;">НЗОК №:</i>
+                                                    <i style="color: white;">{$lang.nzok} №:</i>
                                                 </td>
                                                 <td>
                                                     <input name="nzok" value="{$mdd.0.nzok_num}" style="width: 100px" type="text">
@@ -314,7 +315,7 @@
                                             </tr>
                                             <tr>
                                                 <td align="right" colspan="3">
-                                                    <i style="color: white;">Извършено от външна лаборатория:</i>
+                                                    <i style="color: white;">{$lang.done}  {$lang.laboratory}:</i>
                                                 </td>
                                                 <td colspan="4">
                                                     <input name="uin_zam_naet" style="width: 400px" type="text">
@@ -322,7 +323,7 @@
                                             </tr>
                                             <tr>
                                                 <td align="right">
-                                                    <i style="color: white;">МКБ 10:</i>
+                                                    <i style="color: white;">{$lang.mkb} 10:</i>
                                                 </td>
                                                 <td colspan="4">
                                                     <input name="mkb" style="width: 45px" value="{$mdd.0.mkb}" type="text">
@@ -343,10 +344,10 @@
                                                 <td align="right" style="color: white">Пакет:</td>
                                                 <td>
                                                     <select name="paket">
-                                                        <option value="1">Пакет клинична лаборатория</option>
+                                                        <option value="1">{$lang.pack} {$lang.clinical} {$lang.laboratory}</option>
                                                     </select>
                                                 </td>
-                                                <td align="right" style="color: white">Код:</td>
+                                                <td align="right" style="color: white">{$lang.code}:</td>
                                                 <td colspan="3">
                                                     <input type="number" name="code2" value="{$mdd.0.code2}" style="width: 40px;">
                                                     <i style="color: white">Тип НМДД:</i>
@@ -363,7 +364,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="5">
-                                                    <i style="color: white;">Код по назначени изследвания:
+                                                    <i style="color: white;">{$lang.codes_by_tests}:
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -387,6 +388,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <div style="background-color: green;color: white;">{$updated}</div>
                                                     <input type="submit" name="save" value="Запиши">
                                                 </td>
                                             </tr>

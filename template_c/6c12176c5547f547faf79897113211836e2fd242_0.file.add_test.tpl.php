@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-08 10:50:30
+/* Smarty version 3.1.32, created on 2019-12-13 21:30:34
   from '/var/www/html/dlab/view/add_test.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5decb956af6378_95283581',
+  'unifunc' => 'content_5df3e6da31acc0_02973832',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c12176c5547f547faf79897113211836e2fd242' => 
     array (
       0 => '/var/www/html/dlab/view/add_test.tpl',
-      1 => 1575795020,
+      1 => 1575901431,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5decb956af6378_95283581 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df3e6da31acc0_02973832 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -37,7 +37,7 @@ function content_5decb956af6378_95283581 (Smarty_Internal_Template $_smarty_tpl)
                 <td style="text-align: right; font-family: monospace"><b>Изследване:</b> </td>
                 <td>
                     <input type="text" name="name" value="<?php echo $_smarty_tpl->tpl_vars['test']->value[0]['name'];?>
-">
+" required>
                 </td>
             </tr>
             <tr>

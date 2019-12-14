@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body>
+<body style="background-color: #34495E; color:white;text-align: center; font-family: monospace">
     <form action="../controller/edit_test.php?id={$test.0.id}" method="POST">
         <table border="0" cellspacing="0">
             <tr>

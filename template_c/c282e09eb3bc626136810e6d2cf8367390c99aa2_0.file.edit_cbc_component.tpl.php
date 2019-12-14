@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 22:59:17
+/* Smarty version 3.1.32, created on 2019-12-13 21:32:34
   from '/var/www/html/dlab/view/edit_cbc_component.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dec12a5e43054_47109535',
+  'unifunc' => 'content_5df3e7524953d1_10450164',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c282e09eb3bc626136810e6d2cf8367390c99aa2' => 
     array (
       0 => '/var/www/html/dlab/view/edit_cbc_component.tpl',
-      1 => 1558695016,
+      1 => 1576265547,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dec12a5e43054_47109535 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df3e7524953d1_10450164 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -30,7 +30,7 @@ function content_5dec12a5e43054_47109535 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body>
+<body style="background-color: #34495E; color:white;text-align: center; font-family: monospace">
     <form action="../controller/edit_cbc_component.php?id=<?php echo $_smarty_tpl->tpl_vars['test']->value[0]['id'];?>
 " method="POST">
         <table border="0" cellspacing="0">

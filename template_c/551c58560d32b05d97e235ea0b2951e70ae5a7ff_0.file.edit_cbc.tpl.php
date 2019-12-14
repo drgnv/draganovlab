@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 22:58:54
+/* Smarty version 3.1.32, created on 2019-12-13 21:41:53
   from '/var/www/html/dlab/view/edit_cbc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dec128eac2c36_99381622',
+  'unifunc' => 'content_5df3e981683087_11272880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '551c58560d32b05d97e235ea0b2951e70ae5a7ff' => 
     array (
       0 => '/var/www/html/dlab/view/edit_cbc.tpl',
-      1 => 1575752334,
+      1 => 1576266112,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dec128eac2c36_99381622 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df3e981683087_11272880 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -121,13 +121,15 @@ echo $_prefixVariable2;?>
                          'width=320,height=260');
               return false;" alt="Редактирай резултати">
                                 <img src="../images/edit.png" width="30" height="30" title="Редактирай <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
-"> Редактиране
+"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['edit'];?>
+
                             </a>
 
                             <a style="text-decoration: none;" href="../controller/edit_cbc.php?delete=<?php echo $_smarty_tpl->tpl_vars['test']->value['id'];?>
 " onclick="return confirm('Сигурен ли сте, че искате да изтриете: <?php echo $_smarty_tpl->tpl_vars['test']->value['name'];?>
 ?')" title="Изтрий <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
-"><img src="../images/delete.png" width="25" height="25"> Изтриване</a>
+"><img src="../images/delete.png" width="25" height="25"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['delete'];?>
+</a>
 
                         </td>
                     </tr>

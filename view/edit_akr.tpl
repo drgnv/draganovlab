@@ -64,7 +64,7 @@
                                 <img src="../images/edit.png" width="30" height="30" title="Редактирай {$result.names}">{$lang.edit}
                             </a>
 
-                            <a style="text-decoration: none;" href="../controller/edit_akr.php?delete={$test.id}" onclick="return confirm('{$lang.delete_warning}: {$test.name}?')" title="Изтрий {$result.names}"><img src="../images/delete.png" width="25" height="25">{$lang.edit}</a>
+                            <a style="text-decoration: none;" href="../controller/edit_akr.php?delete={$test.id}" onclick="return confirm('{$lang.delete_warning}: {$test.name}?')" title="Изтрий {$result.names}"><img src="../images/delete.png" width="25" height="25">{$lang.delete}</a>
 
                         </td>
                     </tr>

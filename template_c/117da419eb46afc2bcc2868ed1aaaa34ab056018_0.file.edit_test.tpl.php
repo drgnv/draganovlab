@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-08 10:59:04
+/* Smarty version 3.1.32, created on 2019-12-13 21:31:54
   from '/var/www/html/dlab/view/edit_test.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5decbb58412944_59014898',
+  'unifunc' => 'content_5df3e72ab85a90_26545441',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '117da419eb46afc2bcc2868ed1aaaa34ab056018' => 
     array (
       0 => '/var/www/html/dlab/view/edit_test.tpl',
-      1 => 1558695016,
+      1 => 1576265498,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5decbb58412944_59014898 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df3e72ab85a90_26545441 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -30,7 +30,7 @@ function content_5decbb58412944_59014898 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body>
+<body style="background-color: #34495E; color:white;text-align: center; font-family: monospace">
     <form action="../controller/edit_test.php?id=<?php echo $_smarty_tpl->tpl_vars['test']->value[0]['id'];?>
 " method="POST">
         <table border="0" cellspacing="0">

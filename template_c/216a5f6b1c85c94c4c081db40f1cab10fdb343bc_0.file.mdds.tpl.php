@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:58:05
+/* Smarty version 3.1.32, created on 2019-12-14 14:34:51
   from '/var/www/html/dlab/view/mdds.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4c03d365871_26733871',
+  'unifunc' => 'content_5df4d6eb95b472_17950254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '216a5f6b1c85c94c4c081db40f1cab10fdb343bc' => 
     array (
       0 => '/var/www/html/dlab/view/mdds.tpl',
-      1 => 1576321083,
+      1 => 1576326890,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df4c03d365871_26733871 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4d6eb95b472_17950254 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -333,6 +333,7 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
                             <tr>
                                 <td><?php $_smarty_tpl->_subTemplateRender("file:mdd_menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?></td>
+
                             </tr>
                             <tr>
                                 <!--===========EDIT MDD=========-->
@@ -404,9 +405,10 @@ if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['doctors']->value, 'doctor');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['doctor']->value) {
-?> <?php if ($_smarty_tpl->tpl_vars['mdd']->value[0]['doctor_id'] == $_smarty_tpl->tpl_vars['doctor']->value['id']) {?>
+?>
+                                                            <?php if ($_smarty_tpl->tpl_vars['mdd']->value[0]['doctor_id'] == $_smarty_tpl->tpl_vars['doctor']->value['doctor_id']) {?>
                                                         <option value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor_id'];?>
-" selected="true"><?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
+" selected><?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
 </option>
                                                         <?php } else { ?>
                                                         <option value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor_id'];?>

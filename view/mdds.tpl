@@ -221,6 +221,7 @@
                         <table border="0">
                             <tr>
                                 <td>{include file="mdd_menu.tpl"}</td>
+
                             </tr>
                             <tr>
                                 <!--===========EDIT MDD=========-->
@@ -271,8 +272,9 @@
                                                 </td>
                                                 <td>
                                                     <select name="doctor_id">
-                                                        {foreach from=$doctors item=doctor} {if $mdd.0.doctor_id == $doctor.id}
-                                                        <option value="{$doctor.doctor_id}" selected="true">{$doctor.doctor}</option>
+                                                        {foreach from=$doctors item=doctor}
+                                                            {if $mdd.0.doctor_id == $doctor.doctor_id}
+                                                        <option value="{$doctor.doctor_id}" selected>{$doctor.doctor}</option>
                                                         {else}
                                                         <option value="{$doctor.doctor_id}">{$doctor.doctor}</option>
                                                         {/if} {/foreach}

@@ -24,7 +24,7 @@
     {include file="side_menu.tpl"}
     <div class="center">
         <div class="edit-doctors">
-            <h1 style=" font-size: 25px;">Потребители</h1>
+            <h1 style=" font-size: 25px;">{$lang.users}</h1>
             <hr>
 
             <p style="text-align: left">
@@ -32,15 +32,15 @@
                          'newwindow', 
                          'width=240,height=380')
           return false;   
-          " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">Добави потребител</b></a>
+          " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">{$lang.add} {$lang.user}</b></a>
             </p>
 
             <table id="journal" class="display">
                 <thead>
                     <tr>
-                        <th>Потребител</th>
-                        <th>Права</th>
-                        <th>Действия</th>
+                        <th>{$lang.users}</th>
+                        <th>{$lang.rights}</th>
+                        <th>{$lang.actions}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,10 +55,10 @@
                             <a href="../controller/edit_user.php?user_id={{$user.id}}" onclick="window.open('../controller/edit_user.php?user_id={{$user.id}}',
                                    'newwindow',
                                    'width=300,height=350');
-                                   return false;" alt="Редактирай" style="text-decoration: none;"><img src="../images/edit.png" width="20" height="20">Редактиране </a>
+                                   return false;" alt="Редактирай" style="text-decoration: none;"><img src="../images/edit.png" width="20" height="20">{$lang.edit}</a>
 
                             <a style="text-decoration: none;" href="../controller/users.php?delete_user={$user.id}" onclick="return confirm('Сигурен ли сте, че искате да изтриете потребител: {$user.name}?')">
-                                <img width="20" height="20" src="../images/delete.png">Изтриване</a>
+                                <img width="20" height="20" src="../images/delete.png">{$lang.delete}</a>
                         </td>
                     </tr>
                     {/foreach}

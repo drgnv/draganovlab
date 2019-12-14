@@ -12,6 +12,11 @@ $Smarty->compile_dir='../template_c/';
 
 $Settings = new Settings();
 $Settings->accessControl($_SESSION['user_info'][0]['lvl']);
+//LANGUAGE START
+$def_lang = $Settings->getLanguage();
+include_once "../languages/".$def_lang[0]['default_lang'].".php";
+$Smarty->assign('lang', $language);
+//LANGUAGE STOP
 $users = $Settings->getUsers();
 
 if(isset($_GET['delete_user'])){

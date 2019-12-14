@@ -161,7 +161,8 @@
                                     </td>
                                 </tr>
                             </table>
-                        </center>
+                        </center><img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
+
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journa122" class="lp" width="4350">
@@ -341,7 +342,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="right" style="color: white">Пакет:</td>
+                                                <td align="right" style="color: white">{$lang.pack}:</td>
                                                 <td>
                                                     <select name="paket">
                                                         <option value="1">{$lang.pack} {$lang.clinical} {$lang.laboratory}</option>
@@ -350,7 +351,7 @@
                                                 <td align="right" style="color: white">{$lang.code}:</td>
                                                 <td colspan="3">
                                                     <input type="number" name="code2" value="{$mdd.0.code2}" style="width: 40px;">
-                                                    <i style="color: white">Тип НМДД:</i>
+                                                    <i style="color: white">{$lang.type} {$lang.nmdd}:</i>
 
                                                     <select name="mdd_type" style="width: 200px">
                                                         {foreach from=$mdd_types item=mdd_type} {if $mdd.0.type_mdd_id == $mdd_type.id}
@@ -368,11 +369,11 @@
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                                            Такса Б.М.
+                                                            {$lang.fee} Б.М.
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                                            Обща цена</i>
+                                                            {$lang.price}</i>
                                                     <br>
                                                     <input type="text" name="code1t" value="{$mdd.0.test_code1}" style="width: 40px;">&nbsp;&nbsp;
                                                     <input type="text" name="code2t" value="{$mdd.0.test_code2}" style="width: 40px;">&nbsp;&nbsp;
@@ -389,7 +390,7 @@
                                             <tr>
                                                 <td>
                                                     <div style="background-color: green;color: white;">{$updated}</div>
-                                                    <input type="submit" name="save" value="Запиши">
+                                                    <input type="submit" name="save" value="{$lang.save_btn}">
                                                 </td>
                                             </tr>
                                         </table>
@@ -404,7 +405,7 @@
                                         <div id="table-scroll">
                                             <table id="journa122" class="lp" width="50">
                                                 <thead>
-                                                    <th>Дата</th>
+                                                    <th>{$lang.date}</th>
                                                 </thead>
                                                 <tbody>
                                                     {foreach from=$mdds item=mdd}

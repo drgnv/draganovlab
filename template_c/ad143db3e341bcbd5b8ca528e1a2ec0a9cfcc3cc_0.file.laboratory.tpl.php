@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-13 21:23:54
+/* Smarty version 3.1.32, created on 2019-12-14 12:57:36
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df3e54a151361_78646897',
+  'unifunc' => 'content_5df4c0207ed2f9_19597735',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1576265027,
+      1 => 1576321054,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df3e54a151361_78646897 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4c0207ed2f9_19597735 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -251,6 +251,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                 </tr>
                             </table>
                         </center>
+                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journa122" class="lp" width="4350">

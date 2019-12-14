@@ -33,7 +33,7 @@
           return false;
           " ;> <img src="../images/add.png" width="25" height="25"> <b style="font-size: 18px; color: white">{$lang.add} {$lang.doctor}</b></a>
             <h3>{$lang.doctors}</h3></p>
-
+        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();">
         <table id="doctors" class="display">
             <thead>
                 <tr>

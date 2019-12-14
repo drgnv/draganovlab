@@ -184,6 +184,7 @@
                                 </tr>
                             </table>
                         </center>
+                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journa122" class="lp" width="4350">

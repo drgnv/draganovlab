@@ -62,7 +62,7 @@ if(isset($_POST['save'])){
     }
 
     $Basic->updatePatient($patient);
-    header("Location: old_results.php?patient_id=".$patient['id']."&itsok=Промените са приложени успешно!&idn=".$patient['idn']."");
+    header("Location: old_results.php?patient_id=".$patient['id']."&itsok=".$language['saved_msg']."!&idn=".$patient['idn']."");
 }
 
 $doctors=$Basic->getAllDoctors();

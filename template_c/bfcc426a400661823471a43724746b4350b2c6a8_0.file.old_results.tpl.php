@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-08 13:05:40
+/* Smarty version 3.1.32, created on 2019-12-14 12:31:33
   from '/var/www/html/dlab/view/old_results.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5decd90496a8e3_64295270',
+  'unifunc' => 'content_5df4ba05892760_84773569',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5decd90496a8e3_64295270 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4ba05892760_84773569 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->

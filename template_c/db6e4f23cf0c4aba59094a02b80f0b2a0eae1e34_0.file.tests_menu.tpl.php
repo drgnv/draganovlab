@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 22:56:27
+/* Smarty version 3.1.32, created on 2019-12-14 13:00:25
   from '/var/www/html/dlab/view/tests_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dec11fb5e0651_78462561',
+  'unifunc' => 'content_5df4c0c92f8f21_92123552',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dec11fb5e0651_78462561 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4c0c92f8f21_92123552 (Smarty_Internal_Template $_smarty_tpl) {
 ?><a id="redline" style="color: white; text-decoration: none; font-size: 15px;" href="../controller/edit_cbc.php">
     <img src="../images/cbc.png" width="25px" height="25px"><?php echo $_smarty_tpl->tpl_vars['lang']->value['edit'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['cbc'];?>

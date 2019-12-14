@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-07 13:54:46
+/* Smarty version 3.1.32, created on 2019-12-14 13:00:20
   from '/var/www/html/dlab/view/edit_doctors.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5deb9306d8f753_78254807',
+  'unifunc' => 'content_5df4c0c4378652_98309820',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '27fb00a1b66dbd5ff904eb2d7e15c577d328ca66' => 
     array (
       0 => '/var/www/html/dlab/view/edit_doctors.tpl',
-      1 => 1575719685,
+      1 => 1576321219,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5deb9306d8f753_78254807 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4c0c4378652_98309820 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -74,7 +74,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </b></a>
             <h3><?php echo $_smarty_tpl->tpl_vars['lang']->value['doctors'];?>
 </h3></p>
-
+        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();">
         <table id="doctors" class="display">
             <thead>
                 <tr>

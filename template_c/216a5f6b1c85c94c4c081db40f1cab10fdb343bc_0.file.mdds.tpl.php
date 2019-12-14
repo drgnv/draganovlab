@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-13 21:19:15
+/* Smarty version 3.1.32, created on 2019-12-14 12:58:05
   from '/var/www/html/dlab/view/mdds.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df3e433e2dca0_27787469',
+  'unifunc' => 'content_5df4c03d365871_26733871',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '216a5f6b1c85c94c4c081db40f1cab10fdb343bc' => 
     array (
       0 => '/var/www/html/dlab/view/mdds.tpl',
-      1 => 1576264754,
+      1 => 1576321083,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df3e433e2dca0_27787469 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4c03d365871_26733871 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -219,7 +219,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                     </td>
                                 </tr>
                             </table>
-                        </center>
+                        </center><img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
+
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journa122" class="lp" width="4350">
@@ -498,7 +499,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="right" style="color: white">Пакет:</td>
+                                                <td align="right" style="color: white"><?php echo $_smarty_tpl->tpl_vars['lang']->value['pack'];?>
+:</td>
                                                 <td>
                                                     <select name="paket">
                                                         <option value="1"><?php echo $_smarty_tpl->tpl_vars['lang']->value['pack'];?>
@@ -512,7 +514,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                 <td colspan="3">
                                                     <input type="number" name="code2" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['code2'];?>
 " style="width: 40px;">
-                                                    <i style="color: white">Тип НМДД:</i>
+                                                    <i style="color: white"><?php echo $_smarty_tpl->tpl_vars['lang']->value['type'];?>
+ <?php echo $_smarty_tpl->tpl_vars['lang']->value['nmdd'];?>
+:</i>
 
                                                     <select name="mdd_type" style="width: 200px">
                                                         <?php
@@ -544,11 +548,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                                            Такса Б.М.
+                                                            <?php echo $_smarty_tpl->tpl_vars['lang']->value['fee'];?>
+ Б.М.
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                                            Обща цена</i>
+                                                            <?php echo $_smarty_tpl->tpl_vars['lang']->value['price'];?>
+</i>
                                                     <br>
                                                     <input type="text" name="code1t" value="<?php echo $_smarty_tpl->tpl_vars['mdd']->value[0]['test_code1'];?>
 " style="width: 40px;">&nbsp;&nbsp;
@@ -573,7 +579,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                 <td>
                                                     <div style="background-color: green;color: white;"><?php echo $_smarty_tpl->tpl_vars['updated']->value;?>
 </div>
-                                                    <input type="submit" name="save" value="Запиши">
+                                                    <input type="submit" name="save" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
+">
                                                 </td>
                                             </tr>
                                         </table>
@@ -588,7 +595,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         <div id="table-scroll">
                                             <table id="journa122" class="lp" width="50">
                                                 <thead>
-                                                    <th>Дата</th>
+                                                    <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+</th>
                                                 </thead>
                                                 <tbody>
                                                     <?php

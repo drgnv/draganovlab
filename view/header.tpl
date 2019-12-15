@@ -13,6 +13,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DraganovLab 4.1</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <script type="text/javascript" charset="utf8" src="../js/jj.js"></script>
         <script type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"></script>
         <script type="text/javascript" charset="utf8" src="../js/jj.js"></script>
         <style type="text/css" media="all">

@@ -34,7 +34,7 @@
             <br>
             <br>
             <br>
-            <input type="submit" name="save" value="Запис"> </center>
+            <input type="submit" name="save" value="{$lang.save_btn}"> </center>
 
     </form>
 </body>

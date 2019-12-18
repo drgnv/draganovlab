@@ -158,17 +158,17 @@
                         <table border="0" id="journal" class="display" width="700px" >
                             <thead>
                                 <tr  style="background-color: #122b40; color: white; ">
-                                    <th title="Статус" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>
+                                    <th title="{$lang.status}" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>
+                                    <th title="{$lang.type}" style="font-size: 13px;padding: 0px; margin: 0px;">T</th>
                                     <th style="font-size: 13px; padding: 0px; margin: 0px;">ID</th>
                                     <th style="font-size: 13px; padding: 2px; margin: 2px;">{$lang.patient}</th>
                                     <th style="font-size: 13px;padding: 0px; margin: 0px;">{$lang.doctor}</th>
                                     <th style="font-size: 13px;padding: 0px; margin: 0px;;">{$lang.actions}</th>
-
                                 </tr>
                             </thead>
                             <tbody>
-                                {assign var="un" value="1"} {foreach from=$dayList item=result}
-
+                                {assign var="un" value="1"}
+                                {foreach from=$dayList item=result}
                                 <tr height="0">
                                     <td style="padding: 2px; margin: 2px;">
                                         {if {$result.over} == "on"}
@@ -176,10 +176,14 @@
                                         <b hidden="true">a</b> <img src="../images/over.PNG" width="25" height="25"> {/if} {if {$result.over} !== "on"} <b hidden="true">b</b>
                                         <img src="../images/notover.PNG" width="25" height="25"> {/if}
                                     </td>
-                                    <td style="color: black; font-size: 13px;padding: px; margin: 0px;">{$result.number}</td>
-                                    <td style="color: black; font-size: 13px;padding: 2px; margin: 2px;">
+                                    <td style="padding: 2px; margin: 2px;">
                                         {if {$result.pay} == "on"}
-                                        <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="20" height="20"> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
+
+                                            <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.over} !== "on"} <b hidden="true">b</b>
+                                            <img src="../images/NZOK.png" width="25" height="25"> {/if}
+                                    </td>
+                                    <td style="color: black; font-size: 13px;padding: px; margin: 0px;">{$result.number}</td>
+                                    <td style="color: black; font-size: 13px;padding: 2px; margin: 2px;"> {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
                                 <div class="tooltip">
                                     <a style="text-decoration: none; color: #2e6da4; font-size: 13px;" href="../controller/edit.php?id={{$result.id}}"
                                        onclick="window.open('../controller/edit.php?id={{$result.id}}',

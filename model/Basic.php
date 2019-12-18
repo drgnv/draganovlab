@@ -53,6 +53,13 @@ class Basic extends Host{
         return $data;
     }
 
+    public function searchByDateNoPay($start, $end) {
+        $sql = "SELECT * FROM patients LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."' AND pay != 'on'";
+
+        $data = $this->sqliexecute($sql);
+        return $data;
+    }
+
     public function searchByDateAndStatus($start, $end, $status) {
         if($status == 'all'){
             $sql = "SELECT * FROM patients WHERE date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";

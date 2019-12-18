@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:59:32
+/* Smarty version 3.1.32, created on 2019-12-18 14:42:04
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4c094e12288_40478656',
+  'unifunc' => 'content_5dfa1e9c559111_58978609',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1576321172,
+      1 => 1576672923,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df4c094e12288_40478656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa1e9c559111_58978609 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -224,7 +224,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <table border="0" id="journal" class="display" width="700px" >
                             <thead>
                                 <tr  style="background-color: #122b40; color: white; ">
-                                    <th title="Статус" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>
+                                    <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
+" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>
+                                    <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['type'];?>
+" style="font-size: 13px;padding: 0px; margin: 0px;">T</th>
                                     <th style="font-size: 13px; padding: 0px; margin: 0px;">ID</th>
                                     <th style="font-size: 13px; padding: 2px; margin: 2px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
 </th>
@@ -232,16 +235,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </th>
                                     <th style="font-size: 13px;padding: 0px; margin: 0px;;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['actions'];?>
 </th>
-
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $_smarty_tpl->_assignInScope('un', "1");?> <?php
+                                <?php $_smarty_tpl->_assignInScope('un', "1");?>
+                                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['dayList']->value, 'result');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['result']->value) {
 ?>
-
                                 <tr height="0">
                                     <td style="padding: 2px; margin: 2px;">
                                         <?php ob_start();
@@ -255,30 +257,37 @@ $_prefixVariable2 = ob_get_clean();
 if ($_prefixVariable2 !== "on") {?> <b hidden="true">b</b>
                                         <img src="../images/notover.PNG" width="25" height="25"> <?php }?>
                                     </td>
-                                    <td style="color: black; font-size: 13px;padding: px; margin: 0px;"><?php echo $_smarty_tpl->tpl_vars['result']->value['number'];?>
-</td>
-                                    <td style="color: black; font-size: 13px;padding: 2px; margin: 2px;">
+                                    <td style="padding: 2px; margin: 2px;">
                                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['pay'];
 $_prefixVariable3 = ob_get_clean();
 if ($_prefixVariable3 == "on") {?>
-                                        <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="20" height="20"> <?php }?> <?php ob_start();
-echo $_smarty_tpl->tpl_vars['result']->value['pay'];
+
+                                            <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="25" height="25"> <?php }?> <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['over'];
 $_prefixVariable4 = ob_get_clean();
-if ($_prefixVariable4 !== "on") {?> <b hidden="true">b</b> <?php }?> <?php ob_start();
-echo $_smarty_tpl->tpl_vars['result']->value['cito'];
+if ($_prefixVariable4 !== "on") {?> <b hidden="true">b</b>
+                                            <img src="../images/NZOK.png" width="25" height="25"> <?php }?>
+                                    </td>
+                                    <td style="color: black; font-size: 13px;padding: px; margin: 0px;"><?php echo $_smarty_tpl->tpl_vars['result']->value['number'];?>
+</td>
+                                    <td style="color: black; font-size: 13px;padding: 2px; margin: 2px;"> <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['pay'];
 $_prefixVariable5 = ob_get_clean();
-if ($_prefixVariable5 == "on") {?><b style="color: red;">
+if ($_prefixVariable5 !== "on") {?> <b hidden="true">b</b> <?php }?> <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['cito'];
+$_prefixVariable6 = ob_get_clean();
+if ($_prefixVariable6 == "on") {?><b style="color: red;">
                                 <div class="tooltip">
                                     <a style="text-decoration: none; color: #2e6da4; font-size: 13px;" href="../controller/edit.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable6 = ob_get_clean();
-echo $_prefixVariable6;?>
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
 "
                                        onclick="window.open('../controller/edit.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable7 = ob_get_clean();
-echo $_prefixVariable7;?>
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
 ',
                                                'newwindow',
                                                'width=1090,height=650');
@@ -288,30 +297,30 @@ echo $_prefixVariable7;?>
 </a>
                                  <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable8 = ob_get_clean();
-if (strlen($_prefixVariable8) > 1) {?>
+$_prefixVariable9 = ob_get_clean();
+if (strlen($_prefixVariable9) > 1) {?>
 
                                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable9 = ob_get_clean();
-if (strlen($_prefixVariable9) > 1) {?>
+$_prefixVariable10 = ob_get_clean();
+if (strlen($_prefixVariable10) > 1) {?>
                                             <span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
 </span>
                                             <?php }?>
                                     <?php }?></div>
                                 </b><?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['cito'];
-$_prefixVariable10 = ob_get_clean();
-if ($_prefixVariable10 !== "on") {?>
+$_prefixVariable11 = ob_get_clean();
+if ($_prefixVariable11 !== "on") {?>
                                         <div class="tooltip">
                                             <a style="text-decoration: none; color: #2e6da4; font-size: 13px;" href="../controller/edit.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable11 = ob_get_clean();
-echo $_prefixVariable11;?>
-" onclick="window.open('../controller/edit.php?id=<?php ob_start();
-echo $_smarty_tpl->tpl_vars['result']->value['id'];
 $_prefixVariable12 = ob_get_clean();
 echo $_prefixVariable12;?>
+" onclick="window.open('../controller/edit.php?id=<?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['id'];
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
 ',
                                             'newwindow',
                                             'width=1090,height=650');
@@ -319,8 +328,8 @@ echo $_prefixVariable12;?>
                                         <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 </a><?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable13 = ob_get_clean();
-if (strlen($_prefixVariable13) > 1) {?><span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
+$_prefixVariable14 = ob_get_clean();
+if (strlen($_prefixVariable14) > 1) {?><span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
 </span><?php }?>
                                         </div>
                                         <?php }?>
@@ -330,8 +339,8 @@ if (strlen($_prefixVariable13) > 1) {?><span class="tooltiptext"><?php echo $_sm
                                     <td align="center" style="padding: 0px; margin: 0px;">
                                         <a style="text-decoration: none;" href="../controller/print.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable14 = ob_get_clean();
-echo $_prefixVariable14;?>
+$_prefixVariable15 = ob_get_clean();
+echo $_prefixVariable15;?>
 " target="_blank">
                                             <img src="../images/request.png" width="20" height="20" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['print'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['request'];?>
@@ -340,8 +349,8 @@ echo $_prefixVariable14;?>
                                         </a>
                                         <a style="text-decoration: none;" href="../controller/resultbyid.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable15 = ob_get_clean();
-echo $_prefixVariable15;?>
+$_prefixVariable16 = ob_get_clean();
+echo $_prefixVariable16;?>
 " target="_blank">
                                             <img src="../images/results.png" width="20" height="20" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['print'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['result'];?>
@@ -351,16 +360,16 @@ echo $_prefixVariable15;?>
 
                                         <a style="text-decoration: none;" href="../controller/onlineresults.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable16 = ob_get_clean();
-echo $_prefixVariable16;?>
+$_prefixVariable17 = ob_get_clean();
+echo $_prefixVariable17;?>
 " target="_blank">
                                             <img src="../images/online.png" width="20" height="20" title="Онлайн достъп на <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 ">
                                         </a>
                                         <a style="text-decoration: none;" href="../controller/new_patient.php?delete=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['id'];
-$_prefixVariable17 = ob_get_clean();
-echo $_prefixVariable17;?>
+$_prefixVariable18 = ob_get_clean();
+echo $_prefixVariable18;?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['lang']->value['delete'];?>
 " onclick="return confirm('<?php echo $_smarty_tpl->tpl_vars['lang']->value['delete_warning'];?>
 : <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>

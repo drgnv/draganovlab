@@ -202,6 +202,7 @@
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
                                         <th title="{$lang.status}">С</th>
+                                        <th title="{$lang.type}">T</th>
                                         <th>ID</th>
                                         <th>{$lang.patient}</th>
 
@@ -217,15 +218,29 @@
                                                 {if {$result.over} !== "on"} <b hidden="true">b</b>
                                                 <img src="../images/notover.PNG" width="20" height="20"> {/if}
                                             </td>
+                                            <td>
+                                                {if {$result.pay} == "on"}
+                                                    <img title="{$lang.pay}" src="../images/dollar-symbol.png" width="25" height="25">
+                                                    {else}
+                                                    <img title="" src="../images/NZOK.png" width="25" height="25">
+                                                {/if}
+
+                                            </td>
                                             <td style="display:none;">{$result.idn}</td>
                                             <td style="display:none;">{$result.id}</td>
 
                                             <td style="color: black;" onclick="window.location='#';">{$result.number}</td>
                                             <td style="color: black;" onclick="window.location='#';">
-                                                {if {$result.pay} == "on"}
-                                                <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
+
+                                                {if {$result.cito} == "on"}
+                                                    <b style="color: red;">
+
                                           {if strlen({$result.comment})>1}   <div class="tooltip">
-                                                  {if $result.id == $data.0.patient_id}<b>{$result.names}</b> {else}{$result.names} {/if}
+
+                                                  {if $result.id == $data.0.patient_id}<b>{$result.names}</b> {else}
+                                                      {$result.names}
+                                                  {/if}
+                                                {else}{$result.names}
                                               {if strlen({$result.comment})>1}
                                                   <span class="tooltiptext">{$result.comment}</span>
                                               {/if}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:31:33
+/* Smarty version 3.1.32, created on 2019-12-18 17:38:35
   from '/var/www/html/dlab/view/old_results.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4ba05892760_84773569',
+  'unifunc' => 'content_5dfa47fb08e4c7_88019219',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfcc426a400661823471a43724746b4350b2c6a8' => 
     array (
       0 => '/var/www/html/dlab/view/old_results.tpl',
-      1 => 1575745176,
+      1 => 1576683514,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df4ba05892760_84773569 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa47fb08e4c7_88019219 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/dlab/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -168,7 +169,6 @@ if ($_prefixVariable2 !== "on") {?> <b hidden="true">b</b>
 </td>
                                             <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
 </td>
-
                                             <td style="color: black;" onclick="window.location='#';"><?php echo $_smarty_tpl->tpl_vars['result']->value['number'];?>
 </td>
                                             <td style="color: black;" onclick="window.location='#';">
@@ -187,7 +187,7 @@ if ($_prefixVariable5 == "on") {?><b style="color: red;">
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
 $_prefixVariable6 = ob_get_clean();
 if (strlen($_prefixVariable6) > 1) {?>   <div class="tooltip">
-                                                        <?php echo $_smarty_tpl->tpl_vars['result']->value['date'];?>
+                                                       <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['result']->value['date'],"%d/%m/%y");?>
 
                                                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
@@ -202,7 +202,7 @@ echo $_smarty_tpl->tpl_vars['result']->value['cito'];
 $_prefixVariable8 = ob_get_clean();
 if ($_prefixVariable8 !== "on") {?>
                                                 <div class="tooltip">
-                                                    <?php echo $_smarty_tpl->tpl_vars['result']->value['date'];
+                                                    <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['result']->value['date'],"%d/%m/%y");
 ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
 $_prefixVariable9 = ob_get_clean();

@@ -24,6 +24,7 @@ $date=date('Y-m-d');
 if(isset($_GET['idn'])){
     $patient_data = $Basic->oldResults($_GET['idn']);
     $data = $Basic->getPatientData($_GET['patient_id']);
+
     $Smarty->assign('data', $patient_data);
 
     if(isset($_GET['patient_id'])){

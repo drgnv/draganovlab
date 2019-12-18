@@ -107,20 +107,19 @@
                                             </td>
                                             <td style="display:none;">{$result.idn}</td>
                                             <td style="display:none;">{$result.id}</td>
-
                                             <td style="color: black;" onclick="window.location='#';">{$result.number}</td>
                                             <td style="color: black;" onclick="window.location='#';">
                                                 {if {$result.pay} == "on"}
                                                 <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
                                                     {if strlen({$result.comment})>1}   <div class="tooltip">
-                                                        {$result.date}
+                                                       {$result.date|date_format:"%d/%m/%y"}
                                                         {if strlen({$result.comment})>1}
                                                             <span class="tooltiptext">{$result.comment}</span>
                                                         {/if}
                                                         </div>{/if}
                                                     </b>{/if} {if {$result.cito} !== "on"}
                                                 <div class="tooltip">
-                                                    {$result.date}{if strlen({$result.comment})>1}<span class="tooltiptext">{$result.comment}</span>{/if}
+                                                    {$result.date|date_format:"%d/%m/%y"}{if strlen({$result.comment})>1}<span class="tooltiptext">{$result.comment}</span>{/if}
                                                 </div>
                                                 {/if}
                                             </td>

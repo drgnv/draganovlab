@@ -91,6 +91,7 @@
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
                                         <th title="{$lang.status}">С</th>
+                                        <th title="{$lang.type}">T</th>
                                         <th>ID</th>
                                         <th>{$lang.date}</th>
 
@@ -105,6 +106,12 @@
                                                 <b hidden="true">a</b> <img src="../images/over.PNG" width="20" height="20"> {/if} {if {$result.over} !== "on"} <b hidden="true">b</b>
                                                 <img src="../images/notover.PNG" width="20" height="20"> {/if}
                                             </td>
+                                            <td>
+                                                {if {$result.pay} == "on"}
+
+                                                    <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="20" height="20"> {/if} {if {$result.over} !== "on"} <b hidden="true">b</b>
+                                                    <img src="../images/NZOK.png" width="20" height="20"> {/if}
+                                            </td>
                                             <td style="display:none;">{$result.idn}</td>
                                             <td style="display:none;">{$result.id}</td>
                                             <td style="color: black;" onclick="window.location='#';">{$result.number}</td>
@@ -112,14 +119,14 @@
                                                 {if {$result.pay} == "on"}
                                                 <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
                                                     {if strlen({$result.comment})>1}   <div class="tooltip">
-                                                       {$result.date|date_format:"%d/%m/%y"}
+                                                       {$result.date|date_format:"%d.%m.%Y"}
                                                         {if strlen({$result.comment})>1}
                                                             <span class="tooltiptext">{$result.comment}</span>
                                                         {/if}
                                                         </div>{/if}
                                                     </b>{/if} {if {$result.cito} !== "on"}
                                                 <div class="tooltip">
-                                                    {$result.date|date_format:"%d/%m/%y"}{if strlen({$result.comment})>1}<span class="tooltiptext">{$result.comment}</span>{/if}
+                                                    {$result.date|date_format:"%d.%m.%Y"}{if strlen({$result.comment})>1}<span class="tooltiptext">{$result.comment}</span>{/if}
                                                 </div>
                                                 {/if}
                                             </td>

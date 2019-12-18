@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-18 14:42:04
+/* Smarty version 3.1.32, created on 2019-12-18 17:55:49
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfa1e9c559111_58978609',
+  'unifunc' => 'content_5dfa4c05e36698_74249389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1576672923,
+      1 => 1576684549,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfa1e9c559111_58978609 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa4c05e36698_74249389 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -220,8 +220,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </td>
                 <td valign="top"  id="t">
                     <div class="lp">
-                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="left" onClick="window.location.reload();">
-                        <table border="0" id="journal" class="display" width="700px" >
+                          <table border="0" id="journal" class="display" width="700px" >
                             <thead>
                                 <tr  style="background-color: #122b40; color: white; ">
                                     <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>

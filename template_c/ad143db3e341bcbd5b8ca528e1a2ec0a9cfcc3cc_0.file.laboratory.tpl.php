@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-18 14:32:06
+/* Smarty version 3.1.32, created on 2019-12-18 17:55:24
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfa1c46bea445_89486658',
+  'unifunc' => 'content_5dfa4bec6dd837_59449233',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1576672320,
+      1 => 1576684518,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfa1c46bea445_89486658 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa4bec6dd837_59449233 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -260,7 +260,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                 </tr>
                             </table>
                         </center>
-                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journal122" class="display" width="4350">
@@ -274,7 +273,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 ">T</th>
                                         <th>ID</th>
                                         <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
-</th>
+ <img style="cursor: pointer" src="../images/ref.ico" width="20px" height="20px" align="right" onClick="window.location.reload();"><br>
+                                        </th>
 
                                     </thead>
                                     <tbody>

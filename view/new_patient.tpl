@@ -154,8 +154,7 @@
                 </td>
                 <td valign="top"  id="t">
                     <div class="lp">
-                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="left" onClick="window.location.reload();">
-                        <table border="0" id="journal" class="display" width="700px" >
+                          <table border="0" id="journal" class="display" width="700px" >
                             <thead>
                                 <tr  style="background-color: #122b40; color: white; ">
                                     <th title="{$lang.status}" style="font-size: 13px;padding: 0px; margin: 0px;">С</th>

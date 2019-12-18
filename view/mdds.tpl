@@ -161,8 +161,7 @@
                                     </td>
                                 </tr>
                             </table>
-                        </center><img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
-
+                        </center>
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journa122" class="lp" width="4350">
@@ -172,7 +171,8 @@
                                         <th style="display:none;">id</th>
                                         <th title="{$lang.status}">С</th>
                                         <th>ID</th>
-                                        <th>{$lang.patient}</th>
+                                        <th>{$lang.patient} <img style="cursor: pointer" src="../images/ref.ico" width="20px" height="20px" align="right" onClick="window.location.reload();"><br>
+                                        </th>
 
                                     </thead>
                                     <tbody>

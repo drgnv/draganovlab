@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-18 17:55:24
+/* Smarty version 3.1.32, created on 2019-12-18 18:23:50
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfa4bec6dd837_59449233',
+  'unifunc' => 'content_5dfa5296570c22_64176269',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1576684518,
+      1 => 1576686229,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfa4bec6dd837_59449233 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa5296570c22_64176269 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -263,7 +263,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journal122" class="display" width="4350">
-                                    <thead>
+                                    <thead style="font-size: 14px">
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
@@ -277,14 +277,14 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                         </th>
 
                                     </thead>
-                                    <tbody>
+                                    <tbody style="padding: 0px;margin: 0px">
                                         <?php $_smarty_tpl->_assignInScope('un', "1");?> <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['dayList']->value, 'result');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['result']->value) {
 ?>
 
-                                        <tr  style="background-color: green; cursor: pointer;" data-href="../controller/laboratory.php?patient_id=<?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
+                                        <tr  style="background-color: green; cursor: pointer; font-size: 13px;" data-href="../controller/laboratory.php?patient_id=<?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
 &from=<?php echo $_smarty_tpl->tpl_vars['from_date']->value;?>
 &to=<?php echo $_smarty_tpl->tpl_vars['to_date']->value;?>
 &status=<?php echo $_smarty_tpl->tpl_vars['status']->value;?>
@@ -310,7 +310,7 @@ if ($_prefixVariable3 == "on") {?>
                                                     <img title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['pay'];?>
 " src="../images/dollar-symbol.png" width="25" height="25">
                                                     <?php } else { ?>
-                                                    <img title="" src="../images/NZOK.png" width="25" height="25">
+                                                    <img title="" src="../images/NZOK.png" width="20" height="20">
                                                 <?php }?>
 
                                             </td>

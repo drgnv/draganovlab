@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:31:33
+/* Smarty version 3.1.32, created on 2019-12-18 17:42:57
   from '/var/www/html/dlab/view/old_results.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4ba05892760_84773569',
+  'unifunc' => 'content_5dfa49014d1160_70884128',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfcc426a400661823471a43724746b4350b2c6a8' => 
     array (
       0 => '/var/www/html/dlab/view/old_results.tpl',
-      1 => 1575745176,
+      1 => 1576683776,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df4ba05892760_84773569 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa49014d1160_70884128 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/dlab/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--Datatables js-->
@@ -137,6 +138,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                         <th style="display:none;">id</th>
                                         <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
 ">С</th>
+                                        <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['type'];?>
+">T</th>
                                         <th>ID</th>
                                         <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
 </th>
@@ -164,49 +167,60 @@ $_prefixVariable2 = ob_get_clean();
 if ($_prefixVariable2 !== "on") {?> <b hidden="true">b</b>
                                                 <img src="../images/notover.PNG" width="20" height="20"> <?php }?>
                                             </td>
+                                            <td>
+                                                <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['pay'];
+$_prefixVariable3 = ob_get_clean();
+if ($_prefixVariable3 == "on") {?>
+
+                                                    <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="20" height="20"> <?php }?> <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['over'];
+$_prefixVariable4 = ob_get_clean();
+if ($_prefixVariable4 !== "on") {?> <b hidden="true">b</b>
+                                                    <img src="../images/NZOK.png" width="20" height="20"> <?php }?>
+                                            </td>
                                             <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['idn'];?>
 </td>
                                             <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
 </td>
-
                                             <td style="color: black;" onclick="window.location='#';"><?php echo $_smarty_tpl->tpl_vars['result']->value['number'];?>
 </td>
                                             <td style="color: black;" onclick="window.location='#';">
                                                 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['pay'];
-$_prefixVariable3 = ob_get_clean();
-if ($_prefixVariable3 == "on") {?>
+$_prefixVariable5 = ob_get_clean();
+if ($_prefixVariable5 == "on") {?>
                                                 <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['pay'];
-$_prefixVariable4 = ob_get_clean();
-if ($_prefixVariable4 !== "on") {?> <b hidden="true">b</b> <?php }?> <?php ob_start();
+$_prefixVariable6 = ob_get_clean();
+if ($_prefixVariable6 !== "on") {?> <b hidden="true">b</b> <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['cito'];
-$_prefixVariable5 = ob_get_clean();
-if ($_prefixVariable5 == "on") {?><b style="color: red;">
+$_prefixVariable7 = ob_get_clean();
+if ($_prefixVariable7 == "on") {?><b style="color: red;">
                                                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable6 = ob_get_clean();
-if (strlen($_prefixVariable6) > 1) {?>   <div class="tooltip">
-                                                        <?php echo $_smarty_tpl->tpl_vars['result']->value['date'];?>
+$_prefixVariable8 = ob_get_clean();
+if (strlen($_prefixVariable8) > 1) {?>   <div class="tooltip">
+                                                       <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['result']->value['date'],"%d.%m.%Y");?>
 
                                                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable7 = ob_get_clean();
-if (strlen($_prefixVariable7) > 1) {?>
+$_prefixVariable9 = ob_get_clean();
+if (strlen($_prefixVariable9) > 1) {?>
                                                             <span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
 </span>
                                                         <?php }?>
                                                         </div><?php }?>
                                                     </b><?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['cito'];
-$_prefixVariable8 = ob_get_clean();
-if ($_prefixVariable8 !== "on") {?>
+$_prefixVariable10 = ob_get_clean();
+if ($_prefixVariable10 !== "on") {?>
                                                 <div class="tooltip">
-                                                    <?php echo $_smarty_tpl->tpl_vars['result']->value['date'];
+                                                    <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['result']->value['date'],"%d.%m.%Y");
 ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable9 = ob_get_clean();
-if (strlen($_prefixVariable9) > 1) {?><span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
+$_prefixVariable11 = ob_get_clean();
+if (strlen($_prefixVariable11) > 1) {?><span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
 </span><?php }?>
                                                 </div>
                                                 <?php }?>
@@ -232,11 +246,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="lp">
                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];
-$_prefixVariable10 = ob_get_clean();
+$_prefixVariable12 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];
-$_prefixVariable11 = ob_get_clean();
-if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
+$_prefixVariable13 = ob_get_clean();
+if (isset($_prefixVariable12) && $_prefixVariable13 > 0) {?>
                                <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                        <a style="text-decoration: none; color: white;" href="../controller/print.php?id=<?php echo $_smarty_tpl->tpl_vars['data2']->value[0]['patient_id'];?>
 " target="_blank">
@@ -369,27 +383,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 :</b></td>
                             <td> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['cito'];
-$_prefixVariable12 = ob_get_clean();
-if ($_prefixVariable12 == "on") {?>
+$_prefixVariable14 = ob_get_clean();
+if ($_prefixVariable14 == "on") {?>
                                 <input type="checkbox" name="cito" checked> <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['cito'];
-$_prefixVariable13 = ob_get_clean();
-if ($_prefixVariable13 !== "on") {?>
+$_prefixVariable15 = ob_get_clean();
+if ($_prefixVariable15 !== "on") {?>
                                 <input type="checkbox" name="cito"> <?php }?><b style="color:white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
 :</b>
                                 <select name="over">
                                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['over'];
-$_prefixVariable14 = ob_get_clean();
-if ($_prefixVariable14 == "on") {?>
+$_prefixVariable16 = ob_get_clean();
+if ($_prefixVariable16 == "on") {?>
                                     <option value="on" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
 </option>
                                     <option value="off"><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
 </option>
                                     <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data2']->value[0]['over'];
-$_prefixVariable15 = ob_get_clean();
-if ($_prefixVariable15 !== "on") {?>
+$_prefixVariable17 = ob_get_clean();
+if ($_prefixVariable17 !== "on") {?>
                                     <option value="on"><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
 </option>
                                     <option value="off" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>

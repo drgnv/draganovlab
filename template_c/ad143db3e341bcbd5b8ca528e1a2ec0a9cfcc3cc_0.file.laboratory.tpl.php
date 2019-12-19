@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:57:36
+/* Smarty version 3.1.32, created on 2019-12-18 17:55:24
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4c0207ed2f9_19597735',
+  'unifunc' => 'content_5dfa4bec6dd837_59449233',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1576321054,
+      1 => 1576684518,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5df4c0207ed2f9_19597735 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfa4bec6dd837_59449233 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,6 +31,39 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
  src="../js/jquery-3.3.1.min.js" type="text/javascript"><?php echo '</script'; ?>
 >
 <link href="../css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+<!--Datatables js-->
+
+<?php echo '<script'; ?>
+ type="text/javascript" charset="utf8" src="../js/jquery-3.3.1.min.js"><?php echo '</script'; ?>
+>
+<link rel="stylesheet" type="text/css" href="../libs/jquery.dataTables.css">
+<?php echo '<script'; ?>
+ type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+    $(document).ready(function() {
+        $('#journal122').DataTable({
+
+                    "pageLength": 50,
+                    "order": [
+                        [3, "desc"]
+                    ],
+                    "aLengthMenu": [
+                        [10, 25, 50, 75, -1],
+                        [10, 25, 50, 75, "Всички"]
+                    ],
+                    "scrollY": "375px",
+                    "scrollX": "100px",
+                    "scrollCollapse": true,
+                    "paging": false,
+
+                }
+
+        );
+    });
+<?php echo '</script'; ?>
+>
 <?php echo '<script'; ?>
 >
     $(document).ready(function() {
@@ -70,31 +103,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     }
 </style>
 
-<!--Datatables js-->
-
-<?php echo '<script'; ?>
- type="text/javascript" charset="utf8" src="../js/jquery-3.3.1.min.js"><?php echo '</script'; ?>
->
-<link rel="stylesheet" type="text/css" href="../libs/jquery.dataTables.css">
-<?php echo '<script'; ?>
- type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
->
-    $(document).ready(function() {
-        $('#journal').DataTable({
-            "pageLength": 50,
-            "order": [
-                [3, "desc"]
-            ],
-            "aLengthMenu": [
-                [10, 25, 50, 75, -1],
-                [10, 25, 50, 75, "Всички"]
-            ]
-        });
-    });
-<?php echo '</script'; ?>
->
 <?php echo '<script'; ?>
 >
     function validateForm() {
@@ -162,6 +170,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             }
         <?php echo '</script'; ?>
 >
+
 
         <table border="0" cellspacing="0" cellpadding="0" width="100%" style=" border-collapse: collapse;">
             <tr>
@@ -251,19 +260,21 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                 </tr>
                             </table>
                         </center>
-                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
                         <div id="table-wrapper">
                             <div id="table-scroll">
-                                <table id="journa122" class="lp" width="4350">
+                                <table id="journal122" class="display" width="4350">
                                     <thead>
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
                                         <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
 ">С</th>
+                                        <th title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['type'];?>
+">T</th>
                                         <th>ID</th>
                                         <th><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
-</th>
+ <img style="cursor: pointer" src="../images/ref.ico" width="20px" height="20px" align="right" onClick="window.location.reload();"><br>
+                                        </th>
 
                                     </thead>
                                     <tbody>
@@ -291,6 +302,18 @@ $_prefixVariable2 = ob_get_clean();
 if ($_prefixVariable2 !== "on") {?> <b hidden="true">b</b>
                                                 <img src="../images/notover.PNG" width="20" height="20"> <?php }?>
                                             </td>
+                                            <td>
+                                                <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['pay'];
+$_prefixVariable3 = ob_get_clean();
+if ($_prefixVariable3 == "on") {?>
+                                                    <img title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['pay'];?>
+" src="../images/dollar-symbol.png" width="25" height="25">
+                                                    <?php } else { ?>
+                                                    <img title="" src="../images/NZOK.png" width="25" height="25">
+                                                <?php }?>
+
+                                            </td>
                                             <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['idn'];?>
 </td>
                                             <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['result']->value['id'];?>
@@ -299,37 +322,38 @@ if ($_prefixVariable2 !== "on") {?> <b hidden="true">b</b>
                                             <td style="color: black;" onclick="window.location='#';"><?php echo $_smarty_tpl->tpl_vars['result']->value['number'];?>
 </td>
                                             <td style="color: black;" onclick="window.location='#';">
+
                                                 <?php ob_start();
-echo $_smarty_tpl->tpl_vars['result']->value['pay'];
-$_prefixVariable3 = ob_get_clean();
-if ($_prefixVariable3 == "on") {?>
-                                                <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> <?php }?> <?php ob_start();
-echo $_smarty_tpl->tpl_vars['result']->value['pay'];
-$_prefixVariable4 = ob_get_clean();
-if ($_prefixVariable4 !== "on") {?> <b hidden="true">b</b> <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['cito'];
-$_prefixVariable5 = ob_get_clean();
-if ($_prefixVariable5 == "on") {?><b style="color: red;">
+$_prefixVariable4 = ob_get_clean();
+if ($_prefixVariable4 == "on") {?>
+                                                    <b style="color: red;">
+
                                           <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable6 = ob_get_clean();
-if (strlen($_prefixVariable6) > 1) {?>   <div class="tooltip">
+$_prefixVariable5 = ob_get_clean();
+if (strlen($_prefixVariable5) > 1) {?>   <div class="tooltip">
+
                                                   <?php if ($_smarty_tpl->tpl_vars['result']->value['id'] == $_smarty_tpl->tpl_vars['data']->value[0]['patient_id']) {?><b><?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
-</b> <?php } else {
+</b> <?php } else { ?>
+                                                      <?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
+
+                                                  <?php }?>
+                                                <?php } else {
 echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
- <?php }?>
+
                                               <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable7 = ob_get_clean();
-if (strlen($_prefixVariable7) > 1) {?>
+$_prefixVariable6 = ob_get_clean();
+if (strlen($_prefixVariable6) > 1) {?>
                                                   <span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
 </span>
                                               <?php }?>
                                               </div><?php }?>
                                           </b><?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['cito'];
-$_prefixVariable8 = ob_get_clean();
-if ($_prefixVariable8 !== "on") {?>
+$_prefixVariable7 = ob_get_clean();
+if ($_prefixVariable7 !== "on") {?>
                                                 <div class="tooltip">
                                                     <?php if ($_smarty_tpl->tpl_vars['result']->value['id'] == $_smarty_tpl->tpl_vars['data']->value[0]['patient_id']) {?><b><?php echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
 </b> <?php } else {
@@ -337,8 +361,8 @@ echo $_smarty_tpl->tpl_vars['result']->value['names'];?>
  <?php }?>
                                                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['result']->value['comment'];
-$_prefixVariable9 = ob_get_clean();
-if (strlen($_prefixVariable9) > 1) {?><span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
+$_prefixVariable8 = ob_get_clean();
+if (strlen($_prefixVariable8) > 1) {?><span class="tooltiptext"><?php echo $_smarty_tpl->tpl_vars['result']->value['comment'];?>
 </span><?php }?>
                                                 </div>
                                                 <?php }?>
@@ -364,11 +388,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="lp">
                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];
-$_prefixVariable10 = ob_get_clean();
+$_prefixVariable9 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];
-$_prefixVariable11 = ob_get_clean();
-if (isset($_prefixVariable10) && $_prefixVariable11 > 0) {?>
+$_prefixVariable10 = ob_get_clean();
+if (isset($_prefixVariable9) && $_prefixVariable10 > 0) {?>
 
                         <!-- НАЧАЛО НА МЕНЮ ПАЦИЕНТИ-->
                         <a style="text-decoration: none; color: white;" href="../controller/print.php?id=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['patient_id'];?>
@@ -504,27 +528,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 :</b></td>
                             <td> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
-$_prefixVariable12 = ob_get_clean();
-if ($_prefixVariable12 == "on") {?>
+$_prefixVariable11 = ob_get_clean();
+if ($_prefixVariable11 == "on") {?>
                                 <input type="checkbox" name="cito" checked> <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
-$_prefixVariable13 = ob_get_clean();
-if ($_prefixVariable13 !== "on") {?>
+$_prefixVariable12 = ob_get_clean();
+if ($_prefixVariable12 !== "on") {?>
                                 <input type="checkbox" name="cito"> <?php }?> <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['status'];?>
 :</i>
                                 <select name="over">
                                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['over'];
-$_prefixVariable14 = ob_get_clean();
-if ($_prefixVariable14 == "on") {?>
+$_prefixVariable13 = ob_get_clean();
+if ($_prefixVariable13 == "on") {?>
                                     <option value="on" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
 </option>
                                     <option value="off"><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>
 </option>
                                     <?php }?> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['over'];
-$_prefixVariable15 = ob_get_clean();
-if ($_prefixVariable15 !== "on") {?>
+$_prefixVariable14 = ob_get_clean();
+if ($_prefixVariable14 !== "on") {?>
                                     <option value="on"><?php echo $_smarty_tpl->tpl_vars['lang']->value['over'];?>
 </option>
                                     <option value="off" selected><?php echo $_smarty_tpl->tpl_vars['lang']->value['not_over'];?>

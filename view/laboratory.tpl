@@ -2,6 +2,33 @@
 
 <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <link href="../css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+<!--Datatables js-->
+
+<script type="text/javascript" charset="utf8" src="../js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../libs/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#journal122').DataTable({
+
+                    "pageLength": 50,
+                    "order": [
+                        [3, "desc"]
+                    ],
+                    "aLengthMenu": [
+                        [10, 25, 50, 75, -1],
+                        [10, 25, 50, 75, "Всички"]
+                    ],
+                    "scrollY": "375px",
+                    "scrollX": "100px",
+                    "scrollCollapse": true,
+                    "paging": false,
+
+                }
+
+        );
+    });
+</script>
 <script>
     $(document).ready(function() {
         $(".flip").click(function() {
@@ -39,25 +66,6 @@
     }
 </style>
 
-<!--Datatables js-->
-
-<script type="text/javascript" charset="utf8" src="../js/jquery-3.3.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../libs/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#journal').DataTable({
-            "pageLength": 50,
-            "order": [
-                [3, "desc"]
-            ],
-            "aLengthMenu": [
-                [10, 25, 50, 75, -1],
-                [10, 25, 50, 75, "Всички"]
-            ]
-        });
-    });
-</script>
 <script>
     function validateForm() {
         var x = document.forms["myForm"]["fname"].value;
@@ -116,6 +124,7 @@
                 }
             }
         </script>
+
 
         <table border="0" cellspacing="0" cellpadding="0" width="100%" style=" border-collapse: collapse;">
             <tr>
@@ -184,17 +193,18 @@
                                 </tr>
                             </table>
                         </center>
-                        <img style="cursor: pointer" src="../images/refresh.png" width="25px" height="25px" align="right" onClick="window.location.reload();"><br>
                         <div id="table-wrapper">
                             <div id="table-scroll">
-                                <table id="journa122" class="lp" width="4350">
+                                <table id="journal122" class="display" width="4350">
                                     <thead>
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
                                         <th title="{$lang.status}">С</th>
+                                        <th title="{$lang.type}">T</th>
                                         <th>ID</th>
-                                        <th>{$lang.patient}</th>
+                                        <th>{$lang.patient} <img style="cursor: pointer" src="../images/ref.ico" width="20px" height="20px" align="right" onClick="window.location.reload();"><br>
+                                        </th>
 
                                     </thead>
                                     <tbody>
@@ -208,15 +218,29 @@
                                                 {if {$result.over} !== "on"} <b hidden="true">b</b>
                                                 <img src="../images/notover.PNG" width="20" height="20"> {/if}
                                             </td>
+                                            <td>
+                                                {if {$result.pay} == "on"}
+                                                    <img title="{$lang.pay}" src="../images/dollar-symbol.png" width="25" height="25">
+                                                    {else}
+                                                    <img title="" src="../images/NZOK.png" width="25" height="25">
+                                                {/if}
+
+                                            </td>
                                             <td style="display:none;">{$result.idn}</td>
                                             <td style="display:none;">{$result.id}</td>
 
                                             <td style="color: black;" onclick="window.location='#';">{$result.number}</td>
                                             <td style="color: black;" onclick="window.location='#';">
-                                                {if {$result.pay} == "on"}
-                                                <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
+
+                                                {if {$result.cito} == "on"}
+                                                    <b style="color: red;">
+
                                           {if strlen({$result.comment})>1}   <div class="tooltip">
-                                                  {if $result.id == $data.0.patient_id}<b>{$result.names}</b> {else}{$result.names} {/if}
+
+                                                  {if $result.id == $data.0.patient_id}<b>{$result.names}</b> {else}
+                                                      {$result.names}
+                                                  {/if}
+                                                {else}{$result.names}
                                               {if strlen({$result.comment})>1}
                                                   <span class="tooltiptext">{$result.comment}</span>
                                               {/if}

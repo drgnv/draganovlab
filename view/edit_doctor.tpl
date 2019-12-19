@@ -39,6 +39,7 @@
             </table>
 
             <p>
+                <div style="background-color: darkgreen;color: white;">{$saved_msg}</div>
                 <input type="submit" name="submit" value="{$lang.edit}">
             </p>
         </form>

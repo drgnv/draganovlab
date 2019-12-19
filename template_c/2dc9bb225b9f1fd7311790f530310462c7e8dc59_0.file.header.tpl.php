@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:24:19
+/* Smarty version 3.1.32, created on 2019-12-14 15:57:43
   from '/var/www/html/dlab/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4b85318f6e4_05963946',
+  'unifunc' => 'content_5df4ea5763d201_08164954',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2dc9bb225b9f1fd7311790f530310462c7e8dc59' => 
     array (
       0 => '/var/www/html/dlab/view/header.tpl',
-      1 => 1575741898,
+      1 => 1576331861,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df4b85318f6e4_05963946 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df4ea5763d201_08164954 (Smarty_Internal_Template $_smarty_tpl) {
 ?><DOCTYPE html>
     <html>
 
@@ -36,6 +36,10 @@ function content_5df4b85318f6e4_05963946 (Smarty_Internal_Template $_smarty_tpl)
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DraganovLab 4.1</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <?php echo '<script'; ?>
+ type="text/javascript" charset="utf8" src="../js/jj.js"><?php echo '</script'; ?>
+>
         <?php echo '<script'; ?>
  type="text/javascript" charset="utf8" src="../libs/jquery.dataTables.js"><?php echo '</script'; ?>
 >

@@ -19,6 +19,7 @@ include_once "../languages/".$def_lang[0]['default_lang'].".php";
 $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 if(isset($_GET['editdoc'])){
+
     $doc_info = $Settings->getDoctor($_GET['editdoc']);
 
     if(isset($_POST['submit'])){
@@ -28,11 +29,13 @@ if(isset($_GET['editdoc'])){
         $phone2 = filter_input(INPUT_POST, 'phone2');
         $uin = filter_input(INPUT_POST, 'uin');
         $Settings->editDoctor($name, $phone, $phone2, $uin, $doctor_id);
-        header("Location: edit_doctor.php?editdoc=".$doctor_id);
+        header("Location: edit_doctor.php?editdoc=".$doctor_id."&saved=".$language['saved_msg']);
+        $Smarty->assign('saved_msg', $_GET['saved']);
     }
 
 
 
 }
+$Smarty->assign('saved_msg', $_GET['saved']);
 $Smarty->assign('doc_info', $doc_info);
 $Smarty->display('edit_doctor.tpl');

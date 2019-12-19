@@ -79,7 +79,7 @@ $doctors=$Mdds->getAllDoctors();
 //пациенти по дата
 $start = $_GET['from'];
 $end = $_GET['to'];
-$dayList = $Mdds->searchByDate($start, $end);
+$dayList = $Mdds->searchByDateNoPay($start, $end);
 
 //ИЗТРИВАНЕ НА ПАЦИЕНТ ПО ИД
 if (isset($_GET['delete'])) {

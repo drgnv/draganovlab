@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-19 15:24:53
+/* Smarty version 3.1.32, created on 2019-12-21 08:43:27
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfb7a251fa7d9_11038524',
+  'unifunc' => 'content_5dfdbf0f6deeb2_26622766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfb7a251fa7d9_11038524 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfdbf0f6deeb2_26622766 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">

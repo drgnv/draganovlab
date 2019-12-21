@@ -98,5 +98,6 @@ $language = array(
     "cbc"=>"CBC",
     "electro"=>'Electrolytes',
     "codes_by_tests"=>'Code de test attribué',
-    "cbc_full"=>'Numération sanguine complète'
+    "cbc_full"=>'Numération sanguine complète',
+    "printouts"=>"Impressions"
 );

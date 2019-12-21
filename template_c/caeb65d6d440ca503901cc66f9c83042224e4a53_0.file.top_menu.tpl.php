@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-14 12:24:19
+/* Smarty version 3.1.32, created on 2019-12-20 18:32:04
   from '/var/www/html/dlab/view/top_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5df4b8531967b2_54342150',
+  'unifunc' => 'content_5dfcf784b01680_95900811',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df4b8531967b2_54342150 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfcf784b01680_95900811 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id='navbar'>
     <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant%20-%20Copy.png" width="35" height="25"></a>
     <a href='./new_patient.php'><?php echo $_smarty_tpl->tpl_vars['lang']->value['registry'];?>
@@ -36,8 +36,8 @@ function content_5df4b8531967b2_54342150 (Smarty_Internal_Template $_smarty_tpl)
     <a href='./search_by_date.php'><?php echo $_smarty_tpl->tpl_vars['lang']->value['search_by_date'];?>
 </a> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['lvl']->value;
-$_prefixVariable12 = ob_get_clean();
-if ($_prefixVariable12 < 3) {
+$_prefixVariable1 = ob_get_clean();
+if ($_prefixVariable1 < 3) {
 } else { ?><a href='./settings.php'><?php echo $_smarty_tpl->tpl_vars['lang']->value['settings'];?>
 </a><?php }?>
 

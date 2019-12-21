@@ -10,6 +10,7 @@
     #main {
         border: 0px solid black;
         padding: 10px;
+        font-family: Monospace;
     }
     
     .bordered,

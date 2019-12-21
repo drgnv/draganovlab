@@ -196,7 +196,7 @@
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table id="journal122" class="display" width="4350">
-                                    <thead>
+                                    <thead style="font-size: 14px">
 
                                         <th style="display:none;">егн</th>
                                         <th style="display:none;">id</th>
@@ -207,10 +207,10 @@
                                         </th>
 
                                     </thead>
-                                    <tbody>
+                                    <tbody style="padding: 0px;margin: 0px">
                                         {assign var="un" value="1"} {foreach from=$dayList item=result}
 
-                                        <tr  style="background-color: green; cursor: pointer;" data-href="../controller/laboratory.php?patient_id={$result.id}&from={$from_date}&to={$to_date}&status={$status}&searchbydate=Търси...">
+                                        <tr  style="background-color: green; cursor: pointer; font-size: 13px;" data-href="../controller/laboratory.php?patient_id={$result.id}&from={$from_date}&to={$to_date}&status={$status}&searchbydate=Търси...">
                                             <td>
                                                 {if {$result.over} == "on"}
 
@@ -222,7 +222,7 @@
                                                 {if {$result.pay} == "on"}
                                                     <img title="{$lang.pay}" src="../images/dollar-symbol.png" width="25" height="25">
                                                     {else}
-                                                    <img title="" src="../images/NZOK.png" width="25" height="25">
+                                                    <img title="" src="../images/NZOK.png" width="20" height="20">
                                                 {/if}
 
                                             </td>

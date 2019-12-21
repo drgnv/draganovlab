@@ -31,6 +31,8 @@ if(isset($_POST['record'])){
     $pay = filter_input(INPUT_POST, 'pay');
     $idn = filter_input(INPUT_POST, 'idn');
     $cito = filter_input(INPUT_POST, 'cito');
+    $comment = filter_input(INPUT_POST, 'comment');
+    $note = filter_input(INPUT_POST, 'note');
     if($Basic->checkCBC($results)){
         $counter = 1;
         $cbc_count = $Basic->getCbcCount()+1;
@@ -131,7 +133,7 @@ if(isset($_POST['record'])){
      $_SESSION['num'] = $num;
      $_SESSION['doc'] = $doctor;
      $_SESSION['date'] = $date;
-    $Basic->newPatient($pname, $num, $doctor, $results, $date,$pay, $idn, $cito);
+    $Basic->newPatient($pname, $num, $doctor, $results, $date,$pay, $idn, $cito, $comment, $note);
    
  
 }

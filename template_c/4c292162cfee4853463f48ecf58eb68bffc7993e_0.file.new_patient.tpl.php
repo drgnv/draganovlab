@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-18 17:55:49
+/* Smarty version 3.1.32, created on 2019-12-19 15:24:53
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfa4c05e36698_74249389',
+  'unifunc' => 'content_5dfb7a251fa7d9_11038524',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1576684549,
+      1 => 1576761891,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfa4c05e36698_74249389 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfb7a251fa7d9_11038524 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -198,8 +198,32 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >
                                 $('.ui-choose').ui_choose();
                             <?php echo '</script'; ?>
->
+><br><br>
+                            <table align="center" border="1" style="border-collapse: collapse; padding: 5px" cellspacing="0">
+                                <th style="background-color: #ffbd28;">
+                                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['comment'];?>
 
+                                        <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                                    </div>
+                                </th>
+                                <th style="background-color: #ffbd28;">
+                                    <div class="tooltip"><?php echo $_smarty_tpl->tpl_vars['lang']->value['note'];?>
+
+                                        <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                                    </div>
+                                </th>
+                                <tr>
+                                    <td>
+                                        <textarea style="background-color: #ffedc4; resize: none;" name="comment" ><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['comment'];?>
+</textarea>
+                                    </td>
+                                    <td>
+                                        <textarea style="background-color: #ffedc4; resize: none;" name="note"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['note'];?>
+</textarea>
+                                    </td>
+                                </tr>
+                            </table>
                             </br>
                             </br>
                             <?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
@@ -211,10 +235,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <input type="submit" name="record" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px" value="&#10133; <?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
 ">&nbsp&nbsp |
                             <a href="../controller/print.php?id=<?php echo $_smarty_tpl->tpl_vars['patient_id']->value;?>
-" target="_blank" style="text-decoration: none;"><img src="../images/print.png" width="24" height="24"><b style="font-size: 13px; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['print'];?>
+" target="_blank" style="text-decoration: none;">
+                                <img src="../images/print.png" width="24" height="24"><b style="font-size: 13px; color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['print'];?>
  <?php echo $_smarty_tpl->tpl_vars['lang']->value['request'];?>
 </b></a>
-
                     </form>
                     </div>
                 </td>
@@ -262,8 +286,9 @@ echo $_smarty_tpl->tpl_vars['result']->value['pay'];
 $_prefixVariable3 = ob_get_clean();
 if ($_prefixVariable3 == "on") {?>
 
-                                            <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="25" height="25"> <?php }?> <?php ob_start();
-echo $_smarty_tpl->tpl_vars['result']->value['over'];
+                                            <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="25" height="25"> <?php }?>
+                                        <?php ob_start();
+echo $_smarty_tpl->tpl_vars['result']->value['pay'];
 $_prefixVariable4 = ob_get_clean();
 if ($_prefixVariable4 !== "on") {?> <b hidden="true">b</b>
                                             <img src="../images/NZOK.png" width="25" height="25"> <?php }?>

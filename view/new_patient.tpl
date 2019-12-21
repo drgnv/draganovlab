@@ -138,8 +138,28 @@
                             <script src="../js/ui-choose.js"></script>
                             <script>
                                 $('.ui-choose').ui_choose();
-                            </script>
-
+                            </script><br><br>
+                            <table align="center" border="1" style="border-collapse: collapse; padding: 5px" cellspacing="0">
+                                <th style="background-color: #ffbd28;">
+                                    <div class="tooltip">{$lang.comment}
+                                        <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                                    </div>
+                                </th>
+                                <th style="background-color: #ffbd28;">
+                                    <div class="tooltip">{$lang.note}
+                                        <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                                    </div>
+                                </th>
+                                <tr>
+                                    <td>
+                                        <textarea style="background-color: #ffedc4; resize: none;" name="comment" >{$data.0.comment}</textarea>
+                                    </td>
+                                    <td>
+                                        <textarea style="background-color: #ffedc4; resize: none;" name="note">{$data.0.note}</textarea>
+                                    </td>
+                                </tr>
+                            </table>
                             </br>
                             </br>
                             {$lang.date}:
@@ -147,8 +167,8 @@
                                 | &nbsp&nbsp
 
                             <input type="submit" name="record" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px" value="&#10133; {$lang.add}">&nbsp&nbsp |
-                            <a href="../controller/print.php?id={$patient_id}" target="_blank" style="text-decoration: none;"><img src="../images/print.png" width="24" height="24"><b style="font-size: 13px; color: white;">{$lang.print} {$lang.request}</b></a>
-
+                            <a href="../controller/print.php?id={$patient_id}" target="_blank" style="text-decoration: none;">
+                                <img src="../images/print.png" width="24" height="24"><b style="font-size: 13px; color: white;">{$lang.print} {$lang.request}</b></a>
                     </form>
                     </div>
                 </td>
@@ -178,7 +198,8 @@
                                     <td style="padding: 2px; margin: 2px;">
                                         {if {$result.pay} == "on"}
 
-                                            <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.over} !== "on"} <b hidden="true">b</b>
+                                            <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="25" height="25"> {/if}
+                                        {if {$result.pay} !== "on"} <b hidden="true">b</b>
                                             <img src="../images/NZOK.png" width="25" height="25"> {/if}
                                     </td>
                                     <td style="color: black; font-size: 13px;padding: px; margin: 0px;">{$result.number}</td>

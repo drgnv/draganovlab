@@ -1,0 +1,7 @@
+<application>
+  <component name="FileTypeManager" version="16">
+    <extensionMap>
+      <mapping pattern="printouts_result.tpl" type="Smarty" />
+    </extensionMap>
+  </component>
+</application>

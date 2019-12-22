@@ -15,12 +15,13 @@ if(isset($_GET['printres'])){
 $data=$Basic->getDayResults($_GET['date']);
 
 $a = $Basic->array_group_by($data, 'patient_id');
+
 foreach ($a as $key => $value) {
    
     $b[$key]=$value;
-$hospital_data = $Basic->getHospitalInfo();
-}
 
+}
+    $hospital_data = $Basic->getHospitalInfo();
 
 //print_r($b);
 $date = date('d.m.Yг.');

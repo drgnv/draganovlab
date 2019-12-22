@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time:  3 дек 2019 в 09:08
+-- Generation Time: 22 дек 2019 в 19:32
 -- Версия на сървъра: 5.7.28-0ubuntu0.19.04.2
--- PHP Version: 7.2.24-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.19.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -431,7 +431,11 @@ CREATE TABLE `mdds` (
 --
 
 INSERT INTO `mdds` (`num_mdd`, `out_date`, `complete_date`, `doctor_id`, `rzk`, `zam_doc_id`, `nzok_num`, `mkb`, `paket_id`, `mkb2`, `type_mdd_id`, `test_code1`, `test_code2`, `test_code3`, `test_code4`, `test_code5`, `test_code6`, `no_money`, `id`, `patient_id`, `al_num`, `code1`, `code2`) VALUES
-(21312, '2019-12-03', '2019-12-23', '1', '2323', '34', '234', '2342', 1, '', 1, '01.11', '', '', '', '', '', '1', 1, 5, '324', '11', '');
+(21312, '2019-12-03', '2019-12-23', '1', '2323', '34', '234', '2342', 1, '', 1, '01.11', '', '', '', '', '', '1', 1, 5, '324', '11', ''),
+(121, '2019-12-31', '2019-12-31', '1', '897', '987', '87', 'z00', 1, '', 2, '10.09', '01.09', '', '', '', '', '1', 2, 16, '897', '91', '9'),
+(213, '2019-12-14', '2019-12-14', '1', '32990', '', '', 'Z00.0', 1, '', 1, '01.11', '01.09', '', '', '', '', '1', 3, 17, '213', '3600', '1'),
+(213, '2019-12-04', '2019-12-12', '1', '32990', '', '', 'Z00.1', 1, '', 8, '01.01', '01.12', '', '', '', '', '1', 4, 17, '111', '3600', ''),
+(213, '2019-12-18', '2019-12-18', '1', '32990', '', '', 'Z00.1', 1, '', 6, '01.11', '01.09', '', '', '', '', '1', 5, 4, '21', '33', '');
 
 -- --------------------------------------------------------
 
@@ -510,10 +514,33 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`number`, `names`, `doctor`, `date`, `id`, `username`, `password`, `over`, `comment`, `pay`, `idn`, `address`, `mkb`, `cito`, `phone`, `note`, `gender`, `country_id`, `municipality`, `street`, `mail`, `area`, `post_code`, `blood_type`, `work_place`) VALUES
-(1, 'dragan borisov draganov', '1', '2019-11-30', 2, 'K6GXzAh6PI', 'qraxtUIAu2', 'off', NULL, '', '9308253229', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'asdasd', '2', '2019-11-30', 3, '4uuzFrYBBw', 'lMvWTBfCKF', 'off', NULL, '', '', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'qwerfqwdf', '1', '2019-11-30', 4, 'QsOLos6k8E', '3fBnQAk1Gc', 'off', NULL, '', '', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'ДРАГАН БОРИСОВ ДРАГАНОВ', '3', '2019-12-01', 5, 'lEG2SGOmLI', 'xwaBVaGY6L', 'off', NULL, '', '9308253229', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'ДРАГАН ДРАГАНОВ', 'д-р Еленкова', '2019-12-22', 13, 'haGRbETmAg', 'jr8768uuvB', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `personal_info`
+--
+
+CREATE TABLE `personal_info` (
+  `pi_address` varchar(50) NOT NULL,
+  `pi_phone` varchar(20) NOT NULL,
+  `pi_mail` varchar(50) NOT NULL,
+  `pi_gender` int(1) NOT NULL,
+  `pi_blood_type` varchar(5) NOT NULL,
+  `pi_workplace` varchar(50) NOT NULL,
+  `pi_id` int(11) NOT NULL,
+  `pi_patient_idn` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `personal_info`
+--
+
+INSERT INTO `personal_info` (`pi_address`, `pi_phone`, `pi_mail`, `pi_gender`, `pi_blood_type`, `pi_workplace`, `pi_id`, `pi_patient_idn`) VALUES
+('a', '2', 'asd', 0, 'ab', 'sad', 3, '930825'),
+('', '', '', 0, '', '', 4, '9100293'),
+('asd', 'ff', 'ff', 1, '', 'fffffs', 5, '9308253229');
 
 -- --------------------------------------------------------
 
@@ -535,44 +562,7 @@ CREATE TABLE `results` (
 --
 
 INSERT INTO `results` (`test_code`, `result`, `patient_id`, `id`, `date`, `patient_idn`) VALUES
-('99.01', '', 2, 18, '2019-11-30', '9308253229'),
-('99.02', '', 2, 19, '2019-11-30', '9308253229'),
-('99.03', '', 2, 20, '2019-11-30', '9308253229'),
-('99.04', '', 2, 21, '2019-11-30', '9308253229'),
-('99.05', '', 2, 22, '2019-11-30', '9308253229'),
-('99.06', '', 2, 23, '2019-11-30', '9308253229'),
-('99.07', '', 2, 24, '2019-11-30', '9308253229'),
-('99.08', '', 2, 25, '2019-11-30', '9308253229'),
-('99.09', '', 2, 26, '2019-11-30', '9308253229'),
-('99.010', '', 2, 27, '2019-11-30', '9308253229'),
-('99.011', '', 2, 28, '2019-11-30', '9308253229'),
-('99.012', '', 2, 29, '2019-11-30', '9308253229'),
-('99.013', '', 2, 30, '2019-11-30', '9308253229'),
-('99.014', '', 2, 31, '2019-11-30', '9308253229'),
-('10.26', '', 3, 32, '2019-11-30', ''),
-('88.01', '', 4, 33, '2019-11-30', ''),
-('88.02', '', 4, 34, '2019-11-30', ''),
-('88.03', '', 4, 35, '2019-11-30', ''),
-('88.04', '', 4, 36, '2019-11-30', ''),
-('88.05', '', 4, 37, '2019-11-30', ''),
-('88.06', '', 4, 38, '2019-11-30', ''),
-('88.07', '', 4, 39, '2019-11-30', ''),
-('88.08', '', 4, 40, '2019-11-30', ''),
-('01.03', '', 5, 41, '2019-12-01', '9308253229'),
-('99.01', '', 5, 42, '2019-12-01', '9308253229'),
-('99.02', '', 5, 43, '2019-12-01', '9308253229'),
-('99.03', '', 5, 44, '2019-12-01', '9308253229'),
-('99.04', '', 5, 45, '2019-12-01', '9308253229'),
-('99.05', '', 5, 46, '2019-12-01', '9308253229'),
-('99.06', '', 5, 47, '2019-12-01', '9308253229'),
-('99.07', '', 5, 48, '2019-12-01', '9308253229'),
-('99.08', '', 5, 49, '2019-12-01', '9308253229'),
-('99.09', '', 5, 50, '2019-12-01', '9308253229'),
-('99.010', '', 5, 51, '2019-12-01', '9308253229'),
-('99.011', '', 5, 52, '2019-12-01', '9308253229'),
-('99.012', '', 5, 53, '2019-12-01', '9308253229'),
-('99.013', '', 5, 54, '2019-12-01', '9308253229'),
-('99.014', '', 5, 55, '2019-12-01', '9308253229');
+('01.11', '', 13, 72, '2019-12-22', '9308253229');
 
 -- --------------------------------------------------------
 
@@ -657,7 +647,7 @@ CREATE TABLE `tests` (
 INSERT INTO `tests` (`name`, `button`, `code`, `up`, `down`, `unit`, `flag`, `id`, `price`) VALUES
 ('ESR', 'ESR', '01.03', '<25', '', 'mm/h', 'blood', 2, ''),
 ('Време на кървене', 'Вр.кър', '01.04', '60', '300', 'sec.', 'coag', 3, ''),
-('INR', 'INR', '01.05', '0.95\r\n(Синтром: 2.0)', '1.20\r\n(Синтром: 4.0)', 'INR.', 'coag', 4, ''),
+('INR', 'INR', '01.05', '0.95', '1.20', 'INR.', 'coag', 4, ''),
 ('APTT', 'APTT', '01.06', '27', '35', 'sec', 'coag', 5, ''),
 ('Фибриноген', 'Fbg', '01.07', '2', '4', 'g/l', 'coag', 6, ''),
 ('Глюкоза', 'GLU', '01.11', '4.1', '6.2', 'mmol/L', 'blood', 10, ''),
@@ -667,7 +657,7 @@ INSERT INTO `tests` (`name`, `button`, `code`, `up`, `down`, `unit`, `flag`, `id
 ('Директен билирубин', 'DBI', '01.16', '<3.4', '', 'μmol/l', 'blood', 15, ''),
 ('Общ белтък', 'TP', '01.17', '64', '82', 'g/l', 'blood', 16, ''),
 ('Албумин', 'ALB', '01.18', '34', '50', 'g/l', 'blood', 17, ''),
-('Холестерол', 'CHOL', '01.19', '2.4', '5.2', 'mmol/l', 'blood', 18, ''),
+('Холестерол', 'CHOL', '01.19', '2.4', '5.2', 'mmol/l', 'blood', 18, '6'),
 ('HDL', 'HDL', '01.20', 'Мъже: >90\r\nЖени: >1.10', '', 'mmol/l', 'blood', 19, ''),
 ('Триглицериди', 'TGL', '01.21', '<2.2', '', 'mmol/l', 'blood', 20, ''),
 ('Гликиран хемоглобин', 'HbA1C', '01.22', '', '6.2', '%', 'blood', 21, ''),
@@ -726,7 +716,7 @@ INSERT INTO `tests` (`name`, `button`, `code`, `up`, `down`, `unit`, `flag`, `id
 ('Lym', '', '44.06', '', '', '%', 'dif', 80, ''),
 ('АКР - tCO2', '', '66.06', '', '', '', 'akr', 81, ''),
 ('Време на съсирване', 'Вр.със', '98.01', '180', '360', 'sec', 'coag', 84, ''),
-('Д-ДИМЕР', 'Д-ДИМЕР', '100.5', '<400 ng/mlIFEU', '', 'ng/mlIFEU', 'coag', 85, ''),
+('D-Dimer', 'D-Dimer', '100.5', '<400 ng/mlIFEU', '', 'ng/mlIFEU', 'coag', 85, ''),
 ('Mg', 'Mg', '01.99', '0.66', '1.03', 'mmol/l', 'blood', 86, ''),
 ('Anti - TPO / MAT/', 'MAT', '10.27', '<34', '', 'IU/mL', 'hormon', 89, ''),
 ('A-TG-TAT', 'TAT', '10.28', '<117 ', '', 'IU/ml', 'hormon', 90, ''),
@@ -750,7 +740,8 @@ INSERT INTO `tests` (`name`, `button`, `code`, `up`, `down`, `unit`, `flag`, `id
 ('Cl', '', '15.03', '97', '107', 'mmol/l', 'ele', 112, ''),
 ('Глюкоза - 8ч:', '', '62.01', '', '', 'mmol/l', 'kzp', 113, ''),
 ('Глюкоза - 12ч:', '', '62.02', '', '', 'mmol/l', 'kzp', 114, ''),
-('Глюкоза - 18ч:', '', '62.03', '', '', 'mmol/l', 'kzp', 115, '');
+('Глюкоза - 18ч:', '', '62.03', '', '', 'mmol/l', 'kzp', 115, ''),
+('test', 'test', '15.04', '0.95', '1.20', 'eqe', 'ele', 116, '0');
 
 -- --------------------------------------------------------
 
@@ -847,6 +838,12 @@ ALTER TABLE `patients`
   ADD KEY `id_2` (`id`);
 
 --
+-- Indexes for table `personal_info`
+--
+ALTER TABLE `personal_info`
+  ADD PRIMARY KEY (`pi_id`);
+
+--
 -- Indexes for table `results`
 --
 ALTER TABLE `results`
@@ -919,7 +916,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `mdds`
 --
 ALTER TABLE `mdds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `mdd_types`
 --
@@ -934,12 +931,17 @@ ALTER TABLE `mkb`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `personal_info`
+--
+ALTER TABLE `personal_info`
+  MODIFY `pi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT for table `schedule`
 --
@@ -959,7 +961,7 @@ ALTER TABLE `shifts`
 -- AUTO_INCREMENT for table `tests`
 --
 ALTER TABLE `tests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 --
 -- AUTO_INCREMENT for table `users`
 --

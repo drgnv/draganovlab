@@ -3,8 +3,11 @@
     <a href='./new_patient.php'>{$lang.registry}</a>
     <a href='./laboratory.php?from={$from_date}&to={$to_date}&status=all&searchbydate=Търси...'>{$lang.laboratory}</a>
     <a href='./mdds.php?from={$from_date}&to={$to_date}&searchbydate=Търси...'>{$lang.mdds}</a>
-    <a href='./search_by_date.php'>{$lang.search_by_date}</a> {if {$lvl}
-    <3}{else}<a href='./settings.php'>{$lang.settings}</a>{/if}
+    <a href='./search_by_date.php'>{$lang.search_by_date}</a>
+    <a href="../controller/printouts.php">{$lang.printouts}</a>
+    {if {$lvl}
+    <3}{else}
+        <a href='./settings.php'>{$lang.settings}</a>{/if}
 
         <form method="GET" action="../controller/search.php">
             <div style="text-align: right; margin: 6  ">

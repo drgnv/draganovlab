@@ -109,7 +109,8 @@
                                             <td>
                                                 {if {$result.pay} == "on"}
 
-                                                    <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="20" height="20"> {/if} {if {$result.over} !== "on"} <b hidden="true">b</b>
+                                                    <b hidden="true">a</b> <img src="../images/dollar-symbol.png" width="20" height="20"> {/if}
+                                                {if {$result.pay} !== "on"} <b hidden="true">b</b>
                                                     <img src="../images/NZOK.png" width="20" height="20"> {/if}
                                             </td>
                                             <td style="display:none;">{$result.idn}</td>
@@ -117,7 +118,7 @@
                                             <td style="color: black;" onclick="window.location='#';">{$result.number}</td>
                                             <td style="color: black;" onclick="window.location='#';">
                                                 {if {$result.pay} == "on"}
-                                                <b hidden="true">a</b> <img title="ПЛАТЕНО" src="../images/dollar-symbol.png" width="25" height="25"> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
+                                                <b hidden="true">a</b> {/if} {if {$result.pay} !== "on"} <b hidden="true">b</b> {/if} {if {$result.cito} == "on"}<b style="color: red;">
                                                     {if strlen({$result.comment})>1}   <div class="tooltip">
                                                        {$result.date|date_format:"%d.%m.%Y"}
                                                         {if strlen({$result.comment})>1}
@@ -234,6 +235,27 @@
                                     <option value="off" selected>{$lang.not_over}</option>
                                     {/if}
                                 </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="1" style="border-collapse: collapse;" cellspacing="0">
+                        <th style="background-color: #ffbd28;">
+                            <div class="tooltip">{$lang.comment}
+                                <span class="tooltiptext">Коментрът на резултатите се принтира с резултатите на пациента</span>
+                            </div>
+                        </th>
+                        <th style="background-color: #ffbd28;">
+                            <div class="tooltip">{$lang.note}
+                                <span class="tooltiptext">Бележките са видими само в полето "Болежки" и не достигат до пациентите. Подходящи
+  за работни записки.</span>
+                            </div>
+                        </th>
+                        <tr>
+                            <td>
+                                <textarea style="background-color: #ffedc4; resize: none;" name="comment" >{$data.0.comment}</textarea>
+                            </td>
+                            <td>
+                                <textarea style="background-color: #ffedc4; resize: none;" name="note">{$data.0.note}</textarea>
                             </td>
                         </tr>
                     </table>

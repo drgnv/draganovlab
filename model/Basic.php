@@ -22,6 +22,10 @@ class Basic extends Host{
     }
 
     public function newPatient($pname, $num, $doctor, $results, $date, $pay,$idn, $cito, $comment, $note) {
+        if($this->checkPersonalInfo($idn) == false){
+            $sql = "INSERT INTO `personal_info` (`pi_address`, `pi_phone`, `pi_mail`, `pi_gender`, `pi_blood_type`, `pi_workplace`, `pi_id`, `pi_patient_idn`) VALUES ('', '', '', 0, 'false', '', NULL, '".$idn."')";
+            $this->sqliexecute($sql);
+        }
         $userPass = $this->userPass();
        $sql = "INSERT INTO `patients` (`comment`, `note`, `number`, `names`, `doctor`, `date`, `id`, `username`, `password`, `pay`, `idn`, `cito`, `over`) VALUES ('".mysqli_real_escape_string($this->connect(), $comment)."', '".mysqli_real_escape_string($this->connect(), $note)."', '".mysqli_real_escape_string($this->connect(), $num)."', '".mysqli_real_escape_string($this->connect(), $pname)."', '".mysqli_real_escape_string($this->connect(), $doctor)."', '".mysqli_real_escape_string($this->connect(), $date)."', NULL, '".mysqli_real_escape_string($this->connect(), $userPass['username'])."', '".mysqli_real_escape_string($this->connect(), $userPass['password'])."', '".mysqli_real_escape_string($this->connect(), $pay)."', '".mysqli_real_escape_string($this->connect(), $idn)."', '".mysqli_real_escape_string($this->connect(), $cito)."', 'off')";
 //echo $sql;
@@ -37,6 +41,16 @@ class Basic extends Host{
         }
 //echo $sql;
        // print_r($results);
+    }
+
+    public function checkPersonalInfo($idn){
+        $sql = "SELECT * FROM personal_info WHERE pi_patient_idn = '".$idn."'";
+       $result = $this->sqliexecute($sql);
+        if(is_array($result)){
+            return $result;
+        }else{
+            return false;
+        }
     }
     
     public function getDayResults($date) {
@@ -78,7 +92,7 @@ class Basic extends Host{
     
     
     public function getPatientData($id) {
-        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor = doctors.doctor_id WHERE patients.id=".mysqli_real_escape_string($this->connect(), $id)." ORDER BY results.id";
+        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor = doctors.doctor_id  WHERE patients.id=".mysqli_real_escape_string($this->connect(), $id)." ORDER BY results.id";
         
         $raw_data=$this->sqliexecute($sql);
         return $raw_data;
@@ -231,7 +245,7 @@ class Basic extends Host{
       $this->sqliexecute($sql2);
   }
   
-  public function updatePatient($data) {
+  public function updatePatient($data){
       $sql = "UPDATE patients SET "
               . "number = ".mysqli_real_escape_string($this->connect(), $data['number']).", "
               . "names = '".mysqli_real_escape_string($this->connect(), $data['name'])."', "
@@ -605,6 +619,24 @@ class Basic extends Host{
     public function getLanguage(){
         $sql="SELECT default_lang FROM hospital WHERE id = 1";
         return $this->sqliexecute($sql);
+    }
+
+    public function getPersonalInfo($idn){
+        $sql = "SELECT * FROM personal_info WHERE pi_patient_idn = '".mysqli_real_escape_string($this->connect(),$idn)."'";
+      return $this->sqliexecute($sql);
+    }
+
+    public function updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn){
+        $sql = "UPDATE personal_info SET
+        `pi_address` = '".mysqli_real_escape_string($this->connect(),$address)."',
+         `pi_phone` = '".mysqli_real_escape_string($this->connect(),$phone)."',
+         `pi_mail` = '".mysqli_real_escape_string($this->connect(),$mail)."',
+         `pi_blood_type` = '".mysqli_real_escape_string($this->connect(),$blood_type)."',
+         `pi_gender` = '".mysqli_real_escape_string($this->connect(),$gender)."',
+         `pi_workplace` = '".mysqli_real_escape_string($this->connect(),$work_place)."'
+         WHERE pi_patient_idn = '".mysqli_real_escape_string($this->connect(),$idn)."'";
+        $this->sqliexecute($sql);
+        //return $sql;
     }
 
 }

@@ -98,5 +98,6 @@ $language = array(
     "cbc"=>"CBC",
     "electro"=>'Electrolitos',
     "codes_by_tests"=>'Código de prueba asignado',
-    "cbc_full"=>'Conteo sanguíneo completo'
+    "cbc_full"=>'Conteo sanguíneo completo',
+    "printouts"=>"impresiones"
 );

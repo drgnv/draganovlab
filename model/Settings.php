@@ -190,5 +190,37 @@ class Settings extends Basic{
         $sql = "UPDATE `settings` SET `setting_selected` = '".$selected_setting."' WHERE `settings`.`id` = 1";
         return $this->sqliexecute($sql);
     }
+
+    public function printOuts($type, $mode, $start_date, $end_date, $doctor_id, $patient_idn){
+
+        if($type == 'tests'){
+            if($mode=='all'){
+                $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code";
+            }
+            if($mode=='dates'){
+                $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code WHERE patients.date between '".mysqli_real_escape_string($this->connect(), $start_date)."' and '".mysqli_real_escape_string($this->connect(), $end_date)."'";
+            }
+        }
+
+        if($type == 'doctor'){
+            if($mode=='all'){
+                $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE patients.doctor =".mysqli_real_escape_string($this->connect(), $doctor_id)."";
+            }
+            if($mode=='dates'){
+                $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE patients.date between '".mysqli_real_escape_string($this->connect(), $start_date)."' and '".mysqli_real_escape_string($this->connect(), $end_date)."' AND patients.doctor =".mysqli_real_escape_string($this->connect(), $doctor_id)." ";
+            }
+        }
+
+        if($type == 'patient'){
+            if($mode=='all'){
+                $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE patients.idn = '".mysqli_real_escape_string($this->connect(), $patient_idn)."'";
+            }
+            if($mode=='dates'){
+                $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE patients.idn = '".mysqli_real_escape_string($this->connect(), $patient_idn)."' AND patients.date between '".mysqli_real_escape_string($this->connect(), $start_date)."' and '".mysqli_real_escape_string($this->connect(), $end_date)."'";
+            }
+        }
+//echo $sql;
+        return $this->sqliexecute($sql);
+    }
 }
 

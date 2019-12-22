@@ -83,6 +83,46 @@
         background-color: #fff3bf;
         box-shadow: #33FF33;
     }
+
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #34495E;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
 <div class="content">
@@ -310,25 +350,25 @@
                 <td valign="top">
                     <table>
                         <tr>
-                            <td style="color: white;">ID </td>
+                            <td style="color: white;" align="right">ID: </td>
                             <td>
                                 <input required type="text" name="number" value="{$data.0.number}" size="1">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">{$lang.patient}:</td>
+                            <td style="color: white;" align="right">{$lang.patient}:</td>
                             <td>
                                 <input required type="text" name="patient" value="{$data.0.names}" size="26">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">{$lang.idn}:</td>
+                            <td style="color: white;" align="right">{$lang.idn}:</td>
                             <td>
                                 <input type="text" name="idn" value="{$data.0.idn}" size="9">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"> {$lang.doctor}:</td>
+                            <td style="color: white;" align="right"> {$lang.doctor}:</td>
                             <td>
                                 <input list="hosting-plan" type="text" size="14" name='doctor' value="{$data.0.doctor}">
                                 <datalist id="hosting-plan">
@@ -338,13 +378,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">{$lang.date}:</td>
+                            <td style="color: white;" align="right">{$lang.date}:</td>
                             <td>
                                 <input type="date" name="date" value="{$data.0.date}">
                             </td>
                         </tr>
                         <tr>
-                            <td> <b style="color:red;">{$lang.cito}:</b></td>
+                            <td align="right"> <b style="color:red;" >{$lang.cito}:</b></td>
                             <td> {if {$data.0.cito} == "on"}
                                 <input type="checkbox" name="cito" checked> {/if} {if {$data.0.cito} !== "on"}
                                 <input type="checkbox" name="cito"> {/if} <i style="color: white;">{$lang.status}:</i>
@@ -360,9 +400,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><a style="text-decoration:none; color: black;" id="myBtn">
+                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="cursor: pointer; color: white;">Лични данни</b></a>
+
+                            </td>
                             <td>
-                                <a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
+                                  | <a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
                                     <img src="../images/archive.png" width="30" height="30"><b style="color: white;">{$lang.old_results}</b></a>
 
                             </td>
@@ -403,6 +446,7 @@
                 </tr>
 
                 </form>
+
                 <tr>
                     </td>
                     <!--
@@ -488,4 +532,109 @@
         </script>
 
     </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p><h2 style="color: white;">Лични данни</h2>
+                <form action="../controller/laboratory.php" method="POST">
+                <table style="color: white;">
+                    <tr>
+                        <td>
+                            {$lang.address}:
+                        </td>
+                        <td>
+                        <input type="text" name="address" value="{$pi.0.pi_address}">
+                        </td>
+                        <td>
+                            {$lang.phone}:
+                        </td>
+                        <td>
+                            <input type="text" name="phone" value="{$pi.0.pi_phone}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            E-mail
+                        </td>
+                        <td>
+                            <input type="mail" name="mail" value="{$pi.0.pi_mail}">
+                        </td>
+                        <td>
+                            Работно място:
+                        </td>
+                        <td>
+                            <input type="text" name="work_place" value="{$pi.0.pi_workplace}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Пол:
+                        </td>
+                        <td>
+                            <select name="gender">
+                                <option value="1" {if $pi.0.pi_gender == '1'}selected{else}{/if}>Мъж</option>
+                                <option value="2" {if $pi.0.pi_gender == '2'}selected{else}{/if}>Жена</option>
+                                <option value="0" {if $pi.0.pi_gender == '0'}selected{else}{/if}>Не е посочено</option>
+                            </select>
+                        </td>
+                        <td>
+                            Кръвна група:
+                        </td>
+                        <td>
+                            <select name="blood_type">
+                                <option value="1" {if $pi.0.pi_blood_type == '1'}selected{else}{/if}>A+</option>
+                                <option value="2" {if $pi.0.pi_blood_type == '2'}selected{else}{/if}>A-</option>
+                                <option value="3" {if $pi.0.pi_blood_type == '3'}selected{else}{/if}>B+</option>
+                                <option value="4" {if $pi.0.pi_blood_type == '4'}selected{else}{/if}>B-</option>
+                                <option value="5" {if $pi.0.pi_blood_type == '5'}selected{else}{/if}>AB+</option>
+                                <option value="6" {if $pi.0.pi_blood_type == '6'}selected{else}{/if}>AB-</option>
+                                <option value="7" {if $pi.0.pi_blood_type == '7'}selected{else}{/if}>0+</option>
+                                <option value="8" {if $pi.0.pi_blood_type == '8'}selected{else}{/if}>0-</option>
+                                <option value="false" {if $pi.0.pi_blood_type == 'false'}selected{else}{/if}>Не е посочено</option>
+                            </select>
+                            <input type="hidden" name="idn" value="{$dayList.0.idn}">
+                            <input type="hidden" name="id" value="{$dayList.0.id}">
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <input type="submit" name="personal_info" value="{$lang.save_btn}" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">
+            </form>
+
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     {include file="footer.tpl"}

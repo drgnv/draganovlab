@@ -32,13 +32,24 @@ $from_date = filter_input(INPUT_GET, 'from');
 $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);
 $Smarty->assign('status', $status);
+
 if(isset($_GET['patient_id'])){
     $patient_data = $Basic->getPatientData($_GET['patient_id']);
    // print_r($patient_data);
     $data = $Basic->getPatientData($_GET['patient_id']);
+    $personal_info = $Basic->getPersonalInfo($data[0]['idn']);
     $Smarty->assign('data', $patient_data);
+    $Smarty->assign('pi', $personal_info);
 }
 
+if(isset($_POST['personal_info'])){
+    $address = filter_input(INPUT_POST, 'address');
+    $mail = filter_input(INPUT_POST, 'mail');
+    $gender = filter_input(INPUT_POST, 'gender');
+    $phone = filter_input(INPUT_POST, 'phone');
+    $work_place = filter_input(INPUT_POST, 'work_place');
+    $blood_type = filter_input(INPUT_POST, 'blood_type');
+}
 
 //ЗАПИС НА ПРОМЕНИТЕ
 if(isset($_POST['save'])){

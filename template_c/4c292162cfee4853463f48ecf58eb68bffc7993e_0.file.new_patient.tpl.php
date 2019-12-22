@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-21 08:43:27
+/* Smarty version 3.1.32, created on 2019-12-22 13:20:27
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfdbf0f6deeb2_26622766',
+  'unifunc' => 'content_5dff517bc7eeb2_56625398',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1576761891,
+      1 => 1577013622,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfdbf0f6deeb2_26622766 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dff517bc7eeb2_56625398 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -171,7 +171,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                             <input placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
 " required type="text" name="names" style="width: 220px; text-transform: capitalize;">
                             <input type="text" name='idn' size="7" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
-">
+" required>
                             <input list="hosting-plan" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
 " type="text" size="14"  name='doctor'>
                             <datalist id="hosting-plan">

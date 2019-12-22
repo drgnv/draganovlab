@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-21 20:53:48
+/* Smarty version 3.1.32, created on 2019-12-22 18:39:38
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfe6a3c641580_58015333',
+  'unifunc' => 'content_5dff9c4a7c62f2_80260176',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1576954427,
+      1 => 1577015383,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfe6a3c641580_58015333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dff9c4a7c62f2_80260176 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -121,6 +121,46 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     input[type=text]:focus {
         background-color: #fff3bf;
         box-shadow: #33FF33;
+    }
+
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #34495E;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
     }
 </style>
 
@@ -558,9 +598,9 @@ if ($_prefixVariable14 !== "on") {?>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
-" style="text-decoration:none; color: black;">
+                            <td><a style="text-decoration:none; color: black;" id="myBtn">
                                     <img src="../images/personal-information-icon.png" width="30" height="30"><b style="color: white;">Лични данни</b></a>
+
                             </td>
                             <td>
                                 <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
@@ -612,6 +652,7 @@ if ($_prefixVariable14 !== "on") {?>
                 </tr>
 
                 </form>
+
                 <tr>
                     </td>
                     <!--
@@ -739,6 +780,129 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >
 
     </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p><h2 style="color: white;">Лични данни</h2>
+                <form action="../controller/laboratory.php" method="POST">
+                <table style="color: white;">
+                    <tr>
+                        <td>
+                            <?php echo $_smarty_tpl->tpl_vars['lang']->value['address'];?>
+:
+                        </td>
+                        <td>
+                        <input type="text" name="address" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_address'];?>
+">
+                        </td>
+                        <td>
+                            <?php echo $_smarty_tpl->tpl_vars['lang']->value['phone'];?>
+:
+                        </td>
+                        <td>
+                            <input type="text" name="phone" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_phone'];?>
+">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            E-mail
+                        </td>
+                        <td>
+                            <input type="mail" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_mail'];?>
+">
+                        </td>
+                        <td>
+                            Работно място:
+                        </td>
+                        <td>
+                            <input type="text" name="work_place" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_workplace'];?>
+">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Пол:
+                        </td>
+                        <td>
+                            <select value="gender">
+                                <option value="1" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_gender'] == '1') {?>selected<?php } else {
+}?>>Мъж</option>
+                                <option value="2" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_gender'] == '2') {?>selected<?php } else {
+}?>>Жена</option>
+                                <option value="0" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_gender'] == '0') {?>selected<?php } else {
+}?>>Не е посочено</option>
+                            </select>
+                        </td>
+                        <td>
+                            Кръвна група:
+                        </td>
+                        <td>
+                            <select value="blood_type">
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'A+') {?>selected<?php } else {
+}?>>A+</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'A-') {?>selected<?php } else {
+}?>>A-</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'B+') {?>selected<?php } else {
+}?>>B+</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'B-') {?>selected<?php } else {
+}?>>B-</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'AB+') {?>selected<?php } else {
+}?>>AB+</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'AB-') {?>selected<?php } else {
+}?>>AB-</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == '0+') {?>selected<?php } else {
+}?>>0+</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == '0-') {?>selected<?php } else {
+}?>>0-</option>
+                                <option value="false" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'false') {?>selected<?php } else {
+}?>>Не е посочено</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" name="personal_info" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
+" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">
+            </form>
+
+            </p>
+        </div>
+
+    </div>
+
+    <?php echo '<script'; ?>
+>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    <?php echo '</script'; ?>
+>
     <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

@@ -126,7 +126,7 @@
 
                            
                             <input placeholder="{$lang.patient}" required type="text" name="names" style="width: 220px; text-transform: capitalize;">
-                            <input type="text" name='idn' size="7" placeholder="{$lang.idn}">
+                            <input type="text" name='idn' size="7" placeholder="{$lang.idn}" required>
                             <input list="hosting-plan" placeholder="{$lang.doctor}" type="text" size="14"  name='doctor'>
                             <datalist id="hosting-plan">
                                 {foreach from=$doctors item=doctor}

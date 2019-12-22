@@ -350,25 +350,25 @@
                 <td valign="top">
                     <table>
                         <tr>
-                            <td style="color: white;">ID </td>
+                            <td style="color: white;" align="right">ID: </td>
                             <td>
                                 <input required type="text" name="number" value="{$data.0.number}" size="1">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">{$lang.patient}:</td>
+                            <td style="color: white;" align="right">{$lang.patient}:</td>
                             <td>
                                 <input required type="text" name="patient" value="{$data.0.names}" size="26">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">{$lang.idn}:</td>
+                            <td style="color: white;" align="right">{$lang.idn}:</td>
                             <td>
                                 <input type="text" name="idn" value="{$data.0.idn}" size="9">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"> {$lang.doctor}:</td>
+                            <td style="color: white;" align="right"> {$lang.doctor}:</td>
                             <td>
                                 <input list="hosting-plan" type="text" size="14" name='doctor' value="{$data.0.doctor}">
                                 <datalist id="hosting-plan">
@@ -378,13 +378,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;">{$lang.date}:</td>
+                            <td style="color: white;" align="right">{$lang.date}:</td>
                             <td>
                                 <input type="date" name="date" value="{$data.0.date}">
                             </td>
                         </tr>
                         <tr>
-                            <td> <b style="color:red;">{$lang.cito}:</b></td>
+                            <td align="right"> <b style="color:red;" >{$lang.cito}:</b></td>
                             <td> {if {$data.0.cito} == "on"}
                                 <input type="checkbox" name="cito" checked> {/if} {if {$data.0.cito} !== "on"}
                                 <input type="checkbox" name="cito"> {/if} <i style="color: white;">{$lang.status}:</i>
@@ -401,11 +401,11 @@
                         </tr>
                         <tr>
                             <td><a style="text-decoration:none; color: black;" id="myBtn">
-                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="color: white;">Лични данни</b></a>
+                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="cursor: pointer; color: white;">Лични данни</b></a>
 
                             </td>
                             <td>
-                                <a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
+                                  | <a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
                                     <img src="../images/archive.png" width="30" height="30"><b style="color: white;">{$lang.old_results}</b></a>
 
                             </td>
@@ -574,7 +574,7 @@
                             Пол:
                         </td>
                         <td>
-                            <select value="gender">
+                            <select name="gender">
                                 <option value="1" {if $pi.0.pi_gender == '1'}selected{else}{/if}>Мъж</option>
                                 <option value="2" {if $pi.0.pi_gender == '2'}selected{else}{/if}>Жена</option>
                                 <option value="0" {if $pi.0.pi_gender == '0'}selected{else}{/if}>Не е посочено</option>
@@ -595,9 +595,12 @@
                                 <option {if $pi.0.pi_blood_type == '0-'}selected{else}{/if}>0-</option>
                                 <option value="false" {if $pi.0.pi_blood_type == 'false'}selected{else}{/if}>Не е посочено</option>
                             </select>
+                            <input type="hidden" name="idn" value="{$dayList.0.idn}">
+                            <input type="hidden" name="id" value="{$dayList.0.id}">
                         </td>
                     </tr>
                 </table>
+
                 <br>
                 <input type="submit" name="personal_info" value="{$lang.save_btn}" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">
             </form>

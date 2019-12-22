@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-22 18:39:38
+/* Smarty version 3.1.32, created on 2019-12-22 19:29:34
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dff9c4a7c62f2_80260176',
+  'unifunc' => 'content_5dffa7fe900144_18643530',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1577015383,
+      1 => 1577035754,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dff9c4a7c62f2_80260176 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dffa7fe900144_18643530 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -512,14 +512,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <td valign="top">
                     <table>
                         <tr>
-                            <td style="color: white;">ID </td>
+                            <td style="color: white;" align="right">ID: </td>
                             <td>
                                 <input required type="text" name="number" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['number'];?>
 " size="1">
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
+                            <td style="color: white;" align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['patient'];?>
 :</td>
                             <td>
                                 <input required type="text" name="patient" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['names'];?>
@@ -527,7 +527,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
+                            <td style="color: white;" align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['idn'];?>
 :</td>
                             <td>
                                 <input type="text" name="idn" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
@@ -535,7 +535,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
+                            <td style="color: white;" align="right"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
 :</td>
                             <td>
                                 <input list="hosting-plan" type="text" size="14" name='doctor' value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['doctor'];?>
@@ -556,7 +556,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
+                            <td style="color: white;" align="right"><?php echo $_smarty_tpl->tpl_vars['lang']->value['date'];?>
 :</td>
                             <td>
                                 <input type="date" name="date" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['date'];?>
@@ -564,7 +564,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </td>
                         </tr>
                         <tr>
-                            <td> <b style="color:red;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['cito'];?>
+                            <td align="right"> <b style="color:red;" ><?php echo $_smarty_tpl->tpl_vars['lang']->value['cito'];?>
 :</b></td>
                             <td> <?php ob_start();
 echo $_smarty_tpl->tpl_vars['data']->value[0]['cito'];
@@ -599,11 +599,11 @@ if ($_prefixVariable14 !== "on") {?>
                         </tr>
                         <tr>
                             <td><a style="text-decoration:none; color: black;" id="myBtn">
-                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="color: white;">Лични данни</b></a>
+                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="cursor: pointer; color: white;">Лични данни</b></a>
 
                             </td>
                             <td>
-                                <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
+                                  | <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " style="text-decoration:none; color: black;">
                                     <img src="../images/archive.png" width="30" height="30"><b style="color: white;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['old_results'];?>
 </b></a>
@@ -828,7 +828,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             Пол:
                         </td>
                         <td>
-                            <select value="gender">
+                            <select name="gender">
                                 <option value="1" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_gender'] == '1') {?>selected<?php } else {
 }?>>Мъж</option>
                                 <option value="2" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_gender'] == '2') {?>selected<?php } else {
@@ -861,9 +861,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <option value="false" <?php if ($_smarty_tpl->tpl_vars['pi']->value[0]['pi_blood_type'] == 'false') {?>selected<?php } else {
 }?>>Не е посочено</option>
                             </select>
+                            <input type="hidden" name="idn" value="<?php echo $_smarty_tpl->tpl_vars['dayList']->value[0]['idn'];?>
+">
+                            <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['dayList']->value[0]['id'];?>
+">
                         </td>
                     </tr>
                 </table>
+
                 <br>
                 <input type="submit" name="personal_info" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
 " style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">

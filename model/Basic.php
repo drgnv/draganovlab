@@ -626,8 +626,17 @@ class Basic extends Host{
       return $this->sqliexecute($sql);
     }
 
-    public function updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type){
-
+    public function updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn){
+        $sql = "UPDATE personal_info SET
+        `pi_address` = '".mysqli_real_escape_string($this->connect(),$address)."',
+         `pi_phone` = '".mysqli_real_escape_string($this->connect(),$phone)."',
+         `pi_mail` = '".mysqli_real_escape_string($this->connect(),$mail)."',
+         `pi_blood_type` = '".mysqli_real_escape_string($this->connect(),$blood_type)."',
+         `pi_gender` = '".mysqli_real_escape_string($this->connect(),$gender)."',
+         `pi_workplace` = '".mysqli_real_escape_string($this->connect(),$work_place)."'
+         WHERE pi_patient_idn = '".mysqli_real_escape_string($this->connect(),$idn)."'";
+        $this->sqliexecute($sql);
+        //return $sql;
     }
 
 }

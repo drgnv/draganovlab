@@ -6,4 +6,5 @@ node_modules/
 desktop.ini
 .settings/
 *.tpl.php
-_linux
+_linux/
+inspection/

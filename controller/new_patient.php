@@ -22,7 +22,7 @@ $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 
 
-if(isset($_POST['record'])){
+if(filter_has_var(INPUT_POST, 'record')){
     
     $pname = filter_input(INPUT_POST, 'names');
     $num = filter_input(INPUT_POST, 'num');
@@ -150,8 +150,8 @@ if(isset($_SESSION['num'])){
     $Smarty->assign('lastnum', $ln);
 }
 
-if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
+if (filter_has_var(INPUT_GET, 'delete')) {
+    $id = filter_input(INPUT_GET, 'delete');
     $Basic->deleteById($id);
     header('Location: new_patient.php');
 }
@@ -177,7 +177,7 @@ if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && st
 }
 $Smarty->assign('status', $status);
 
-//===========ВЗЕМАНЕ НА ПАНЕЛ============
+//===========Take test panel============
 include_once '../model/Settings.php';
 $Settings = new Settings();
 $panel = $Settings->getTestPanel();

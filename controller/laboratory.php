@@ -42,13 +42,13 @@ if(isset($_GET['patient_id'])){
     $Smarty->assign('pi', $personal_info);
 }
 
-if(isset($_POST['personal_info'])){
+if(filter_has_var(INPUT_POST, 'personal_info')){
     $address = filter_input(INPUT_POST, 'address');
-    $mail = filter_input(INPUT_POST, 'mail');
-    $gender = filter_input(INPUT_POST, 'gender');
+    $mail = filter_input(INPUT_POST, 'mail', FILTER_VALIDATE_EMAIL);
+    $gender = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_INT);
     $phone = filter_input(INPUT_POST, 'phone');
     $work_place = filter_input(INPUT_POST, 'work_place');
-    $blood_type = filter_input(INPUT_POST, 'blood_type');
+    $blood_type = filter_input(INPUT_POST, 'blood_type',  FILTER_VALIDATE_INT);
     $idn = filter_input(INPUT_POST, 'idn');
 
     $Basic->updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn);
@@ -57,7 +57,7 @@ if(isset($_POST['personal_info'])){
 }
 
 //ЗАПИС НА ПРОМЕНИТЕ
-if(isset($_POST['save'])){
+if(filter_has_var(INPUT_POST, 'save')){
     $patient['number'] = filter_input(INPUT_POST, 'number');
     $patient['name'] = filter_input(INPUT_POST, 'patient');
     $patient['doctor'] = filter_input(INPUT_POST, 'doctor');
@@ -93,7 +93,7 @@ if(isset($_POST['save'])){
 $doctors=$Basic->getAllDoctors();
 
 //ДОБАВЯНЕ НА ИЗСЛЕДВАНИЯ
-if(isset($_POST['add'])){
+if(filter_has_var(INPUT_POST, 'add')){
     $patient_new_tests = $_POST['my-select'];
     $patient_id = filter_input(INPUT_POST, 'patient_id');
     $data1 = $data[0]['date'];
@@ -109,21 +109,21 @@ if(isset($_POST['add'])){
 }
 
 //премахване на изследвания
-if(isset($_POST['remove'])){
+if(filter_has_var(INPUT_POST, 'remove')){
     $patient_id = filter_input(INPUT_GET, 'patient_id');
     $tests_for_remove = $_POST['my-selectdel'];
     $Basic->deleteTestsFromPatient($patient_id, $tests_for_remove);
     header("Location: laboratory.php?patient_id=".$patient_id."&from=".$from_date."&to=".$to_date."&status=".$status);
 }
 
-//пациенти по дата
+//Patients by date
 $start = $_GET['from'];
 $end = $_GET['to'];
 $status = $_GET['status'];
 $dayList = $Basic->searchByDateAndStatus($start, $end, $status);
 
-//ИЗТРИВАНЕ НА ПАЦИЕНТ ПО ИД
-if (isset($_GET['delete'])) {
+//DELETE PATIENT BY ID
+if (filter_has_var(INPUT_POST, 'delete')) {
     $id = $_GET['delete'];
     $Basic->deleteById($id);
     header('Location: laboratory.php');
@@ -137,7 +137,7 @@ $tests = $Basic->getAllTests();
 if(isset($_SESSION['patient_id'])){
     $Smarty->assign('patient_id', $_SESSION['patient_id'][0]['MAX(id)']);
 }
-if(isset($_GET['itsok'])){
+if(filter_has_var(INPUT_GET, 'itsok')){
     $Smarty->assign('ok', $_GET['itsok']);
 }
 $all_tests = $Basic->getAllTests();

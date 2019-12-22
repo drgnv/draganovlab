@@ -584,15 +584,15 @@
                             Кръвна група:
                         </td>
                         <td>
-                            <select value="blood_type">
-                                <option {if $pi.0.pi_blood_type == 'A+'}selected{else}{/if}>A+</option>
-                                <option {if $pi.0.pi_blood_type == 'A-'}selected{else}{/if}>A-</option>
-                                <option {if $pi.0.pi_blood_type == 'B+'}selected{else}{/if}>B+</option>
-                                <option {if $pi.0.pi_blood_type == 'B-'}selected{else}{/if}>B-</option>
-                                <option {if $pi.0.pi_blood_type == 'AB+'}selected{else}{/if}>AB+</option>
-                                <option {if $pi.0.pi_blood_type == 'AB-'}selected{else}{/if}>AB-</option>
-                                <option {if $pi.0.pi_blood_type == '0+'}selected{else}{/if}>0+</option>
-                                <option {if $pi.0.pi_blood_type == '0-'}selected{else}{/if}>0-</option>
+                            <select name="blood_type">
+                                <option value="1" {if $pi.0.pi_blood_type == '1'}selected{else}{/if}>A+</option>
+                                <option value="2" {if $pi.0.pi_blood_type == '2'}selected{else}{/if}>A-</option>
+                                <option value="3" {if $pi.0.pi_blood_type == '3'}selected{else}{/if}>B+</option>
+                                <option value="4" {if $pi.0.pi_blood_type == '4'}selected{else}{/if}>B-</option>
+                                <option value="5" {if $pi.0.pi_blood_type == '5'}selected{else}{/if}>AB+</option>
+                                <option value="6" {if $pi.0.pi_blood_type == '6'}selected{else}{/if}>AB-</option>
+                                <option value="7" {if $pi.0.pi_blood_type == '7'}selected{else}{/if}>0+</option>
+                                <option value="8" {if $pi.0.pi_blood_type == '8'}selected{else}{/if}>0-</option>
                                 <option value="false" {if $pi.0.pi_blood_type == 'false'}selected{else}{/if}>Не е посочено</option>
                             </select>
                             <input type="hidden" name="idn" value="{$dayList.0.idn}">

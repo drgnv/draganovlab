@@ -50,6 +50,7 @@ if(isset($_POST['personal_info'])){
     $work_place = filter_input(INPUT_POST, 'work_place');
     $blood_type = filter_input(INPUT_POST, 'blood_type');
     $idn = filter_input(INPUT_POST, 'idn');
+
     $Basic->updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn);
     header("Location: laboratory.php?patient_id=".$_POST['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date."&status=".$status);
 

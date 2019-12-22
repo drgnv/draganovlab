@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-20 18:32:04
+/* Smarty version 3.1.32, created on 2019-12-22 19:48:08
   from '/var/www/html/dlab/view/side_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfcf784b0e8b4_04287024',
+  'unifunc' => 'content_5dffac58d2b1b1_51803147',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af4c58407b76f4acffdd19b532ced3bb679b50cf' => 
     array (
       0 => '/var/www/html/dlab/view/side_menu.tpl',
-      1 => 1576858972,
+      1 => 1576946925,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfcf784b0e8b4_04287024 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dffac58d2b1b1_51803147 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="../css/side_menu_drop_down.css">
 <div class="settings-menu">
 
@@ -120,12 +120,7 @@ function content_5dfcf784b0e8b4_04287024 (Smarty_Internal_Template $_smarty_tpl)
         <b style="font-size: 18px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['mdds'];?>
 </b>
     </a>
-    <br>
-    <a href="../controller/printouts.php" style="color:whitesmoke; text-decoration: none;">
-        <img src="../images/print.png" width="25" height="25">
-        <b style="font-size: 18px;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['printouts'];?>
-</b>
-    </a>
+
 
 
 </div><?php }

@@ -65,7 +65,22 @@ if(isset($_POST['doctor'])){
 }
 
 if(isset($_POST['tests'])){
+    $mode = filter_input(INPUT_POST, 'mode');
+    $type = filter_input(INPUT_POST, 'tests');
+    $start_date = filter_input(INPUT_POST, 'start_date');
+    $end_date = filter_input(INPUT_POST, 'end_date');
+    $data = $Settings->printOuts('tests', $mode, $start_date, $end_date, '', '');
 
+    $a = $Settings->array_group_by($data, 'date');
+
+    foreach ($a as $key => $value) {
+
+        $b[$key]=$value;
+
+    }
+    $Smarty->assign('results', $b);
+    $Smarty->display('printouts_results.tpl');
+    exit;
 }
 
 

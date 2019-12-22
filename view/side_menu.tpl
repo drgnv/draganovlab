@@ -84,11 +84,7 @@
         <img src="../images/mdd.png" width="25" height="25">
         <b style="font-size: 18px;">{$lang.mdds}</b>
     </a>
-    <br>
-    <a href="../controller/printouts.php" style="color:whitesmoke; text-decoration: none;">
-        <img src="../images/print.png" width="25" height="25">
-        <b style="font-size: 18px;">{$lang.printouts}</b>
-    </a>
+
 
 
 </div>

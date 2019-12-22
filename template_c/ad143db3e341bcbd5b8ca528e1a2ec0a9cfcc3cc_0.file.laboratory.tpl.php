@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-21 09:04:25
+/* Smarty version 3.1.32, created on 2019-12-21 20:53:48
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfdc3f905d577_18916968',
+  'unifunc' => 'content_5dfe6a3c641580_58015333',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1576686229,
+      1 => 1576954427,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dfdc3f905d577_18916968 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfe6a3c641580_58015333 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -558,7 +558,10 @@ if ($_prefixVariable14 !== "on") {?>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
+" style="text-decoration:none; color: black;">
+                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="color: white;">Лични данни</b></a>
+                            </td>
                             <td>
                                 <a href="../controller/old_results.php?idn=<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['idn'];?>
 " style="text-decoration:none; color: black;">

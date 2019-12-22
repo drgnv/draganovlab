@@ -31,7 +31,6 @@
     {include file="top_menu.tpl"}
 </div>
 <div class="content">
-    {include file="side_menu.tpl"}
 
     <div class="center">
         <div class="edit-doctors">
@@ -40,8 +39,8 @@
 
             <hr>
             <p style="font-size: 15px" align="left">Печат на изследвания, назначени за пациент</p>
-            <form action="../controller/printouts.php" method="POST">
-                <i style="font-size: 15px;">{$lang.idn}:</i><input size="10" type="text" name="patient_idn">
+            <form action="../controller/printouts.php" method="POST" autocomplete="off">
+                <i style="font-size: 15px;">{$lang.idn}:</i><input size="10" type="text" name="patient_idn" required>
                 <i style="font-size: 15px;">{$lang.type}:</i> <select name="mode">
                     <option value="all">{$lang.all}</option>
                     <option value="dates">{$lang.date}</option>
@@ -54,8 +53,8 @@
 
             <hr>
             <p style="font-size: 15px" align="left">Печат на изследвания, назначени от конкретен лекар</p>
-            <form action="../controller/printouts.php" method="POST">
-                <input list="hosting-plan" placeholder="{$lang.doctor}" type="text" size="14"  name='doctor_id'>
+            <form action="../controller/printouts.php" method="POST" autocomplete="off">
+                <input list="hosting-plan" placeholder="{$lang.doctor}" type="text" size="14"  name='doctor_id' required>
                 <datalist id="hosting-plan">
                     {foreach from=$doctors item=doctor}
                         <option value="{$doctor.doctor_id}" >{$doctor.doctor}</option> {/foreach}
@@ -73,7 +72,7 @@
 
             <hr>
             <p style="font-size: 15px" align="left">Печат на изследвания</p>
-            <form action="../controller/printouts.php" method="POST">
+            <form action="../controller/printouts.php" method="POST" autocomplete="off">
                 <i style="font-size: 15px;">{$lang.type}:</i> <select name="mode">
                     <option value="all">{$lang.all}</option>
                     <option value="dates">{$lang.date}</option>

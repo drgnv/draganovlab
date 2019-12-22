@@ -360,7 +360,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
+                                    <img src="../images/personal-information-icon.png" width="30" height="30"><b style="color: white;">Лични данни</b></a>
+                            </td>
                             <td>
                                 <a href="../controller/old_results.php?idn={$data.0.idn}" style="text-decoration:none; color: black;">
                                     <img src="../images/archive.png" width="30" height="30"><b style="color: white;">{$lang.old_results}</b></a>

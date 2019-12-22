@@ -19,7 +19,7 @@ $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 $Settings->accessControl($_SESSION['user_info'][0]['lvl']);
 $seting_record = $Settings->getHospital();
-if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
+if(filter_has_var(INPUT_GET, 'from') && filter_has_var(INPUT_GET, 'to') && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
 $from_date = filter_input(INPUT_GET, 'from');;
     $to_date = filter_input(INPUT_GET, 'to');;
 }else{
@@ -29,7 +29,7 @@ $from_date = filter_input(INPUT_GET, 'from');;
 
 $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);
-if($_POST['save']){
+if(filter_has_var(INPUT_POST, 'save')){
     $hospital = filter_input(INPUT_POST, 'hospital');
     $doctor = filter_input(INPUT_POST, 'doctor');
     $address = filter_input(INPUT_POST, 'address');
@@ -46,7 +46,7 @@ $Smarty->assign('saved', $_GET['saved']);
 //------НАСТРОЙКИ ЗА ПАНЕЛ ИЗСЛЕДВАНИЯ (РЕГИСТРАТУРА)--------
 $test_panel = $Settings->getTestPanel();
 //print_r($test_panel);
-if(isset($_POST['p1'])){
+if(filter_has_var(INPUT_POST, 'p1')){
     $selected_setting = filter_input(INPUT_POST, 'p1');
     $Settings->setTestPanel($selected_setting);
     header("Location: settings.php");

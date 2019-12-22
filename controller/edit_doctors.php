@@ -21,7 +21,7 @@ include_once "../languages/".$def_lang[0]['default_lang'].".php";
 $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 
-if(isset($_GET['deletedoc'])){
+if(filter_has_var(INPUT_GET, 'deletedoc')){
     $doctor_id = filter_input(INPUT_GET, 'deletedoc');
     $Settings->deleteDoctor($doctor_id);
     header("Location: edit_doctors.php");

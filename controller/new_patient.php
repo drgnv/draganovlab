@@ -166,7 +166,7 @@ $max_id = $Basic->maxPatientId();
 $a2 = $max_id[0]['MAX(number)']+1;
 $Smarty->assign('pid', $a2);
 
-if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
+if(filter_has_var(INPUT_GET, 'from') && filter_has_var(INPUT_GET, 'to') && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
     $from_date = filter_input(INPUT_GET, 'from');
     $to_date = filter_input(INPUT_GET, 'to');
     $status = filter_input(INPUT_GET, 'status');

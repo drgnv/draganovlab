@@ -117,14 +117,14 @@ if(filter_has_var(INPUT_POST, 'remove')){
 }
 
 //Patients by date
-$start = $_GET['from'];
-$end = $_GET['to'];
-$status = $_GET['status'];
+$start = filter_input(INPUT_GET, 'from');
+$end = filter_input(INPUT_GET, 'to');
+$status = filter_input(INPUT_GET, 'status');
 $dayList = $Basic->searchByDateAndStatus($start, $end, $status);
 
 //DELETE PATIENT BY ID
-if (filter_has_var(INPUT_POST, 'delete')) {
-    $id = $_GET['delete'];
+if (filter_has_var(INPUT_GET, 'delete')) {
+    $id = filter_input(INPUT_GET, 'delete');;
     $Basic->deleteById($id);
     header('Location: laboratory.php');
 }

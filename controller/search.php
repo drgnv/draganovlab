@@ -18,7 +18,7 @@ include_once "../languages/".$def_lang[0]['default_lang'].".php";
 $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 
-if(isset($_GET['send'])){
+if(filter_has_var(INPUT_GET, 'send')){
     $type = filter_input(INPUT_GET, 'type');
     $search = filter_input(INPUT_GET, 'search');
    $results = $Basic->searchNameId($search, $type);
@@ -27,7 +27,7 @@ if(isset($_GET['send'])){
    $Smarty->assign('type', $type);
 }
 
-if (isset($_GET['delete'])) {
+if (filter_has_var(INPUT_GET, 'delete')) {
     $id = filter_input(INPUT_GET, 'delete');
     $Basic->deleteById($id);
     header('Location: search.php?type='.$_GET['type'].'&search='.$_GET['search'].'&send=Търси');

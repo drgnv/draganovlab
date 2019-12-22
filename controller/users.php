@@ -19,7 +19,7 @@ $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 $users = $Settings->getUsers();
 
-if(isset($_GET['delete_user'])){
+if(filter_has_var(INPUT_GET, 'delete_user')){
     $delete_user = filter_input(INPUT_GET, 'delete_user');
     $Settings->deleteUser($delete_user);
     header("Location: ./users.php");

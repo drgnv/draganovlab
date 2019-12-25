@@ -33,10 +33,11 @@ $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);
 $Smarty->assign('status', $status);
 
-if(isset($_GET['patient_id'])){
-    $patient_data = $Basic->getPatientData($_GET['patient_id']);
+if(filter_has_var(INPUT_GET, 'patient_id')){
+    $patient_id = filter_input(INPUT_GET, 'patient_id');
+    $patient_data = $Basic->getPatientData($patient_id);
    // print_r($patient_data);
-    $data = $Basic->getPatientData($_GET['patient_id']);
+    $data = $Basic->getPatientData($patient_id);
     $personal_info = $Basic->getPersonalInfo($data[0]['idn']);
     $Smarty->assign('data', $patient_data);
     $Smarty->assign('pi', $personal_info);
@@ -138,7 +139,8 @@ if(isset($_SESSION['patient_id'])){
     $Smarty->assign('patient_id', $_SESSION['patient_id'][0]['MAX(id)']);
 }
 if(filter_has_var(INPUT_GET, 'itsok')){
-    $Smarty->assign('ok', $_GET['itsok']);
+    $itsok = filter_input(INPUT_GET, 'itsok');
+    $Smarty->assign('ok', $itsok);
 }
 $all_tests = $Basic->getAllTests();
 $Smarty->assign('all_tests', $all_tests);

@@ -54,7 +54,7 @@ class Basic extends Host{
     }
     
     public function getDayResults($date) {
-        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code WHERE patients.date='".mysqli_real_escape_string($this->connect(), $date)."' ORDER BY number ASC, results.test_code ASC"
+        $sql = "SELECT * FROM patients LEFT JOIN results ON patients.id=results.patient_id LEFT JOIN tests ON results.test_code=tests.code LEFT JOIN doctors ON patients.doctor=doctors.doctor_id WHERE patients.date='".mysqli_real_escape_string($this->connect(), $date)."' ORDER BY number ASC, results.test_code ASC"
                 . "";
         $data = $this->sqliexecute($sql);
         return $data;
@@ -626,15 +626,18 @@ class Basic extends Host{
       return $this->sqliexecute($sql);
     }
 
-    public function updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn){
+    public function updatePersonalInfo($pi){
         $sql = "UPDATE personal_info SET
-        `pi_address` = '".mysqli_real_escape_string($this->connect(),$address)."',
-         `pi_phone` = '".mysqli_real_escape_string($this->connect(),$phone)."',
-         `pi_mail` = '".mysqli_real_escape_string($this->connect(),$mail)."',
-         `pi_blood_type` = '".mysqli_real_escape_string($this->connect(),$blood_type)."',
-         `pi_gender` = '".mysqli_real_escape_string($this->connect(),$gender)."',
-         `pi_workplace` = '".mysqli_real_escape_string($this->connect(),$work_place)."'
-         WHERE pi_patient_idn = '".mysqli_real_escape_string($this->connect(),$idn)."'";
+        `pi_address` = '".mysqli_real_escape_string($this->connect(),$pi['address'])."',
+         `pi_phone` = '".mysqli_real_escape_string($this->connect(), $pi['phone'])."',
+         `pi_mail` = '".mysqli_real_escape_string($this->connect(),$pi['mail'])."',
+         `pi_blood_type` = '".mysqli_real_escape_string($this->connect(),$pi['blood_type'])."',
+         `pi_gender` = '".mysqli_real_escape_string($this->connect(),$pi['gender'])."',
+         `citizenship` = '".mysqli_real_escape_string($this->connect(),$pi['citizenship'])."',
+         `zdr_knizkha_num` = '".mysqli_real_escape_string($this->connect(),$pi['zdr_knizkha_num'])."',
+         `rec_knizkha_num` = '".mysqli_real_escape_string($this->connect(),$pi['rec_knizkha_num'])."',
+         `pi_workplace` = '".mysqli_real_escape_string($this->connect(),$pi['work_place'])."'
+         WHERE pi_patient_idn = '".mysqli_real_escape_string($this->connect(),$pi['idn'])."'";
         $this->sqliexecute($sql);
         //return $sql;
     }

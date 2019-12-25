@@ -557,7 +557,7 @@
                     </tr>
                     <tr>
                         <td>
-                            E-mail
+                            E-mail:
                         </td>
                         <td>
                             <input type="mail" name="mail" value="{$pi.0.pi_mail}">
@@ -598,6 +598,16 @@
                             <input type="hidden" name="idn" value="{$dayList.0.idn}">
                             <input type="hidden" name="id" value="{$dayList.0.id}">
                         </td>
+                    </tr>
+                    <tr>
+                        <td>Гражданство: </td>
+                        <td><input type="text" name="citizenship" value="{$pi.0.citizenship}"></td>
+                        <td>Здравна книжка №: </td>
+                        <td><input type="text" name="zdr_knizkha_num" value="{$pi.0.zdr_knizkha_num}"></td>
+                    </tr>
+                    <tr>
+                        <td>Рецептурна книжка №: </td>
+                        <td><input type="text" name="rec_knizkha_num" value="{$pi.0.rec_knizkha_num}"></td>
                     </tr>
                 </table>
 

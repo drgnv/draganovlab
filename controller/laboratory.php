@@ -44,15 +44,18 @@ if(filter_has_var(INPUT_GET, 'patient_id')){
 }
 
 if(filter_has_var(INPUT_POST, 'personal_info')){
-    $address = filter_input(INPUT_POST, 'address');
-    $mail = filter_input(INPUT_POST, 'mail', FILTER_VALIDATE_EMAIL);
-    $gender = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_INT);
-    $phone = filter_input(INPUT_POST, 'phone');
-    $work_place = filter_input(INPUT_POST, 'work_place');
-    $blood_type = filter_input(INPUT_POST, 'blood_type',  FILTER_VALIDATE_INT);
-    $idn = filter_input(INPUT_POST, 'idn');
+    $pi['address'] = filter_input(INPUT_POST, 'address');
+    $pi['mail'] = filter_input(INPUT_POST, 'mail', FILTER_VALIDATE_EMAIL);
+    $pi['gender'] = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_INT);
+    $pi['phone'] = filter_input(INPUT_POST, 'phone');
+    $pi['work_place'] = filter_input(INPUT_POST, 'work_place');
+    $pi['citizenship'] = filter_input(INPUT_POST, 'citizenship');
+    $pi['zdr_knizkha_num'] = filter_input(INPUT_POST, 'zdr_knizkha_num');
+    $pi['rec_knizkha_num'] = filter_input(INPUT_POST, 'rec_knizkha_num');
+    $pi['blood_type'] = filter_input(INPUT_POST, 'blood_type',  FILTER_VALIDATE_INT);
+    $pi['idn'] = filter_input(INPUT_POST, 'idn');
 
-    $Basic->updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn);
+    $Basic->updatePersonalInfo($pi);
     header("Location: laboratory.php?patient_id=".$_POST['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date."&status=".$status);
 
 }

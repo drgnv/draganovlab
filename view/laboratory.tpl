@@ -542,13 +542,13 @@
                 <form action="../controller/laboratory.php" method="POST">
                 <table style="color: white;">
                     <tr>
-                        <td>
+                        <td align="right">
                             {$lang.address}:
                         </td>
                         <td>
                         <input type="text" name="address" value="{$pi.0.pi_address}">
                         </td>
-                        <td>
+                        <td align="right">
                             {$lang.phone}:
                         </td>
                         <td>
@@ -556,13 +556,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td align="right">
                             E-mail:
                         </td>
                         <td>
                             <input type="mail" name="mail" value="{$pi.0.pi_mail}">
                         </td>
-                        <td>
+                        <td align="right">
                             Работно място:
                         </td>
                         <td>
@@ -570,7 +570,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td align="right">
                             Пол:
                         </td>
                         <td>
@@ -580,7 +580,7 @@
                                 <option value="0" {if $pi.0.pi_gender == '0'}selected{else}{/if}>Не е посочено</option>
                             </select>
                         </td>
-                        <td>
+                        <td align="right">
                             Кръвна група:
                         </td>
                         <td>
@@ -600,17 +600,59 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Гражданство: </td>
+                        <td align="right">Гражданство: </td>
                         <td><input type="text" name="citizenship" value="{$pi.0.citizenship}"></td>
-                        <td>Здравна книжка №: </td>
+                        <td align="right">Здравна книжка №: </td>
                         <td><input type="text" name="zdr_knizkha_num" value="{$pi.0.zdr_knizkha_num}"></td>
                     </tr>
                     <tr>
-                        <td>Рецептурна книжка №: </td>
+                        <td align="right">Рец, книжка №: </td>
                         <td><input type="text" name="rec_knizkha_num" value="{$pi.0.rec_knizkha_num}"></td>
+                        <td align="right">ЛАК №: </td>
+                        <td><input type="text" name="lak_num" value="{$pi.0.lak_num}"></td>
                     </tr>
-                </table>
+                    <tr>
+                        <td colspan="4" align="center" style="font-weight: bold"><br>Данни от лична карта </td>
+                    </tr>
+                    <!--NEW familna/na jivota/alergii-->
+                    <tr>
+                        <td align="right" colspan="2">Лична карта №: </td>
+                        <td colspan="2"><input type="text" name="lk_num" value="{$pi.0.pi_lk_num}"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Издадена на: </td>
+                        <td><input type="date" name="out_date" value="{$pi.0.pi_out_date}"></td>
+                        <td align="right">Валидна до: </td>
+                        <td><input type="date" name="exp_date" value="{$pi.0.pi_exp_date}"></td>
 
+                        <td colspan="2" align="right">Издадена от: </td>
+                        <td><input colspan="2" type="text" name="out_place" value="{$pi.0.pi_out_place}"></td>
+                    </tr>
+
+
+
+                </table><hr>
+                    <table border="0">
+                        <thead><tr style="color: white;">
+                        <th>Фамилна анамнеза</th>
+                        <th>Лична анамнеза</th>
+                        <th> Алергии</th>
+                      </tr>  </thead>
+                        <tbody>
+                        <tr>
+                            <td >
+                                <textarea name="fam_anamneza">{$pi.0.pi_fam_anamneza}</textarea>
+                            </td>
+                            <td>
+                                <textarea name="life_anamneza">{$pi.0.pi_life_anamneza}</textarea>
+                            </td>
+                            <td >
+                                <textarea name="alergi">{$pi.0.pi_alergi}</textarea>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--NEW-->
                 <br>
                 <input type="submit" name="personal_info" value="{$lang.save_btn}" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">
             </form>

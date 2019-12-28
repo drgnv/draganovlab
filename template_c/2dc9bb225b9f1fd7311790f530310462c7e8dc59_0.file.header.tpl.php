@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-20 18:32:04
+/* Smarty version 3.1.32, created on 2019-12-27 17:23:11
   from '/var/www/html/dlab/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfcf784af7697_86915670',
+  'unifunc' => 'content_5e0621dfc7bba1_50914363',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2dc9bb225b9f1fd7311790f530310462c7e8dc59' => 
     array (
       0 => '/var/www/html/dlab/view/header.tpl',
-      1 => 1576331861,
+      1 => 1577460186,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfcf784af7697_86915670 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e0621dfc7bba1_50914363 (Smarty_Internal_Template $_smarty_tpl) {
 ?><DOCTYPE html>
     <html>
 
@@ -34,7 +34,7 @@ function content_5dfcf784af7697_86915670 (Smarty_Internal_Template $_smarty_tpl)
         </style>
         <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>DraganovLab 4.1</title>
+        <title>DraganovLab</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
         <?php echo '<script'; ?>

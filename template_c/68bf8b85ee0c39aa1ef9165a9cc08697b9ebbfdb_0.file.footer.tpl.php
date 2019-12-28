@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-20 18:32:04
+/* Smarty version 3.1.32, created on 2019-12-27 17:25:02
   from '/var/www/html/dlab/view/footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfcf784b1d0a0_24930729',
+  'unifunc' => 'content_5e06224e56ba15_06988590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68bf8b85ee0c39aa1ef9165a9cc08697b9ebbfdb' => 
     array (
       0 => '/var/www/html/dlab/view/footer.tpl',
-      1 => 1575747623,
+      1 => 1577460298,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfcf784b1d0a0_24930729 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e06224e56ba15_06988590 (Smarty_Internal_Template $_smarty_tpl) {
 ?></div>
 <br>
 <br>
@@ -35,7 +35,7 @@ position: fixed;
    padding: 3px;
    font-size: 15px;
 "><form action="print_day_results.php" method="GET" style="margin:0; padding: 0;">
-    DraganovLab 4.1v © 2019 | <a href="../support.html" style="color: white; text-decoration: none;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['support'];?>
+    DraganovLab © 2019 | <a href="../support.html" style="color: white; text-decoration: none;"><?php echo $_smarty_tpl->tpl_vars['lang']->value['support'];?>
 </a> | <?php echo $_smarty_tpl->tpl_vars['lang']->value['username'];?>
 : <b><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
 </b> |

@@ -52,6 +52,16 @@ if(filter_has_var(INPUT_POST, 'personal_info')){
     $pi['citizenship'] = filter_input(INPUT_POST, 'citizenship');
     $pi['zdr_knizkha_num'] = filter_input(INPUT_POST, 'zdr_knizkha_num');
     $pi['rec_knizkha_num'] = filter_input(INPUT_POST, 'rec_knizkha_num');
+    $pi['lak_num'] = filter_input(INPUT_POST, 'lak_num');
+
+    $pi['lk_num'] = filter_input(INPUT_POST, 'lk_num');
+    $pi['out_date'] = filter_input(INPUT_POST, 'out_date');
+    $pi['exp_date'] = filter_input(INPUT_POST, 'exp_date');
+    $pi['out_place'] = filter_input(INPUT_POST, 'out_place');
+    $pi['fam_anamneza'] = filter_input(INPUT_POST, 'fam_anamneza');
+    $pi['life_anamneza'] = filter_input(INPUT_POST, 'life_anamneza');
+    $pi['alergi'] = filter_input(INPUT_POST, 'alergi');
+
     $pi['blood_type'] = filter_input(INPUT_POST, 'blood_type',  FILTER_VALIDATE_INT);
     $pi['idn'] = filter_input(INPUT_POST, 'idn');
 

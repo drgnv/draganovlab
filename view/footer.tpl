@@ -12,7 +12,7 @@ position: fixed;
    padding: 3px;
    font-size: 15px;
 "><form action="print_day_results.php" method="GET" style="margin:0; padding: 0;">
-    DraganovLab 4.1v © 2019 | <a href="../support.html" style="color: white; text-decoration: none;">{$lang.support}</a> | {$lang.username}: <b>{$name}</b> |
+    DraganovLab © 2019 | <a href="../support.html" style="color: white; text-decoration: none;">{$lang.support}</a> | {$lang.username}: <b>{$name}</b> |
     <a href="../logout.php" style="color: white;">{$lang.logout}</a> | {foreach from=$over_count key=k item=v}
             {foreach from=$v key=k2 item=v2} {$v2} {/foreach}{/foreach} {$lang.over}
         {$lang.patients} {$lang.from} {$lang.total} {foreach from=$total_count key=k item=v}

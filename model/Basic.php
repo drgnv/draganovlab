@@ -636,6 +636,14 @@ class Basic extends Host{
          `citizenship` = '".mysqli_real_escape_string($this->connect(),$pi['citizenship'])."',
          `zdr_knizkha_num` = '".mysqli_real_escape_string($this->connect(),$pi['zdr_knizkha_num'])."',
          `rec_knizkha_num` = '".mysqli_real_escape_string($this->connect(),$pi['rec_knizkha_num'])."',
+          `lak_num` = '".mysqli_real_escape_string($this->connect(),$pi['lak_num'])."',
+          `pi_lk_num` = '".mysqli_real_escape_string($this->connect(),$pi['lk_num'])."',
+          `pi_out_date` = '".mysqli_real_escape_string($this->connect(),$pi['out_date'])."',
+          `pi_exp_date` = '".mysqli_real_escape_string($this->connect(),$pi['exp_date'])."',
+          `pi_out_place` = '".mysqli_real_escape_string($this->connect(),$pi['out_place'])."',
+          `pi_fam_anamneza` = '".mysqli_real_escape_string($this->connect(),$pi['fam_anamneza'])."',
+          `pi_life_anamneza` = '".mysqli_real_escape_string($this->connect(),$pi['life_anamneza'])."',
+          `pi_alergi` = '".mysqli_real_escape_string($this->connect(),$pi['alergi'])."',
          `pi_workplace` = '".mysqli_real_escape_string($this->connect(),$pi['work_place'])."'
          WHERE pi_patient_idn = '".mysqli_real_escape_string($this->connect(),$pi['idn'])."'";
         $this->sqliexecute($sql);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-22 20:36:00
+/* Smarty version 3.1.32, created on 2019-12-27 18:07:50
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dffb79021dae6_25513438',
+  'unifunc' => 'content_5e062c56093982_29266226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1577039757,
+      1 => 1577462868,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dffb79021dae6_25513438 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e062c56093982_29266226 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -790,7 +790,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <form action="../controller/laboratory.php" method="POST">
                 <table style="color: white;">
                     <tr>
-                        <td>
+                        <td align="right">
                             <?php echo $_smarty_tpl->tpl_vars['lang']->value['address'];?>
 :
                         </td>
@@ -798,7 +798,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <input type="text" name="address" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_address'];?>
 ">
                         </td>
-                        <td>
+                        <td align="right">
                             <?php echo $_smarty_tpl->tpl_vars['lang']->value['phone'];?>
 :
                         </td>
@@ -808,14 +808,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            E-mail
+                        <td align="right">
+                            E-mail:
                         </td>
                         <td>
                             <input type="mail" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_mail'];?>
 ">
                         </td>
-                        <td>
+                        <td align="right">
                             Работно място:
                         </td>
                         <td>
@@ -824,7 +824,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td align="right">
                             Пол:
                         </td>
                         <td>
@@ -837,7 +837,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }?>>Не е посочено</option>
                             </select>
                         </td>
-                        <td>
+                        <td align="right">
                             Кръвна група:
                         </td>
                         <td>
@@ -867,8 +867,71 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 ">
                         </td>
                     </tr>
-                </table>
+                    <tr>
+                        <td align="right">Гражданство: </td>
+                        <td><input type="text" name="citizenship" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['citizenship'];?>
+"></td>
+                        <td align="right">Здравна книжка №: </td>
+                        <td><input type="text" name="zdr_knizkha_num" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['zdr_knizkha_num'];?>
+"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Рец, книжка №: </td>
+                        <td><input type="text" name="rec_knizkha_num" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['rec_knizkha_num'];?>
+"></td>
+                        <td align="right">ЛАК №: </td>
+                        <td><input type="text" name="lak_num" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['lak_num'];?>
+"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center" style="font-weight: bold"><br>Данни от лична карта </td>
+                    </tr>
+                    <!--NEW familna/na jivota/alergii-->
+                    <tr>
+                        <td align="right" colspan="2">Лична карта №: </td>
+                        <td colspan="2"><input type="text" name="lk_num" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_lk_num'];?>
+"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Издадена на: </td>
+                        <td><input type="date" name="out_date" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_out_date'];?>
+"></td>
+                        <td align="right">Валидна до: </td>
+                        <td><input type="date" name="exp_date" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_exp_date'];?>
+"></td>
 
+                        <td colspan="2" align="right">Издадена от: </td>
+                        <td><input colspan="2" type="text" name="out_place" value="<?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_out_place'];?>
+"></td>
+                    </tr>
+
+
+
+                </table><hr>
+                    <table border="0">
+                        <thead><tr style="color: white;">
+                        <th>Фамилна анамнеза</th>
+                        <th>Лична анамнеза</th>
+                        <th> Алергии</th>
+                      </tr>  </thead>
+                        <tbody>
+                        <tr>
+                            <td >
+                                <textarea name="fam_anamneza"><?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_fam_anamneza'];?>
+</textarea>
+                            </td>
+                            <td>
+                                <textarea name="life_anamneza"><?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_life_anamneza'];?>
+</textarea>
+                            </td>
+                            <td >
+                                <textarea name="alergi"><?php echo $_smarty_tpl->tpl_vars['pi']->value[0]['pi_alergi'];?>
+</textarea>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--NEW-->
                 <br>
                 <input type="submit" name="personal_info" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['save_btn'];?>
 " style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px">

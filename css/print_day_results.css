@@ -2,3 +2,8 @@
     font-family: monospace;
     font-size: 14px;
 }
+@media print{
+    .noprint{
+        display:none;
+    }
+}

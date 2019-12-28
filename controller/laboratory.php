@@ -33,25 +33,39 @@ $Smarty->assign('from_date', $from_date);
 $Smarty->assign('to_date', $to_date);
 $Smarty->assign('status', $status);
 
-if(isset($_GET['patient_id'])){
-    $patient_data = $Basic->getPatientData($_GET['patient_id']);
+if(filter_has_var(INPUT_GET, 'patient_id')){
+    $patient_id = filter_input(INPUT_GET, 'patient_id');
+    $patient_data = $Basic->getPatientData($patient_id);
    // print_r($patient_data);
-    $data = $Basic->getPatientData($_GET['patient_id']);
+    $data = $Basic->getPatientData($patient_id);
     $personal_info = $Basic->getPersonalInfo($data[0]['idn']);
     $Smarty->assign('data', $patient_data);
     $Smarty->assign('pi', $personal_info);
 }
 
 if(filter_has_var(INPUT_POST, 'personal_info')){
-    $address = filter_input(INPUT_POST, 'address');
-    $mail = filter_input(INPUT_POST, 'mail', FILTER_VALIDATE_EMAIL);
-    $gender = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_INT);
-    $phone = filter_input(INPUT_POST, 'phone');
-    $work_place = filter_input(INPUT_POST, 'work_place');
-    $blood_type = filter_input(INPUT_POST, 'blood_type',  FILTER_VALIDATE_INT);
-    $idn = filter_input(INPUT_POST, 'idn');
+    $pi['address'] = filter_input(INPUT_POST, 'address');
+    $pi['mail'] = filter_input(INPUT_POST, 'mail', FILTER_VALIDATE_EMAIL);
+    $pi['gender'] = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_INT);
+    $pi['phone'] = filter_input(INPUT_POST, 'phone');
+    $pi['work_place'] = filter_input(INPUT_POST, 'work_place');
+    $pi['citizenship'] = filter_input(INPUT_POST, 'citizenship');
+    $pi['zdr_knizkha_num'] = filter_input(INPUT_POST, 'zdr_knizkha_num');
+    $pi['rec_knizkha_num'] = filter_input(INPUT_POST, 'rec_knizkha_num');
+    $pi['lak_num'] = filter_input(INPUT_POST, 'lak_num');
 
-    $Basic->updatePersonalInfo($address, $mail, $gender, $phone, $work_place, $blood_type, $idn);
+    $pi['lk_num'] = filter_input(INPUT_POST, 'lk_num');
+    $pi['out_date'] = filter_input(INPUT_POST, 'out_date');
+    $pi['exp_date'] = filter_input(INPUT_POST, 'exp_date');
+    $pi['out_place'] = filter_input(INPUT_POST, 'out_place');
+    $pi['fam_anamneza'] = filter_input(INPUT_POST, 'fam_anamneza');
+    $pi['life_anamneza'] = filter_input(INPUT_POST, 'life_anamneza');
+    $pi['alergi'] = filter_input(INPUT_POST, 'alergi');
+
+    $pi['blood_type'] = filter_input(INPUT_POST, 'blood_type',  FILTER_VALIDATE_INT);
+    $pi['idn'] = filter_input(INPUT_POST, 'idn');
+
+    $Basic->updatePersonalInfo($pi);
     header("Location: laboratory.php?patient_id=".$_POST['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date."&status=".$status);
 
 }
@@ -138,7 +152,8 @@ if(isset($_SESSION['patient_id'])){
     $Smarty->assign('patient_id', $_SESSION['patient_id'][0]['MAX(id)']);
 }
 if(filter_has_var(INPUT_GET, 'itsok')){
-    $Smarty->assign('ok', $_GET['itsok']);
+    $itsok = filter_input(INPUT_GET, 'itsok');
+    $Smarty->assign('ok', $itsok);
 }
 $all_tests = $Basic->getAllTests();
 $Smarty->assign('all_tests', $all_tests);

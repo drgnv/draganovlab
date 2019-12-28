@@ -43,18 +43,19 @@ if(isset($_GET['patient_id'])){
 
 //днешна дата
 if(isset($_GET['from']) && isset($_GET['to']) && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
-    $from_date = $_GET['from'];
-    $to_date = $_GET['to'];
+    $from_date = filter_input(INPUT_GET, 'from');
+    $to_date = filter_input(INPUT_GET, 'to');
 }else{
     $from_date = date('Y-m-d');
     $to_date = date('Y-m-d');
 }
 
 //-----------СЪБМИТНАТ ПАЦИЕНТ-----------
-if(isset($_GET['patient_id'])){
-    $patient_data = $Mdds->getPatientData($_GET['patient_id']);
+if(filter_has_var(INPUT_GET, 'patient_id')){
+    $patient_id = filter_input(INPUT_GET, 'patient_id');
+    $patient_data = $Mdds->getPatientData($patient_id);
     // print_r($patient_data);
-    $data = $Mdds->getPatientData($_GET['patient_id']);
+    $data = $Mdds->getPatientData($patient_id);
     $Smarty->assign('data', $patient_data);
 }
 

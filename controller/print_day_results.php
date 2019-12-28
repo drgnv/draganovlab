@@ -21,6 +21,7 @@ foreach ($a as $key => $value) {
     $b[$key]=$value;
 
 }
+
     $hospital_data = $Basic->getHospitalInfo();
 
 //print_r($b);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-21 18:47:59
+/* Smarty version 3.1.32, created on 2019-12-28 13:08:47
   from '/var/www/html/dlab/view/top_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dfe4cbf2c0939_43444775',
+  'unifunc' => 'content_5e0737bf655b26_87388333',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'caeb65d6d440ca503901cc66f9c83042224e4a53' => 
     array (
       0 => '/var/www/html/dlab/view/top_menu.tpl',
-      1 => 1576946878,
+      1 => 1577531312,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfe4cbf2c0939_43444775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e0737bf655b26_87388333 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id='navbar'>
     <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant%20-%20Copy.png" width="35" height="25"></a>
     <a href='./new_patient.php'><?php echo $_smarty_tpl->tpl_vars['lang']->value['registry'];?>
@@ -37,6 +37,7 @@ function content_5dfe4cbf2c0939_43444775 (Smarty_Internal_Template $_smarty_tpl)
 </a>
     <a href="../controller/printouts.php"><?php echo $_smarty_tpl->tpl_vars['lang']->value['printouts'];?>
 </a>
+    <a href="../controller/enquiry.php">Справки</a>
     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['lvl']->value;
 $_prefixVariable1 = ob_get_clean();

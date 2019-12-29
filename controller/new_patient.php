@@ -133,7 +133,11 @@ if(filter_has_var(INPUT_POST, 'record')){
      $_SESSION['num'] = $num;
      $_SESSION['doc'] = $doctor;
      $_SESSION['date'] = $date;
-    $Basic->newPatient($pname, $num, $doctor, $results, $date,$pay, $idn, $cito, $comment, $note);
+    if($Basic->egn_valid($idn)){
+        $Basic->newPatient($pname, $num, $doctor, $results, $date,$pay, $idn, $cito, $comment, $note);
+    }else{
+        $Smarty->assign('not_valid_idn',"Невалиден ЕГН");
+    }
    
  
 }

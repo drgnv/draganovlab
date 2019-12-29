@@ -5,6 +5,7 @@
     <a href='./mdds.php?from={$from_date}&to={$to_date}&searchbydate=Търси...'>{$lang.mdds}</a>
     <a href='./search_by_date.php'>{$lang.search_by_date}</a>
     <a href="../controller/printouts.php">{$lang.printouts}</a>
+    <a href="../controller/enquiry.php">Справки</a>
     {if {$lvl}
     <3}{else}
         <a href='./settings.php'>{$lang.settings}</a>{/if}

@@ -133,6 +133,7 @@
                                     <option value="{$doctor.doctor_id}" alt="1212" >{$doctor.doctor}</option> {/foreach}
                             </datalist>
                             <br>
+                            <b style="color: red">{$not_valid_idn}</b>
                             <br> {include file="{$panel}.tpl"}
 
                             <script src="../js/ui-choose.js"></script>
@@ -165,7 +166,6 @@
                             {$lang.date}:
                             <input required type="date" name="date" value="{$date}" style="width: 135px">
                                 | &nbsp&nbsp
-
                             <input type="submit" name="record" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px" value="&#10133; {$lang.add}">&nbsp&nbsp |
                             <a href="../controller/print.php?id={$patient_id}" target="_blank" style="text-decoration: none;">
                                 <img src="../images/print.png" width="24" height="24"><b style="font-size: 13px; color: white;">{$lang.print} {$lang.request}</b></a>

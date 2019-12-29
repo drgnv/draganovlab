@@ -19,6 +19,7 @@ $Smarty->assign('lang', $language);
 //LANGUAGE STOP
 $Settings->accessControl($_SESSION['user_info'][0]['lvl']);
 $seting_record = $Settings->getHospital();
+
 if(filter_has_var(INPUT_GET, 'from') && filter_has_var(INPUT_GET, 'to') && strlen($_GET['from']) > 2 && strlen($_GET['to']) >2){
 $from_date = filter_input(INPUT_GET, 'from');;
     $to_date = filter_input(INPUT_GET, 'to');;

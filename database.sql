@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 22 дек 2019 в 19:32
--- Версия на сървъра: 5.7.28-0ubuntu0.19.04.2
+-- Generation Time: 29 дек 2019 в 18:47
+-- Версия на сървъра: 8.0.18-0ubuntu0.19.10.1
 -- PHP Version: 7.2.24-0ubuntu0.19.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -338,7 +338,7 @@ INSERT INTO `doctors` (`doctor`, `doctor_id`, `uin`, `phone`, `phone2`, `special
 ('д-р Н.Александрова', 6, '', '', '', '', 0),
 ('д-р Й.Иванов', 7, '32423523', '', '', 'Орториноларинголог', 0),
 ('д-р А.Ваньова', 8, '', '', '', '', 0),
-('д-р Йотова', 9, '', '', '', '', 0),
+('д-р Йотова', 9, '324234', '', '', '', 0),
 ('д-р Струнджев', 10, '', '', '', '', 0),
 ('д-р Струнджева', 11, '', '', '', '', 0),
 ('д-р Маринова', 12, '', '', '', '', 0),
@@ -366,7 +366,6 @@ INSERT INTO `doctors` (`doctor`, `doctor_id`, `uin`, `phone`, `phone2`, `special
 ('д-р Е.Богомилов', 42, '', '', '', '', 0),
 ('д-р Киров', 43, '', '', '', '', 0),
 ('д-р Б.Славчев', 44, '', '', '', '', 0),
-('д-р  Мавродиева', 45, '', '', '', '', 0),
 ('д-р Пейчева', 46, '', '', '', '', 0);
 
 -- --------------------------------------------------------
@@ -435,7 +434,9 @@ INSERT INTO `mdds` (`num_mdd`, `out_date`, `complete_date`, `doctor_id`, `rzk`, 
 (121, '2019-12-31', '2019-12-31', '1', '897', '987', '87', 'z00', 1, '', 2, '10.09', '01.09', '', '', '', '', '1', 2, 16, '897', '91', '9'),
 (213, '2019-12-14', '2019-12-14', '1', '32990', '', '', 'Z00.0', 1, '', 1, '01.11', '01.09', '', '', '', '', '1', 3, 17, '213', '3600', '1'),
 (213, '2019-12-04', '2019-12-12', '1', '32990', '', '', 'Z00.1', 1, '', 8, '01.01', '01.12', '', '', '', '', '1', 4, 17, '111', '3600', ''),
-(213, '2019-12-18', '2019-12-18', '1', '32990', '', '', 'Z00.1', 1, '', 6, '01.11', '01.09', '', '', '', '', '1', 5, 4, '21', '33', '');
+(213, '2019-12-18', '2019-12-18', '1', '32990', '', '', 'Z00.1', 1, '', 6, '01.11', '01.09', '', '', '', '', '1', 5, 4, '21', '33', ''),
+(213, '2019-12-10', '2019-12-10', '1', '', '', '', 'Z00.0', 1, '', 1, '01.11', '', '', '', '', '', '1', 6, 20, '987', '1', ''),
+(213, '2019-12-04', '2019-12-25', '1', '', '', '', 'Z00.0', 1, 'Z01.0', 2, '01.11', '', '', '', '', '', '1', 7, 20, '9', '3', '2');
 
 -- --------------------------------------------------------
 
@@ -514,7 +515,10 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`number`, `names`, `doctor`, `date`, `id`, `username`, `password`, `over`, `comment`, `pay`, `idn`, `address`, `mkb`, `cito`, `phone`, `note`, `gender`, `country_id`, `municipality`, `street`, `mail`, `area`, `post_code`, `blood_type`, `work_place`) VALUES
-(1, 'ДРАГАН ДРАГАНОВ', 'д-р Еленкова', '2019-12-22', 13, 'haGRbETmAg', 'jr8768uuvB', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'драган драганов', '3', '2019-12-22', 20, 'FHKgGXw5td', 'osRDuuZd2P', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'ДРАГАН БОРИСОВ ДРАГАНОВ', '9', '2019-12-25', 22, '5mqNUIjFIq', 'sTemVQF8Fg', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'ДРАГАН ДРАГАНОВ', '7', '2019-12-26', 23, '0Yj44QHsHS', 'vSmox2Ete1', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'ДРАГАН ДРАГАНОВ', '3', '2019-12-28', 34, 'h6caq7Bzag', 'IqgkPZCYNB', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -530,17 +534,31 @@ CREATE TABLE `personal_info` (
   `pi_blood_type` varchar(5) NOT NULL,
   `pi_workplace` varchar(50) NOT NULL,
   `pi_id` int(11) NOT NULL,
-  `pi_patient_idn` varchar(11) NOT NULL
+  `pi_patient_idn` varchar(11) NOT NULL,
+  `citizenship` varchar(25) NOT NULL,
+  `zdr_knizkha_num` varchar(25) NOT NULL,
+  `rec_knizkha_num` varchar(25) NOT NULL,
+  `lak_num` varchar(10) NOT NULL,
+  `pi_lk_num` varchar(15) DEFAULT NULL,
+  `pi_out_date` date DEFAULT NULL,
+  `pi_exp_date` date DEFAULT NULL,
+  `pi_out_place` varchar(30) DEFAULT NULL,
+  `pi_fam_anamneza` text,
+  `pi_life_anamneza` text,
+  `pi_alergi` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Схема на данните от таблица `personal_info`
 --
 
-INSERT INTO `personal_info` (`pi_address`, `pi_phone`, `pi_mail`, `pi_gender`, `pi_blood_type`, `pi_workplace`, `pi_id`, `pi_patient_idn`) VALUES
-('a', '2', 'asd', 0, 'ab', 'sad', 3, '930825'),
-('', '', '', 0, '', '', 4, '9100293'),
-('asd', 'ff', 'ff', 1, '', 'fffffs', 5, '9308253229');
+INSERT INTO `personal_info` (`pi_address`, `pi_phone`, `pi_mail`, `pi_gender`, `pi_blood_type`, `pi_workplace`, `pi_id`, `pi_patient_idn`, `citizenship`, `zdr_knizkha_num`, `rec_knizkha_num`, `lak_num`, `pi_lk_num`, `pi_out_date`, `pi_exp_date`, `pi_out_place`, `pi_fam_anamneza`, `pi_life_anamneza`, `pi_alergi`) VALUES
+('a', '2', 'asd', 0, 'ab', 'sad', 3, '930825', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('', '', '', 0, '', '', 4, '9100293', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('ул.Славейче 1', '0876755464', 'dbdraganov@gmail.com', 1, '5', 'Болницата', 5, '9308253229', 'България', '123123', '312312', '6646', '123', '2019-12-27', '2019-12-20', 'wqew', 'qqq', 'www', '111'),
+('', '', '', 0, 'false', '', 6, '213123', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('', '', '', 0, 'false', '', 7, '1234', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('', '', '', 0, 'false', '', 8, '123', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -562,7 +580,35 @@ CREATE TABLE `results` (
 --
 
 INSERT INTO `results` (`test_code`, `result`, `patient_id`, `id`, `date`, `patient_idn`) VALUES
-('01.11', '', 13, 72, '2019-12-22', '9308253229');
+('99.01', '', 20, 110, '2019-12-26', '9308253229'),
+('99.02', '', 20, 111, '2019-12-26', '9308253229'),
+('99.03', '', 20, 112, '2019-12-26', '9308253229'),
+('99.04', '', 20, 113, '2019-12-26', '9308253229'),
+('99.05', '', 20, 114, '2019-12-26', '9308253229'),
+('99.06', '', 20, 115, '2019-12-26', '9308253229'),
+('99.07', '', 20, 116, '2019-12-26', '9308253229'),
+('99.08', '', 20, 117, '2019-12-26', '9308253229'),
+('99.09', '', 20, 118, '2019-12-26', '9308253229'),
+('99.010', '', 20, 119, '2019-12-26', '9308253229'),
+('99.011', '', 20, 120, '2019-12-26', '9308253229'),
+('99.012', '', 20, 121, '2019-12-26', '9308253229'),
+('99.013', '', 20, 122, '2019-12-26', '9308253229'),
+('99.014', '', 20, 123, '2019-12-26', '9308253229'),
+('01.11', '', 22, 214, '2019-12-26', '9308253229'),
+('01.09', '', 23, 215, '2019-12-26', '9308253229'),
+('88.01', '', 23, 216, '2019-12-26', '9308253229'),
+('88.02', '', 23, 217, '2019-12-26', '9308253229'),
+('88.03', '', 23, 218, '2019-12-26', '9308253229'),
+('88.04', '', 23, 219, '2019-12-26', '9308253229'),
+('88.05', '', 23, 220, '2019-12-26', '9308253229'),
+('88.06', '', 23, 221, '2019-12-26', '9308253229'),
+('88.07', '', 23, 222, '2019-12-26', '9308253229'),
+('88.08', '', 23, 223, '2019-12-26', '9308253229'),
+('01.17', '', 34, 247, '2019-12-28', '9308253229'),
+('01.18', '', 34, 248, '2019-12-28', '9308253229'),
+('01.19', '', 34, 249, '2019-12-28', '9308253229'),
+('01.20', '', 34, 250, '2019-12-28', '9308253229'),
+('01.21', '', 34, 251, '2019-12-28', '9308253229');
 
 -- --------------------------------------------------------
 
@@ -916,7 +962,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `mdds`
 --
 ALTER TABLE `mdds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `mdd_types`
 --
@@ -931,17 +977,17 @@ ALTER TABLE `mkb`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `personal_info`
 --
 ALTER TABLE `personal_info`
-  MODIFY `pi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 --
 -- AUTO_INCREMENT for table `schedule`
 --

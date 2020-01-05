@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 29 дек 2019 в 18:47
+-- Generation Time:  5 яну 2020 в 07:45
 -- Версия на сървъра: 8.0.18-0ubuntu0.19.10.1
 -- PHP Version: 7.2.24-0ubuntu0.19.04.1
 
@@ -371,6 +371,19 @@ INSERT INTO `doctors` (`doctor`, `doctor_id`, `uin`, `phone`, `phone2`, `special
 -- --------------------------------------------------------
 
 --
+-- Структура на таблица `exams`
+--
+
+CREATE TABLE `exams` (
+  `exams_idn` varchar(10) NOT NULL,
+  `exams_time` varchar(25) NOT NULL,
+  `exams_note` text NOT NULL,
+  `exams_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Структура на таблица `hospital`
 --
 
@@ -518,7 +531,8 @@ INSERT INTO `patients` (`number`, `names`, `doctor`, `date`, `id`, `username`, `
 (1, 'драган драганов', '3', '2019-12-22', 20, 'FHKgGXw5td', 'osRDuuZd2P', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (2, 'ДРАГАН БОРИСОВ ДРАГАНОВ', '9', '2019-12-25', 22, '5mqNUIjFIq', 'sTemVQF8Fg', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 'ДРАГАН ДРАГАНОВ', '7', '2019-12-26', 23, '0Yj44QHsHS', 'vSmox2Ete1', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'ДРАГАН ДРАГАНОВ', '3', '2019-12-28', 34, 'h6caq7Bzag', 'IqgkPZCYNB', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(4, 'ДРАГАН ДРАГАНОВ', '3', '2019-12-28', 34, 'h6caq7Bzag', 'IqgkPZCYNB', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'ivan', '1', '2019-12-30', 36, 'YsuBbWgJIp', 'DMYmJmnpcr', 'off', '', '', '9308253229', NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -594,7 +608,7 @@ INSERT INTO `results` (`test_code`, `result`, `patient_id`, `id`, `date`, `patie
 ('99.012', '', 20, 121, '2019-12-26', '9308253229'),
 ('99.013', '', 20, 122, '2019-12-26', '9308253229'),
 ('99.014', '', 20, 123, '2019-12-26', '9308253229'),
-('01.11', '', 22, 214, '2019-12-26', '9308253229'),
+('01.11', '90', 22, 214, '2019-12-30', '9308253229'),
 ('01.09', '', 23, 215, '2019-12-26', '9308253229'),
 ('88.01', '', 23, 216, '2019-12-26', '9308253229'),
 ('88.02', '', 23, 217, '2019-12-26', '9308253229'),
@@ -608,7 +622,8 @@ INSERT INTO `results` (`test_code`, `result`, `patient_id`, `id`, `date`, `patie
 ('01.18', '', 34, 248, '2019-12-28', '9308253229'),
 ('01.19', '', 34, 249, '2019-12-28', '9308253229'),
 ('01.20', '', 34, 250, '2019-12-28', '9308253229'),
-('01.21', '', 34, 251, '2019-12-28', '9308253229');
+('01.21', '', 34, 251, '2019-12-28', '9308253229'),
+('01.06', '', 36, 253, '2019-12-30', '9308253229');
 
 -- --------------------------------------------------------
 
@@ -977,7 +992,7 @@ ALTER TABLE `mkb`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `personal_info`
 --
@@ -987,7 +1002,7 @@ ALTER TABLE `personal_info`
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 --
 -- AUTO_INCREMENT for table `schedule`
 --

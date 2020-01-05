@@ -1,10 +1,11 @@
 <div id='navbar'>
-    <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant%20-%20Copy.png" width="35" height="25"></a>
+    <a style="background-color:transparent ;margin: 3; padding: 3; text-align: center;"><img src="../images/draganovlabtransperant%20-%20Copy.png" width="35" height="35"></a>
     <a href='./new_patient.php'>{$lang.registry}</a>
     <a href='./laboratory.php?from={$from_date}&to={$to_date}&status=all&searchbydate=Търси...'>{$lang.laboratory}</a>
     <a href='./mdds.php?from={$from_date}&to={$to_date}&searchbydate=Търси...'>{$lang.mdds}</a>
     <a href='./search_by_date.php'>{$lang.search_by_date}</a>
     <a href="../controller/printouts.php">{$lang.printouts}</a>
+    <a href="../controller/enquiry.php">Справки</a>
     {if {$lvl}
     <3}{else}
         <a href='./settings.php'>{$lang.settings}</a>{/if}

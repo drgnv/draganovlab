@@ -10,9 +10,8 @@
 <body>
 
     <div class="login-page">
-        <center><img src="./images/draganovlabtransperant.png" width="250" height="90" align="cente">4.1v ©</center>
         <div class="form">
-
+            <img src="./images/draganovlabtransperant.png" width="150" height="150" align="center">
             <form autocomplete="off" class="login-form" action="index.php" method="post">
                 <input type="text" name="username" placeholder="{$lang.username}" />
                 <input type="password" name="password" placeholder="{$lang.password}" />

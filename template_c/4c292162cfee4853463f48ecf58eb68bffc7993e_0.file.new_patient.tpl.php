@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-22 13:20:27
+/* Smarty version 3.1.32, created on 2019-12-28 15:23:55
   from '/var/www/html/dlab/view/new_patient.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5dff517bc7eeb2_56625398',
+  'unifunc' => 'content_5e07576bac74e5_43183349',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c292162cfee4853463f48ecf58eb68bffc7993e' => 
     array (
       0 => '/var/www/html/dlab/view/new_patient.tpl',
-      1 => 1577013622,
+      1 => 1577539434,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dff517bc7eeb2_56625398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e07576bac74e5_43183349 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <link href="../css/tooltip.css" media="screen" rel="stylesheet" type="text/css">
@@ -188,6 +188,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['doctor']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </datalist>
                             <br>
+                            <b style="color: red"><?php echo $_smarty_tpl->tpl_vars['not_valid_idn']->value;?>
+</b>
                             <br> <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['panel']->value).".tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
 
@@ -231,7 +233,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <input required type="date" name="date" value="<?php echo $_smarty_tpl->tpl_vars['date']->value;?>
 " style="width: 135px">
                                 | &nbsp&nbsp
-
                             <input type="submit" name="record" style="border: none; background-color: #ff9b30;color:#472b00; width: 80px;height: 25px; font-weight: bold; font-size: 14px" value="&#10133; <?php echo $_smarty_tpl->tpl_vars['lang']->value['add'];?>
 ">&nbsp&nbsp |
                             <a href="../controller/print.php?id=<?php echo $_smarty_tpl->tpl_vars['patient_id']->value;?>

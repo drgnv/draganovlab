@@ -222,5 +222,24 @@ class Settings extends Basic{
 //echo $sql;
         return $this->sqliexecute($sql);
     }
+
+
+    public function getEnquiry($type)
+    {
+        if($type == '1'){
+
+        }
+
+        if($type == '2'){
+
+        }
+
+        if($type == "3"){
+            $sql = "SELECT name, test_code FROM results LEFT JOIN tests ON results.test_code = tests.code";
+        }
+
+        return $this->sqliexecute($sql);
+
+    }
 }
 

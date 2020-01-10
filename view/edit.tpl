@@ -54,8 +54,8 @@
             <input required type="number" name="number" style="width: 40px;" value="{$data.0.number}"> | {$lang.patient}:
             <input required type="text" name="patient" value="{$data.0.names}" size="26"> <br><hr> {$lang.idn}:
             <input type="text" name="idn" value="{$data.0.idn}" size="9">
-            {$lang.doctor}:
-            <input list="hosting-plan" type="text" value="{$data.0.doctor}" size="14" name='doctor'>
+            {$lang.doctor}: {$data.0.doctor}
+            <input list="hosting-plan" type="text" value="{$data.0.doctor_id}" size="14" name='doctor'>
             <datalist id="hosting-plan">
                 {foreach from=$doctors item=doctor}
                     <option value="{$doctor.doctor_id}">{$doctor.doctor}</option> {/foreach}

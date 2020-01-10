@@ -261,9 +261,10 @@ class Basic extends Host{
       $this->sqliexecute($sql);
      
       foreach ($data['results'] as $test_code => $result) {
-          $sql2 = "UPDATE `results` SET `date`='".mysqli_real_escape_string($this->connect(), $data['date'])."', `result`='".mysqli_real_escape_string($this->connect(), $result)."' WHERE `test_code`='".mysqli_real_escape_string($this->connect(), $test_code)."' AND `patient_id` = ".mysqli_real_escape_string($this->connect(), $data['id'])."";
+          $sql2 = "UPDATE `results` SET results.date='".mysqli_real_escape_string($this->connect(), $data['date'])."', `result`='".mysqli_real_escape_string($this->connect(), $result)."' WHERE `test_code`='".mysqli_real_escape_string($this->connect(), $test_code)."' AND `patient_id` = ".mysqli_real_escape_string($this->connect(), $data['id'])."";
          
-          //$this->sqliexecute($sql2);
+          $this->sqliexecute($sql2);
+
          
       }
   }

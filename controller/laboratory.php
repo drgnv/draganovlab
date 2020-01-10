@@ -39,6 +39,7 @@ if(filter_has_var(INPUT_GET, 'patient_id')){
    // print_r($patient_data);
     $data = $Basic->getPatientData($patient_id);
     $personal_info = $Basic->getPersonalInfo($data[0]['idn']);
+   // print_r($patient_data);
     $Smarty->assign('data', $patient_data);
     $Smarty->assign('pi', $personal_info);
 }
@@ -97,9 +98,9 @@ if(filter_has_var(INPUT_POST, 'save')){
         }
     }
 
-    $Basic->updatePatient($patient);
+   echo $Basic->updatePatient($patient);
 
-    header("Location: laboratory.php?patient_id=".$patient['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date."&status=".$status);
+   header("Location: laboratory.php?patient_id=".$patient['id']."&itsok=".$language['saved_msg']."&from=".$from_date."&to=".$to_date."&status=".$status);
 }
 
 

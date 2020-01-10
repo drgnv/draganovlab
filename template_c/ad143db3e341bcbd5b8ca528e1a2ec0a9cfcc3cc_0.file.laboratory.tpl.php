@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-12-27 18:07:50
+/* Smarty version 3.1.32, created on 2020-01-10 17:22:15
   from '/var/www/html/dlab/view/laboratory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5e062c56093982_29266226',
+  'unifunc' => 'content_5e1896a71387f8_81558335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad143db3e341bcbd5b8ca528e1a2ec0a9cfcc3cc' => 
     array (
       0 => '/var/www/html/dlab/view/laboratory.tpl',
-      1 => 1577462868,
+      1 => 1578669734,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e062c56093982_29266226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e1896a71387f8_81558335 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -538,7 +538,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <td style="color: white;" align="right"> <?php echo $_smarty_tpl->tpl_vars['lang']->value['doctor'];?>
 :</td>
                             <td>
-                                <input list="hosting-plan" type="text" size="14" name='doctor' value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['doctor'];?>
+                                <i style="color: white;"><?php echo $_smarty_tpl->tpl_vars['data']->value[0]['doctor'];?>
+</i>
+                                <input list="hosting-plan" type="text" size="14" name='doctor' value="<?php echo $_smarty_tpl->tpl_vars['data']->value[0]['doctor_id'];?>
 ">
                                 <datalist id="hosting-plan">
                                     <?php
@@ -547,8 +549,9 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['doctor']->value) {
 ?>
                                     <option value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor_id'];?>
-" alt="1212" ><?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
-</option> <?php
+" ><?php echo $_smarty_tpl->tpl_vars['doctor']->value['doctor'];?>
+</option>
+                                    <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>

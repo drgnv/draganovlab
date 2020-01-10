@@ -370,10 +370,12 @@
                         <tr>
                             <td style="color: white;" align="right"> {$lang.doctor}:</td>
                             <td>
-                                <input list="hosting-plan" type="text" size="14" name='doctor' value="{$data.0.doctor}">
+                                <i style="color: white;">{$data.0.doctor}</i>
+                                <input list="hosting-plan" type="text" size="14" name='doctor' value="{$data.0.doctor_id}">
                                 <datalist id="hosting-plan">
                                     {foreach from=$doctors item=doctor}
-                                    <option value="{$doctor.doctor_id}" alt="1212" >{$doctor.doctor}</option> {/foreach}
+                                    <option value="{$doctor.doctor_id}" >{$doctor.doctor}</option>
+                                    {/foreach}
                                 </datalist>
                             </td>
                         </tr>

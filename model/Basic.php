@@ -247,23 +247,23 @@ class Basic extends Host{
   
   public function updatePatient($data){
       $sql = "UPDATE patients SET "
-              . "number = ".mysqli_real_escape_string($this->connect(), $data['number']).", "
-              . "names = '".mysqli_real_escape_string($this->connect(), $data['name'])."', "
+              . "patients.number = ".mysqli_real_escape_string($this->connect(), $data['number']).", "
+              . "patients.names = '".mysqli_real_escape_string($this->connect(), $data['name'])."', "
               . "doctor = '".mysqli_real_escape_string($this->connect(), $data['doctor'])."', "
-              . "date = '".mysqli_real_escape_string($this->connect(), $data['date'])."',"
+              . "patients.date = '".mysqli_real_escape_string($this->connect(), $data['date'])."',"
               . "comment = '".mysqli_real_escape_string($this->connect(), $data['comment'])."',"
               . "note = '".mysqli_real_escape_string($this->connect(), $data['note'])."',"
               . "idn = '".mysqli_real_escape_string($this->connect(), $data['idn'])."',"
               . "cito = '".mysqli_real_escape_string($this->connect(), $data['cito'])."',"
-              . " over = '".mysqli_real_escape_string($this->connect(), $data['over'])."' "
+              . "patients.over = '".mysqli_real_escape_string($this->connect(), $data['over'])."' "
               . "WHERE id = ".mysqli_real_escape_string($this->connect(), $data['id'])."";
-      
+      //echo $sql;
       $this->sqliexecute($sql);
      
       foreach ($data['results'] as $test_code => $result) {
           $sql2 = "UPDATE `results` SET `date`='".mysqli_real_escape_string($this->connect(), $data['date'])."', `result`='".mysqli_real_escape_string($this->connect(), $result)."' WHERE `test_code`='".mysqli_real_escape_string($this->connect(), $test_code)."' AND `patient_id` = ".mysqli_real_escape_string($this->connect(), $data['id'])."";
          
-          $this->sqliexecute($sql2);
+          //$this->sqliexecute($sql2);
          
       }
   }

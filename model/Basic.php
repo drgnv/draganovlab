@@ -5,7 +5,7 @@ class Basic extends Host{
 
     public function logIn($username, $password){
         
-        $sql = "SELECT * FROM users WHERE username = '".mysqli_real_escape_string($this->connect(),$username)."'";
+        $sql = "SELECT * FROM users WHERE username = '".mysqli_real_escape_string($this->connect(),$username)."' && users.type = 'dlab'";
         $_SESSION['user_info'] = $this->sqliexecute($sql);
         $password_verify = password_verify($password, $_SESSION['user_info'][0]['password']);
         

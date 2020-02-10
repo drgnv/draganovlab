@@ -79,7 +79,7 @@ class Basic extends Host{
             $sql = "SELECT * FROM patients WHERE date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";
         }
         if($status == 'over'){
-            $sql = "SELECT * FROM patients WHERE over = 'on' AND date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";
+            $sql = "SELECT * FROM patients WHERE patients.over = 'on' AND date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";
         }
         if($status == 'notover'){
             $sql = "SELECT * FROM patients WHERE over = 'off' AND  date between '".mysqli_real_escape_string($this->connect(), $start)."' and '".mysqli_real_escape_string($this->connect(), $end)."'";
